@@ -1,0 +1,72 @@
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { AuthService } from '../../../../core/services/auth-service';
+import { AutoFocusModule } from 'primeng/autofocus';
+import { MessageModule } from 'primeng/message';
+@Component({
+  selector: 'app-login',
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule,
+    CardModule,
+    IconFieldModule,
+    InputIconModule,
+    AutoFocusModule,
+    MessageModule
+  ],
+  templateUrl: './login.html',
+  styleUrl: './login.scss'
+})
+export class Login {
+  private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  private messageService = inject(MessageService);
+
+  public form: FormGroup;
+  public submitted = false;
+
+  constructor() {
+    this.form = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  get f() { return this.form.controls; }
+
+  public onSubmit(): void {
+    this.submitted = true;
+
+    // Stop here if form is invalid
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.authService.login(this.form.value).subscribe({
+      next: () => {
+        // Login successful, navigate to a protected route
+        this.router.navigate(['about-us']);
+        this.messageService.add({ severity: 'success', summary: 'Login Successful', detail: 'You have successfully logged in.' });
+      },
+      error: (err) => {
+        // Handle login error
+        this.messageService.add({ severity: 'error', summary: 'Login Failed', detail: 'An error occurred during login.' });
+      }
+    });
+  }
+
+}
