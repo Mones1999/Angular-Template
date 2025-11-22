@@ -1,0 +1,8 @@
+{
+    "appName": "Angular Starter",
+    "apiUrl": "http://localhost:9009/SDK_API/api",
+    "defaultTheme": "light",
+    "featureFlags": {
+        "enableMfa": false
+    }
+}
