@@ -1,5 +1,16 @@
+@layer primeng, custom, utilities;
+
+@import 'primeicons/primeicons.css' layer(primeng);
+@import 'primeflex/primeflex.css' layer(utilities);
+
 @layer custom {
+  
+  :root {
+    --p-tooltip-background: var(--p-orange-500);
+  }
+
   body {
     font-family: "Nunito", sans-serif;
+    margin: 0; 
   }
 }

@@ -30,7 +30,6 @@
               }
             ],
             "styles": [
-              "src/assets/styles/layers.css",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
