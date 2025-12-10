@@ -7,6 +7,8 @@ import { TokenPayload } from '../models/TokenPayload';
 import { jwtDecode } from 'jwt-decode';
 import { ConfigService } from './config-service';
 import { Router } from '@angular/router';
+import { APP_ROUTES } from '../constants/app-routes-constants';
+import { AUTH_ROUTES } from '../../features/auth/constants/auth-routes.constants';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -81,7 +83,7 @@ export class AuthService {
   public logout(): void {
     localStorage.removeItem(TOKEN_KEY);
     this.#authState.set({ isLoggedIn: false, userData: null });
-    this.router.navigate(['auth/login']);
+    this.router.navigate([APP_ROUTES.AUTH, AUTH_ROUTES.LOGIN]);
   }
 
 
