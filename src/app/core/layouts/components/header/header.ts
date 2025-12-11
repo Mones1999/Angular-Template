@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Menubar } from 'primeng/menubar';
-import { AuthService } from '../../../core/services/auth-service';
-import { ThemeService } from '../../../core/services/theme-service';
+import { AuthService } from '../../../services/auth-service';
+import { ThemeService } from '../../../services/theme-service';
 
 @Component({
   selector: 'app-header',

@@ -12,6 +12,7 @@ import { PasswordModule } from 'primeng/password';
 import { AuthService } from '../../../../core/services/auth-service';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { MessageModule } from 'primeng/message';
+import { APP_ROUTES } from '../../../../core/constants/app-routes-constants';
 @Component({
   selector: 'app-login',
   imports: [
@@ -59,7 +60,7 @@ export class Login {
     this.authService.login(this.form.value).subscribe({
       next: () => {
         // Login successful, navigate to a protected route
-        this.router.navigate(['about-us']);
+        this.router.navigate([APP_ROUTES.ABOUT_US]);
         this.messageService.add({ severity: 'success', summary: 'Login Successful', detail: 'You have successfully logged in.' });
       },
       error: (err) => {

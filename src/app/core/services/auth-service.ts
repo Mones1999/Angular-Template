@@ -8,7 +8,7 @@ import { jwtDecode } from 'jwt-decode';
 import { ConfigService } from './config-service';
 import { Router } from '@angular/router';
 import { APP_ROUTES } from '../constants/app-routes-constants';
-import { AUTH_ROUTES } from '../../features/auth/constants/auth-routes.constants';
+import { AUTH_ROUTES } from '../../features/auth/constants/auth-routes-constants';
 
 const TOKEN_KEY = 'auth-token';
 

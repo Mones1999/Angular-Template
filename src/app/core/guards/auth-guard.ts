@@ -1,9 +1,11 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth-service';
+import { APP_ROUTES } from '../constants/app-routes-constants';
+import { AUTH_ROUTES } from '../../features/auth/constants/auth-routes-constants';
 
 export const authGuard: CanActivateFn = (route, state) => {
- const authService = inject(AuthService);
+  const authService = inject(AuthService);
   const router = inject(Router);
 
   // Using the Signal-based service
@@ -12,5 +14,5 @@ export const authGuard: CanActivateFn = (route, state) => {
   }
 
   // Not logged in, redirect to login page by returning a UrlTree
-  return router.createUrlTree(['auth/login']);
+  return router.createUrlTree([APP_ROUTES.AUTH, AUTH_ROUTES.LOGIN]);
 };
