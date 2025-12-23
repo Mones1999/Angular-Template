@@ -1,16 +1,136 @@
-<div class="min-h-screen surface-ground flex flex-column align-items-center justify-content-center p-3">
-    <p-card class="w-full max-w-4xl">
-        <section class="mb-4">
-            <h2 class="text-2xl font-bold mb-2">{{ 'ABOUT_US.TITLE' | translate }}</h2>
-            <p>{{ 'ABOUT_US.DESCRIPTION' | translate }}</p>
-        </section>
-        <section class="mb-4">
-            <h2 class="text-2xl font-bold mb-2">{{ 'ABOUT_US.CLIENTS_TITLE' | translate }}</h2>
-            <p>{{ 'ABOUT_US.CLIENTS_DESCRIPTION' | translate }}</p>
-        </section>
-        <section class="mb-4">
-            <h2 class="text-2xl font-bold mb-2">{{ 'ABOUT_US.CONTACT_TITLE' | translate }}</h2>
-            <p>{{ 'ABOUT_US.CONTACT_DESCRIPTION' | translate }}</p>
-        </section>
-    </p-card>
+<div class="about-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ 'ABOUT_US.HERO.TITLE' | translate }}</h1>
+            <p class="hero-subtitle">{{ 'ABOUT_US.HERO.SUBTITLE' | translate }}</p>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            @for (stat of statistics; track stat.label) {
+            <p-card class="stat-card">
+                <div class="stat-content">
+                    <i [class]="stat.icon + ' stat-icon'"></i>
+                    <span class="stat-value">{{ stat.value }}</span>
+                    <span class="stat-label">{{ stat.label | translate }}</span>
+                </div>
+            </p-card>
+            }
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <p-card class="mission-card">
+                <ng-template #header>
+                    <div class="card-header">
+                        <i class="pi pi-bullseye header-icon"></i>
+                        <h2>{{ 'ABOUT_US.MISSION.TITLE' | translate }}</h2>
+                    </div>
+                </ng-template>
+                <p class="card-text">{{ 'ABOUT_US.MISSION.DESCRIPTION' | translate }}</p>
+            </p-card>
+
+            <p-card class="vision-card">
+                <ng-template #header>
+                    <div class="card-header">
+                        <i class="pi pi-eye header-icon"></i>
+                        <h2>{{ 'ABOUT_US.VISION.TITLE' | translate }}</h2>
+                    </div>
+                </ng-template>
+                <p class="card-text">{{ 'ABOUT_US.VISION.DESCRIPTION' | translate }}</p>
+            </p-card>
+        </div>
+    </section>
+
+    <p-divider />
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2 class="section-title">{{ 'ABOUT_US.TEAM.TITLE' | translate }}</h2>
+        <p class="section-subtitle">{{ 'ABOUT_US.TEAM.SUBTITLE' | translate }}</p>
+
+        <div class="team-container">
+            @for (member of teamMembers; track member.name) {
+            <p-card class="team-card">
+                <div class="team-member">
+                    <p-avatar [label]="member.initials" size="xlarge" shape="circle"
+                        [style]="{ 'background-color': member.color, 'color': '#ffffff' }">
+                    </p-avatar>
+                    <h3 class="member-name">{{ member.name | translate }}</h3>
+                    <span class="member-role">{{ member.role | translate }}</span>
+                    <p class="member-bio">{{ member.bio | translate }}</p>
+                    <div class="member-social">
+                        <p-button icon="pi pi-linkedin" [rounded]="true" [text]="true" severity="secondary" />
+                        <p-button icon="pi pi-twitter" [rounded]="true" [text]="true" severity="secondary" />
+                        <p-button icon="pi pi-envelope" [rounded]="true" [text]="true" severity="secondary" />
+                    </div>
+                </div>
+            </p-card>
+            }
+        </div>
+    </section>
+
+    <p-divider />
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <h2 class="section-title">{{ 'ABOUT_US.TIMELINE.TITLE' | translate }}</h2>
+        <p class="section-subtitle">{{ 'ABOUT_US.TIMELINE.SUBTITLE' | translate }}</p>
+
+        <p-timeline [value]="timelineEvents" align="alternate" class="custom-timeline">
+            <ng-template #marker let-event>
+                <span class="timeline-marker" [style.background-color]="event.color">
+                    <i [class]="event.icon"></i>
+                </span>
+            </ng-template>
+            <ng-template #content let-event>
+                <p-card class="timeline-card">
+                    <ng-template #header>
+                        <div class="timeline-header">
+                            <span class="timeline-year">{{ event.year }}</span>
+                        </div>
+                    </ng-template>
+                    <h4 class="timeline-title">{{ event.title | translate }}</h4>
+                    <p class="timeline-description">{{ event.description | translate }}</p>
+                </p-card>
+            </ng-template>
+        </p-timeline>
+    </section>
+
+    <p-divider />
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <p-card class="contact-card">
+            <div class="contact-content">
+                <h2 class="contact-title">{{ 'ABOUT_US.CONTACT.TITLE' | translate }}</h2>
+                <p class="contact-description">{{ 'ABOUT_US.CONTACT.DESCRIPTION' | translate }}</p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="pi pi-map-marker contact-icon"></i>
+                        <span>{{ 'ABOUT_US.CONTACT.ADDRESS' | translate }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="pi pi-phone contact-icon"></i>
+                        <span>{{ 'ABOUT_US.CONTACT.PHONE' | translate }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="pi pi-envelope contact-icon"></i>
+                        <span>{{ 'ABOUT_US.CONTACT.EMAIL' | translate }}</span>
+                    </div>
+                </div>
+
+                <p-button [label]="'ABOUT_US.CONTACT.CTA' | translate" icon="pi pi-send" [raised]="true"
+                    severity="primary" size="large" class="contact-cta">
+                </p-button>
+            </div>
+        </p-card>
+    </section>
 </div>

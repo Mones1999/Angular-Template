@@ -1,1 +1,44 @@
-<p>{{ 'SIDEBAR.TITLE' | translate }}</p>
+<aside class="app-sidebar">
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+        <div class="sidebar-brand">
+            <i class="pi pi-box brand-icon"></i>
+            <span class="brand-text">{{ 'SIDEBAR.BRAND' | translate }}</span>
+        </div>
+        <p-button icon="pi pi-times" [rounded]="true" [text]="true" severity="secondary" (onClick)="toggleSidebar()"
+            styleClass="close-btn" />
+    </div>
+
+    <!-- User Profile Section -->
+    <div class="user-profile">
+        <p-avatar icon="pi pi-user" size="xlarge" shape="circle" styleClass="profile-avatar" />
+        <div class="user-info">
+            <span class="user-name">{{ 'SIDEBAR.USER.NAME' | translate }}</span>
+            <span class="user-role">{{ 'SIDEBAR.USER.ROLE' | translate }}</span>
+        </div>
+    </div>
+
+    <p-divider />
+
+    <!-- Navigation Menu -->
+    <div class="sidebar-nav">
+        <p-panelMenu [model]="menuItems" [multiple]="false" styleClass="sidebar-menu" />
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+        <div class="footer-item" (click)="themeService.toggleTheme()">
+            <i [class]="themeService.isDarkTheme() ? 'pi pi-sun' : 'pi pi-moon'"></i>
+            <span>{{ 'SIDEBAR.TOGGLE_THEME' | translate }}</span>
+        </div>
+        <div class="footer-item" (click)="languageService.toggleLang()">
+            <i class="pi pi-globe"></i>
+            <span>{{ languageService.currentLang() === 'en' ? 'العربية' : 'English' }}</span>
+        </div>
+        <p-divider />
+        <div class="footer-item logout" (click)="authService.logout()">
+            <i class="pi pi-sign-out"></i>
+            <span>{{ 'SIDEBAR.LOGOUT' | translate }}</span>
+        </div>
+    </div>
+</aside>

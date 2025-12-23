@@ -4,7 +4,7 @@
 @import 'primeflex/primeflex.css' layer(utilities);
 
 @layer custom {
-  
+
   :root {
     --p-tooltip-background: var(--p-orange-500);
   }
@@ -12,5 +12,10 @@
   body {
     font-family: "Nunito", sans-serif;
     margin: 0;
+  }
+
+  /* Arabic font - applied when app language is Arabic */
+  [lang="ar"] body {
+    font-family: "Baloo Bhaijaan 2", sans-serif;
   }
 }

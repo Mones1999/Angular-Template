@@ -1,5 +1,387 @@
-::ng-deep {
-    .card-custom .p-card-body .p-card-title {
-        color: var(--p-orange-500);
+.about-page {
+    min-height: 100vh;
+    background: var(--p-surface-ground);
+}
+
+// Hero Section
+.hero-section {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--p-primary-600) 0%, var(--p-primary-400) 50%, var(--p-primary-300) 100%);
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.5;
     }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 1rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+        max-width: 600px;
+        line-height: 1.6;
+
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// Statistics Section
+.stats-section {
+    padding: 3rem 2rem;
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .stat-card {
+        ::ng-deep .p-card {
+            background: var(--p-surface-0);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        .stat-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--p-primary-500);
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--p-text-color);
+            background: linear-gradient(135deg, var(--p-primary-500), var(--p-primary-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--p-text-muted-color);
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+// Content Section
+.content-section {
+    padding: 4rem 2rem;
+
+    .content-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .mission-card,
+    .vision-card {
+        ::ng-deep .p-card {
+            height: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 1.5rem 0;
+
+            .header-icon {
+                font-size: 2rem;
+                color: var(--p-primary-500);
+            }
+
+            h2 {
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--p-text-color);
+            }
+        }
+
+        .card-text {
+            color: var(--p-text-muted-color);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+    }
+}
+
+// Section Titles
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--p-text-color);
+    margin: 0 0 0.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--p-text-muted-color);
+    margin: 0 0 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Team Section
+.team-section {
+    padding: 4rem 2rem;
+
+    .team-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .team-card {
+        ::ng-deep .p-card {
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .member-name {
+            margin: 1rem 0 0.25rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--p-text-color);
+        }
+
+        .member-role {
+            font-size: 0.95rem;
+            color: var(--p-primary-500);
+            font-weight: 600;
+        }
+
+        .member-bio {
+            font-size: 0.95rem;
+            color: var(--p-text-muted-color);
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        .member-social {
+            display: flex;
+            gap: 0.5rem;
+        }
+    }
+}
+
+// Timeline Section
+.timeline-section {
+    padding: 4rem 2rem;
+
+    .custom-timeline {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .timeline-marker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-card {
+        ::ng-deep .p-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        .timeline-header {
+            padding: 1rem 1rem 0;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--p-primary-500), var(--p-primary-400));
+            color: #ffffff;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            margin: 0 0 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--p-text-color);
+        }
+
+        .timeline-description {
+            margin: 0;
+            color: var(--p-text-muted-color);
+            line-height: 1.6;
+        }
+    }
+}
+
+// Contact Section
+.contact-section {
+    padding: 4rem 2rem;
+
+    .contact-card {
+        max-width: 800px;
+        margin: 0 auto;
+
+        ::ng-deep .p-card {
+            border-radius: 24px;
+            background: linear-gradient(135deg, var(--p-surface-0) 0%, var(--p-surface-50) 100%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .contact-content {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--p-text-color);
+        margin: 0 0 1rem;
+    }
+
+    .contact-description {
+        font-size: 1.1rem;
+        color: var(--p-text-muted-color);
+        margin: 0 0 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--p-text-color);
+        font-size: 1rem;
+
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--p-primary-500);
+        }
+    }
+
+    .contact-cta {
+        ::ng-deep .p-button {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// Divider styling
+::ng-deep .p-divider {
+    max-width: 1200px;
+    margin: 0 auto !important;
 }

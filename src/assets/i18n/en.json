@@ -3,15 +3,51 @@
         "GO_TO_HOME": "Go to Home"
     },
     "HEADER": {
+        "BRAND": "Angular App",
         "HOME": "Home",
+        "ABOUT": "About",
         "FEATURES": "Features",
         "FEATURES_TOOLTIP": "New Features Coming Soon!",
+        "SERVICES": "Services",
+        "SERVICES_CONSULTING": "Consulting",
+        "SERVICES_DEVELOPMENT": "Development",
+        "SERVICES_SUPPORT": "Support",
+        "SEARCH": "Search",
+        "NOTIFICATIONS": "Notifications",
         "LOGOUT": "Logout",
-        "THEME": "Theme",
-        "LANGUAGE": "Language"
+        "THEME": "Toggle Theme",
+        "LANGUAGE": "Language",
+        "USER_MENU": {
+            "PROFILE": "My Profile",
+            "SETTINGS": "Settings"
+        }
     },
     "SIDEBAR": {
-        "TITLE": "Sidebar works!"
+        "BRAND": "Angular App",
+        "TITLE": "Navigation",
+        "TOGGLE_THEME": "Toggle Theme",
+        "LOGOUT": "Logout",
+        "USER": {
+            "NAME": "John Doe",
+            "ROLE": "Administrator"
+        },
+        "MENU": {
+            "MAIN": "Main",
+            "DASHBOARD": "Dashboard",
+            "ANALYTICS": "Analytics",
+            "CONTENT": "Content",
+            "PAGES": "Pages",
+            "ABOUT": "About Us",
+            "MEDIA": "Media Library",
+            "MANAGEMENT": "Management",
+            "USERS": "Users",
+            "ROLES": "Roles",
+            "PERMISSIONS": "Permissions",
+            "SETTINGS": "Settings",
+            "GENERAL": "General",
+            "SECURITY": "Security",
+            "NOTIFICATIONS": "Notifications"
+        }
     },
     "LOGIN": {
         "TITLE": "Login",
@@ -38,12 +74,76 @@
         "DESCRIPTION": "Sorry, you do not have permission to access this page."
     },
     "ABOUT_US": {
-        "TITLE": "About Us",
-        "DESCRIPTION": "Information about our company.",
-        "CLIENTS_TITLE": "Our Clients",
-        "CLIENTS_DESCRIPTION": "Details about our valued clients.",
-        "CONTACT_TITLE": "Contact Us",
-        "CONTACT_DESCRIPTION": "Contact information and form."
+        "HERO": {
+            "TITLE": "About Our Company",
+            "SUBTITLE": "We are passionate about creating innovative solutions that transform businesses and empower communities worldwide."
+        },
+        "STATS": {
+            "YEARS": "Years of Experience",
+            "PROJECTS": "Projects Completed",
+            "TEAM": "Team Members",
+            "CLIENTS": "Happy Clients"
+        },
+        "MISSION": {
+            "TITLE": "Our Mission",
+            "DESCRIPTION": "To deliver cutting-edge technology solutions that drive business growth and create lasting value for our clients. We believe in the power of innovation to solve complex challenges and unlock new opportunities."
+        },
+        "VISION": {
+            "TITLE": "Our Vision",
+            "DESCRIPTION": "To be the leading technology partner for businesses worldwide, recognized for our commitment to excellence, innovation, and customer success. We envision a future where technology empowers everyone."
+        },
+        "TEAM": {
+            "TITLE": "Meet Our Team",
+            "SUBTITLE": "The talented people behind our success",
+            "MEMBER1": {
+                "NAME": "John Doe",
+                "ROLE": "CEO & Founder",
+                "BIO": "With over 15 years of experience in technology leadership, John drives our vision and strategy."
+            },
+            "MEMBER2": {
+                "NAME": "Sarah Mitchell",
+                "ROLE": "CTO",
+                "BIO": "Sarah leads our technical innovation with expertise in cloud architecture and AI solutions."
+            },
+            "MEMBER3": {
+                "NAME": "Ahmed Khan",
+                "ROLE": "Lead Developer",
+                "BIO": "Ahmed brings creativity and technical excellence to every project, specializing in Angular and Node.js."
+            },
+            "MEMBER4": {
+                "NAME": "Maria Rodriguez",
+                "ROLE": "UX Designer",
+                "BIO": "Maria creates intuitive and beautiful user experiences that delight our clients and their customers."
+            }
+        },
+        "TIMELINE": {
+            "TITLE": "Our Journey",
+            "SUBTITLE": "Key milestones in our company's history",
+            "EVENT1": {
+                "TITLE": "Company Founded",
+                "DESCRIPTION": "Started with a vision to revolutionize how businesses leverage technology."
+            },
+            "EVENT2": {
+                "TITLE": "Team Expansion",
+                "DESCRIPTION": "Grew our team to 25+ talented professionals across multiple disciplines."
+            },
+            "EVENT3": {
+                "TITLE": "Global Reach",
+                "DESCRIPTION": "Expanded our services to clients across 15+ countries worldwide."
+            },
+            "EVENT4": {
+                "TITLE": "Industry Recognition",
+                "DESCRIPTION": "Received multiple awards for innovation and excellence in technology solutions."
+            }
+        },
+        "CONTACT": {
+            "TITLE": "Get In Touch",
+            "DESCRIPTION": "Ready to start your next project? We'd love to hear from you.",
+            "ADDRESS": "123 Innovation Street, Tech City",
+            "PHONE": "+1 (555) 123-4567",
+            "EMAIL": "hello@company.com",
+            "CTA": "Contact Us"
+        }
     },
     "PRIMENG": {
         "accept": "Accept",

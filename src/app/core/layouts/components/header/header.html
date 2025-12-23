@@ -1,1 +1,56 @@
-<p-menubar [model]="menuItems" />
+<header class="app-header">
+    <div class="header-container">
+        <!-- Logo & Brand -->
+        <div class="header-start">
+            <div class="brand">
+                <i class="pi pi-box brand-icon"></i>
+                <span class="brand-name">{{ 'HEADER.BRAND' | translate }}</span>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="header-center">
+            <p-menubar [model]="menuItems" styleClass="header-menubar">
+                <ng-template #item let-item let-root="root">
+                    <a pRipple class="menu-item-link" [routerLink]="item.routerLink" routerLinkActive="active-route"
+                        [routerLinkActiveOptions]="{ exact: item.routerLinkActiveOptions?.exact }">
+                        <i [class]="item.icon + ' menu-icon'"></i>
+                        <span class="menu-label">{{ item.label }}</span>
+                        @if (item.badge) {
+                        <p-badge [value]="item.badge" severity="danger" />
+                        }
+                    </a>
+                </ng-template>
+            </p-menubar>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-end">
+            <!-- Search -->
+            <p-button icon="pi pi-search" [rounded]="true" [text]="true" severity="secondary"
+                [pTooltip]="'HEADER.SEARCH' | translate" tooltipPosition="bottom" />
+
+            <!-- Notifications -->
+            <p-button icon="pi pi-bell" [rounded]="true" [text]="true" severity="secondary"
+                [pTooltip]="'HEADER.NOTIFICATIONS' | translate" tooltipPosition="bottom" [badge]="'3'"
+                badgeSeverity="danger" />
+
+            <!-- Theme Toggle -->
+            <p-button [icon]="themeService.isDarkTheme() ? 'pi pi-sun' : 'pi pi-moon'" [rounded]="true" [text]="true"
+                severity="secondary" (onClick)="themeService.toggleTheme()" [pTooltip]="'HEADER.THEME' | translate"
+                tooltipPosition="bottom" />
+
+            <!-- Language Toggle -->
+            <p-button icon="pi pi-globe" [rounded]="true" [text]="true" severity="secondary"
+                (onClick)="languageService.toggleLang()"
+                [pTooltip]="languageService.currentLang() === 'en' ? 'العربية' : 'English'" tooltipPosition="bottom" />
+
+            <!-- User Menu -->
+            <div class="user-menu">
+                <p-avatar icon="pi pi-user" shape="circle" size="normal" (click)="userMenu.toggle($event)"
+                    class="user-avatar" />
+                <p-menu #userMenu [model]="userMenuItems" [popup]="true" appendTo="body" styleClass="user-dropdown" />
+            </div>
+        </div>
+    </div>
+</header>
