@@ -17,7 +17,7 @@ export class ThemeService {
       } else {
         this.document.documentElement.classList.remove('my-app-dark');
       }
-      localStorage.setItem('app-theme', isDark ? 'dark' : 'light');
+      sessionStorage.setItem('app-theme', isDark ? 'dark' : 'light');
     });
   }
 
@@ -26,6 +26,6 @@ export class ThemeService {
   }
 
   private getInitialTheme(): boolean {
-    return localStorage.getItem('app-theme') === 'dark';
+    return sessionStorage.getItem('app-theme') === 'dark';
   }
 }

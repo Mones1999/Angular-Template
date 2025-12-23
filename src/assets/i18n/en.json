@@ -1,0 +1,55 @@
+{
+    "COMMON": {
+        "GO_TO_HOME": "Go to Home"
+    },
+    "HEADER": {
+        "HOME": "Home",
+        "FEATURES": "Features",
+        "FEATURES_TOOLTIP": "New Features Coming Soon!",
+        "LOGOUT": "Logout",
+        "THEME": "Theme",
+        "LANGUAGE": "Language"
+    },
+    "SIDEBAR": {
+        "TITLE": "Sidebar works!"
+    },
+    "LOGIN": {
+        "TITLE": "Login",
+        "USERNAME": "Username",
+        "USERNAME_PLACEHOLDER": "Username",
+        "USERNAME_REQUIRED": "Username is required",
+        "PASSWORD": "Password",
+        "PASSWORD_PLACEHOLDER": "Password",
+        "PASSWORD_REQUIRED": "Password is required",
+        "SUBMIT": "Login",
+        "SUCCESS_TITLE": "Login Successful",
+        "SUCCESS_MESSAGE": "You have successfully logged in.",
+        "ERROR_TITLE": "Login Failed",
+        "ERROR_MESSAGE": "An error occurred during login."
+    },
+    "NOT_FOUND": {
+        "CODE": "404",
+        "TITLE": "Page Not Found",
+        "DESCRIPTION": "Sorry, the page you are looking for does not exist or has been moved."
+    },
+    "FORBIDDEN": {
+        "CODE": "403",
+        "TITLE": "Access Forbidden",
+        "DESCRIPTION": "Sorry, you do not have permission to access this page."
+    },
+    "ABOUT_US": {
+        "TITLE": "About Us",
+        "DESCRIPTION": "Information about our company.",
+        "CLIENTS_TITLE": "Our Clients",
+        "CLIENTS_DESCRIPTION": "Details about our valued clients.",
+        "CONTACT_TITLE": "Contact Us",
+        "CONTACT_DESCRIPTION": "Contact information and form."
+    },
+    "PRIMENG": {
+        "accept": "Accept",
+        "reject": "Reject",
+        "choose": "Choose",
+        "upload": "Upload",
+        "cancel": "Cancel"
+    }
+}

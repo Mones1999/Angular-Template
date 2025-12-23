@@ -8,6 +8,8 @@ import { routes } from './app.routes';
 import { AppConfig } from './core/models/AppConfig';
 import { ConfigService } from './core/services/config-service';
 import { MyPreset } from './../assets/styles/preset';
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +18,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideAnimationsAsync(),
+    provideTranslateService({
+      defaultLanguage: 'en'
+    }),
+    provideTranslateHttpLoader({
+      prefix: '/assets/i18n/',
+      suffix: '.json'
+    }),
     providePrimeNG({
       theme: {
         preset: MyPreset,

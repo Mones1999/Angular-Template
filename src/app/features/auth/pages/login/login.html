@@ -1,26 +1,28 @@
 <div class="min-h-screen surface-ground flex align-items-center justify-content-center px-3 py-5">
     <p-card class="w-full sm:w-25rem">
         <div class="text-center mb-3">
-            <div class="text-2xl font-semibold mb-1">Login</div>
+            <div class="text-2xl font-semibold mb-1">{{ 'LOGIN.TITLE' | translate }}</div>
         </div>
 
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-column gap-3">
             <div class="flex flex-column gap-2 ">
-                <label for="username" class="font-semibold">Username</label>
+                <label for="username" class="font-semibold">{{ 'LOGIN.USERNAME' | translate }}</label>
                 <p-iconfield iconPosition="left" class="w-full">
                     <p-inputicon>
                         <i class="pi pi-user"></i>
                     </p-inputicon>
-                    <input id="username" type="text" pInputText [pAutoFocus]="true" placeholder="Username" formControlName="username"
+                    <input id="username" type="text" pInputText [pAutoFocus]="true"
+                        [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate" formControlName="username"
                         class="w-full" [ngClass]="{ 'p-invalid': submitted && f['username'].errors }" />
                 </p-iconfield>
                 @if (submitted && f['username'].errors) {
-                    <p-message severity="error" size="small" variant="simple">Username is required</p-message>
+                <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.USERNAME_REQUIRED' | translate
+                    }}</p-message>
                 }
             </div>
 
             <div class="flex flex-column gap-2">
-                <label for="password" class="font-semibold">Password</label>
+                <label for="password" class="font-semibold">{{ 'LOGIN.PASSWORD' | translate }}</label>
                 <p-iconfield iconPosition="left" class="w-full">
                     <p-inputicon>
                         <i class="pi pi-lock"></i>
@@ -28,14 +30,16 @@
                     <p-password id="password" class="w-full" formControlName="password" [feedback]="false"
                         [toggleMask]="true"
                         [inputStyleClass]="submitted && f['password'].errors ? 'w-full p-invalid' : 'w-full'"
-                        placeholder="Password"></p-password>
+                        [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"></p-password>
                 </p-iconfield>
                 @if (submitted && f['password'].errors) {
-                    <p-message severity="error" size="small" variant="simple">Password is required</p-message>
+                <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.PASSWORD_REQUIRED' | translate
+                    }}</p-message>
                 }
             </div>
 
-            <p-button type="submit" label="Login" class="w-full mt-1" severity="primary"></p-button>
+            <p-button type="submit" [label]="'LOGIN.SUBMIT' | translate" class="w-full mt-1"
+                severity="primary"></p-button>
         </form>
     </p-card>
 </div>

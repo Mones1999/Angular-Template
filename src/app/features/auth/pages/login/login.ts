@@ -12,6 +12,7 @@ import { PasswordModule } from 'primeng/password';
 import { AuthService } from '../../../../core/services/auth-service';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { MessageModule } from 'primeng/message';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { APP_ROUTES } from '../../../../core/constants/app-routes-constants';
 @Component({
   selector: 'app-login',
@@ -26,7 +27,8 @@ import { APP_ROUTES } from '../../../../core/constants/app-routes-constants';
     IconFieldModule,
     InputIconModule,
     AutoFocusModule,
-    MessageModule
+    MessageModule,
+    TranslateModule
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss'
@@ -36,6 +38,7 @@ export class Login {
   private authService = inject(AuthService);
   private router = inject(Router);
   private messageService = inject(MessageService);
+  private translateService = inject(TranslateService);
 
   public form: FormGroup;
   public submitted = false;
@@ -61,11 +64,19 @@ export class Login {
       next: () => {
         // Login successful, navigate to a protected route
         this.router.navigate([APP_ROUTES.ABOUT_US]);
-        this.messageService.add({ severity: 'success', summary: 'Login Successful', detail: 'You have successfully logged in.' });
+        this.messageService.add({
+          severity: 'success',
+          summary: this.translateService.instant('LOGIN.SUCCESS_TITLE'),
+          detail: this.translateService.instant('LOGIN.SUCCESS_MESSAGE')
+        });
       },
       error: (err) => {
         // Handle login error
-        this.messageService.add({ severity: 'error', summary: 'Login Failed', detail: 'An error occurred during login.' });
+        this.messageService.add({
+          severity: 'error',
+          summary: this.translateService.instant('LOGIN.ERROR_TITLE'),
+          detail: this.translateService.instant('LOGIN.ERROR_MESSAGE')
+        });
       }
     });
   }

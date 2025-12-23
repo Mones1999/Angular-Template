@@ -22,7 +22,7 @@ export class AuthService {
   private apiUrl = `${this.config.apiUrl}/access`;
 
   private getInitialAuthState() {
-    const token = localStorage.getItem(TOKEN_KEY);
+    const token = sessionStorage.getItem(TOKEN_KEY);
     if (token) {
       const decodedToken = this.decodeToken(token);
 
@@ -31,7 +31,7 @@ export class AuthService {
         return { isLoggedIn: true, userData: decodedToken };
       } else {
         // Token is invalid or expired, clear it
-        localStorage.removeItem(TOKEN_KEY);
+        sessionStorage.removeItem(TOKEN_KEY);
       }
     }
     return { isLoggedIn: false, userData: null };
@@ -47,9 +47,9 @@ export class AuthService {
     return this.http.post<ResponseResult<string>>(`${this.apiUrl}/login`, credentials).pipe(
       tap((response) => {
         if (response.statusCode === 200 && response.result) {
-          localStorage.clear();
+          sessionStorage.clear();
           // Save the token
-          localStorage.setItem(TOKEN_KEY, response.result);
+          sessionStorage.setItem(TOKEN_KEY, response.result);
           // Decode the token and update the auth state signal
           const decodedToken = this.decodeToken(response.result);
           this.#authState.set({ isLoggedIn: true, userData: decodedToken });
@@ -76,12 +76,12 @@ export class AuthService {
   }
 
   public getToken(): string | null {
-    return localStorage.getItem(TOKEN_KEY);
+    return sessionStorage.getItem(TOKEN_KEY);
   }
 
   // The logout method
   public logout(): void {
-    localStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(TOKEN_KEY);
     this.#authState.set({ isLoggedIn: false, userData: null });
     this.router.navigate([APP_ROUTES.AUTH, AUTH_ROUTES.LOGIN]);
   }

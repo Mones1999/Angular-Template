@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })

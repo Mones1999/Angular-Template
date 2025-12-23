@@ -1,0 +1,55 @@
+{
+    "COMMON": {
+        "GO_TO_HOME": "العودة للرئيسية"
+    },
+    "HEADER": {
+        "HOME": "الرئيسية",
+        "FEATURES": "المميزات",
+        "FEATURES_TOOLTIP": "ميزات جديدة قريباً!",
+        "LOGOUT": "تسجيل الخروج",
+        "THEME": "المظهر",
+        "LANGUAGE": "اللغة"
+    },
+    "SIDEBAR": {
+        "TITLE": "الشريط الجانبي يعمل!"
+    },
+    "LOGIN": {
+        "TITLE": "تسجيل الدخول",
+        "USERNAME": "اسم المستخدم",
+        "USERNAME_PLACEHOLDER": "اسم المستخدم",
+        "USERNAME_REQUIRED": "اسم المستخدم مطلوب",
+        "PASSWORD": "كلمة المرور",
+        "PASSWORD_PLACEHOLDER": "كلمة المرور",
+        "PASSWORD_REQUIRED": "كلمة المرور مطلوبة",
+        "SUBMIT": "تسجيل الدخول",
+        "SUCCESS_TITLE": "تم تسجيل الدخول بنجاح",
+        "SUCCESS_MESSAGE": "لقد قمت بتسجيل الدخول بنجاح.",
+        "ERROR_TITLE": "فشل تسجيل الدخول",
+        "ERROR_MESSAGE": "حدث خطأ أثناء تسجيل الدخول."
+    },
+    "NOT_FOUND": {
+        "CODE": "404",
+        "TITLE": "الصفحة غير موجودة",
+        "DESCRIPTION": "عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها."
+    },
+    "FORBIDDEN": {
+        "CODE": "403",
+        "TITLE": "الوصول محظور",
+        "DESCRIPTION": "عذراً، ليس لديك صلاحية للوصول إلى هذه الصفحة."
+    },
+    "ABOUT_US": {
+        "TITLE": "من نحن",
+        "DESCRIPTION": "معلومات عن شركتنا.",
+        "CLIENTS_TITLE": "عملاؤنا",
+        "CLIENTS_DESCRIPTION": "تفاصيل عن عملائنا الكرام.",
+        "CONTACT_TITLE": "تواصل معنا",
+        "CONTACT_DESCRIPTION": "معلومات الاتصال ونموذج التواصل."
+    },
+    "PRIMENG": {
+        "accept": "قبول",
+        "reject": "رفض",
+        "choose": "اختيار",
+        "upload": "رفع",
+        "cancel": "إلغاء"
+    }
+}
