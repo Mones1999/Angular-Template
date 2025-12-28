@@ -1,33 +1,26 @@
-import { Component, inject, OnInit, OnDestroy, ViewChild, signal, HostListener, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { MenuItem } from 'primeng/api';
-import { Menubar } from 'primeng/menubar';
-import { Menu } from 'primeng/menu';
-import { Button } from 'primeng/button';
-import { Avatar } from 'primeng/avatar';
-import { Badge } from 'primeng/badge';
-import { Tooltip } from 'primeng/tooltip';
-import { Ripple } from 'primeng/ripple';
-import { AuthService } from '../../../services/auth-service';
-import { ThemeService } from '../../../services/theme-service';
-import { LanguageService } from '../../../services/language-service';
+import { Component, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MenuItem } from 'primeng/api';
+import { Avatar } from 'primeng/avatar';
+import { Button } from 'primeng/button';
+import { Menu } from 'primeng/menu';
+import { Menubar } from 'primeng/menubar';
+import { Tooltip } from 'primeng/tooltip';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../../../services/auth-service';
+import { LanguageService } from '../../../services/language-service';
+import { ThemeService } from '../../../services/theme-service';
 
 @Component({
   selector: 'app-header',
   imports: [
     CommonModule,
-    RouterLink,
-    RouterLinkActive,
     Menubar,
     Menu,
     Button,
     Avatar,
-    Badge,
     Tooltip,
-    Ripple,
     TranslateModule,
   ],
   templateUrl: './header.html',
@@ -43,12 +36,7 @@ export class Header implements OnInit, OnDestroy {
 
   menuItems: MenuItem[] = [];
   userMenuItems: MenuItem[] = [];
-  menuToggle = output<void>();
   private langSubscription!: Subscription;
-
-  toggleMenu() {
-    this.menuToggle.emit();
-  }
 
   ngOnInit() {
     this.buildMenu();
@@ -64,14 +52,6 @@ export class Header implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.langSubscription) {
       this.langSubscription.unsubscribe();
-    }
-  }
-
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    // Close the user menu when scrolling to prevent position jumping
-    if (this.userMenu) {
-      this.userMenu.hide();
     }
   }
 

@@ -3,7 +3,7 @@
         <!-- Logo & Brand -->
         <div class="header-start">
             <!-- Mobile Menu Toggle -->
-            <p-button icon="pi pi-bars" [rounded]="true" [text]="true" severity="secondary" (onClick)="toggleMenu()"
+            <p-button icon="pi pi-bars" [rounded]="true" [text]="true" severity="secondary"
                 styleClass="mobile-menu-btn" />
             <div class="brand">
                 <i class="pi pi-box brand-icon"></i>
@@ -13,18 +13,7 @@
 
         <!-- Navigation Menu -->
         <div class="header-center">
-            <p-menubar [model]="menuItems" styleClass="header-menubar">
-                <ng-template #item let-item let-root="root">
-                    <a pRipple class="menu-item-link" [routerLink]="item.routerLink" routerLinkActive="active-route"
-                        [routerLinkActiveOptions]="{ exact: item.routerLinkActiveOptions?.exact }">
-                        <i [class]="item.icon + ' menu-icon'"></i>
-                        <span class="menu-label">{{ item.label }}</span>
-                        @if (item.badge) {
-                        <p-badge [value]="item.badge" severity="danger" />
-                        }
-                    </a>
-                </ng-template>
-            </p-menubar>
+            <p-menubar [model]="menuItems" />
         </div>
 
         <!-- Header Actions -->
@@ -52,7 +41,7 @@
             <div class="user-menu">
                 <p-avatar icon="pi pi-user" shape="circle" size="normal" (click)="userMenu.toggle($event)"
                     class="user-avatar" />
-                <p-menu #userMenu [model]="userMenuItems" [popup]="true" appendTo="body" styleClass="user-dropdown" />
+                <p-menu #userMenu [model]="userMenuItems" [popup]="true" appendTo="body" />
             </div>
         </div>
     </div>
