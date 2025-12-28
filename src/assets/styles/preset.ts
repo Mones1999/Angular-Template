@@ -1,7 +1,7 @@
 import { definePreset } from "@primeuix/themes";
-import Lara from '@primeuix/themes/lara';
+import Aura from '@primeuix/themes/aura';
 
-export const MyPreset = definePreset(Lara, {
+export const MyPreset = definePreset(Aura, {
     primitive: {
         borderRadius: {
             none: "0",

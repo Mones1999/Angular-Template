@@ -2,6 +2,7 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, inject, provideAppInitializer, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { providePrimeNG } from 'primeng/config';
 import { firstValueFrom, tap } from 'rxjs';
 import { routes } from './app.routes';
@@ -14,6 +15,7 @@ import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
+    MessageService,
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
@@ -29,10 +31,10 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: MyPreset,
         options: {
-          cssLayer: true,
           darkModeSelector: '.my-app-dark',
         }
-      }
+      },
+      
     }),
     provideAppInitializer(() => {
       const http = inject(HttpClient);
