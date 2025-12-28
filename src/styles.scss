@@ -1,7 +1,7 @@
-@layer primeng, custom, utilities;
+@layer tailwind, primeng, custom, utilities;
 
+@import "tailwindcss" layer(tailwind);
 @import 'primeicons/primeicons.css' layer(primeng);
-@import 'primeflex/primeflex.css' layer(utilities);
 
 @layer custom {
 
