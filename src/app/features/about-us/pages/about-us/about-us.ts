@@ -32,7 +32,7 @@ interface Statistic {
   selector: 'app-about-us',
   imports: [Card, TranslateModule, Timeline, Avatar, Button, Divider],
   templateUrl: './about-us.html',
-  styleUrl: './about-us.scss',
+  styleUrl: './about-us.css',
 })
 export class AboutUs {
   statistics: Statistic[] = [

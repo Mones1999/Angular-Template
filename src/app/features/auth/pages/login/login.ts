@@ -31,7 +31,7 @@ import { APP_ROUTES } from '../../../../core/constants/app-routes-constants';
     TranslateModule
   ],
   templateUrl: './login.html',
-  styleUrl: './login.scss'
+  styleUrl: './login.css'
 })
 export class Login {
   private fb = inject(FormBuilder);

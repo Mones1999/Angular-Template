@@ -9,7 +9,7 @@ import { ThemeService } from './core/services/theme-service';
   selector: 'app-root',
   imports: [RouterOutlet, ToastModule],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
+  styleUrl: './app.css',
   providers: [MessageService]
 })
 export class App {

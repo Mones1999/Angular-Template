@@ -1,10 +1,6 @@
-@layer tailwind, primeng, custom, utilities;
-
-@import "tailwindcss" layer(tailwind);
-@import 'primeicons/primeicons.css' layer(primeng);
-
+@import "tailwindcss";
+@import 'primeicons/primeicons.css';
 @layer custom {
-
   :root {
     --p-tooltip-background: var(--p-orange-500);
   }

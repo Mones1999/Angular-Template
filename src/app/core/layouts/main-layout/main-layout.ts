@@ -7,9 +7,9 @@ import { Header } from "../components/header/header";
   selector: 'app-main-layout',
   imports: [RouterOutlet, Header],
   templateUrl: './main-layout.html',
-  styleUrl: './main-layout.scss',
+  styleUrl: './main-layout.css',
 })
 export class MainLayout {
 
-  
+
 }

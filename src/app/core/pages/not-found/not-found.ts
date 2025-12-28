@@ -9,7 +9,7 @@ import { APP_ROUTES } from '../../constants/app-routes-constants';
     selector: 'app-not-found',
     imports: [Card, Button, RouterLink, TranslateModule],
     templateUrl: './not-found.html',
-    styleUrl: './not-found.scss',
+    styleUrl: './not-found.css',
 })
 export class NotFound {
     homeRoute = `/${APP_ROUTES.ABOUT_US}`;

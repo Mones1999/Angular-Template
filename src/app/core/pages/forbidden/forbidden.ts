@@ -9,7 +9,7 @@ import { APP_ROUTES } from '../../constants/app-routes-constants';
     selector: 'app-forbidden',
     imports: [Card, Button, RouterLink, TranslateModule],
     templateUrl: './forbidden.html',
-    styleUrl: './forbidden.scss',
+    styleUrl: './forbidden.css',
 })
 export class Forbidden {
     homeRoute = `/${APP_ROUTES.ABOUT_US}`;

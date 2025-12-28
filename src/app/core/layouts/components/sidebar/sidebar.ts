@@ -22,7 +22,7 @@ import { ThemeService } from '../../../services/theme-service';
     TranslateModule,
   ],
   templateUrl: './sidebar.html',
-  styleUrl: './sidebar.scss',
+  styleUrl: './sidebar.css',
 })
 export class Sidebar implements OnInit, OnDestroy {
   authService = inject(AuthService);

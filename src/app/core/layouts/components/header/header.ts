@@ -24,7 +24,7 @@ import { ThemeService } from '../../../services/theme-service';
     TranslateModule,
   ],
   templateUrl: './header.html',
-  styleUrl: './header.scss',
+  styleUrl: './header.css',
 })
 export class Header implements OnInit, OnDestroy {
   authService = inject(AuthService);
