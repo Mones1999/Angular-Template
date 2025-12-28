@@ -1,2 +1,15 @@
-<app-header/>
-<router-outlet/>
+<div class="app-layout" [class.sidebar-open]="isSidebarOpen()">
+    <!-- Sidebar -->
+    <app-sidebar [class.open]="isSidebarOpen()" (sidebarToggle)="onSidebarToggle($event)" />
+
+    <!-- Backdrop for mobile -->
+    <div class="sidebar-backdrop" [class.visible]="isSidebarOpen()" (click)="closeSidebar()"></div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <app-header (menuToggle)="toggleSidebar()" />
+        <main class="page-content">
+            <router-outlet />
+        </main>
+    </div>
+</div>

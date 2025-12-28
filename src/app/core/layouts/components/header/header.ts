@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy, ViewChild, signal, HostListener } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, ViewChild, signal, HostListener, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MenuItem } from 'primeng/api';
@@ -43,7 +43,12 @@ export class Header implements OnInit, OnDestroy {
 
   menuItems: MenuItem[] = [];
   userMenuItems: MenuItem[] = [];
+  menuToggle = output<void>();
   private langSubscription!: Subscription;
+
+  toggleMenu() {
+    this.menuToggle.emit();
+  }
 
   ngOnInit() {
     this.buildMenu();
