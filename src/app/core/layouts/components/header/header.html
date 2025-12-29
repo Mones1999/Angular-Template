@@ -2,9 +2,6 @@
     <div class="header-container">
         <!-- Logo & Brand -->
         <div class="header-start">
-            <!-- Mobile Menu Toggle -->
-            <p-button icon="pi pi-bars" [rounded]="true" [text]="true" severity="secondary"
-                styleClass="mobile-menu-btn" />
             <div class="brand">
                 <i class="pi pi-box brand-icon"></i>
                 <span class="brand-name">{{ 'HEADER.BRAND' | translate }}</span>
@@ -13,7 +10,7 @@
 
         <!-- Navigation Menu -->
         <div class="header-center">
-            <p-menubar [model]="menuItems" />
+            <p-menubar [model]="menuItems" [pt]="{ root: '!border-0' }" />
         </div>
 
         <!-- Header Actions -->

@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AuthService } from '@core/services/auth-service';
+import { LanguageService } from '@core/services/language-service';
+import { ThemeService } from '@core/services/theme-service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 import { Avatar } from 'primeng/avatar';
@@ -8,9 +11,7 @@ import { Menu } from 'primeng/menu';
 import { Menubar } from 'primeng/menubar';
 import { Tooltip } from 'primeng/tooltip';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../../services/auth-service';
-import { LanguageService } from '../../../services/language-service';
-import { ThemeService } from '../../../services/theme-service';
+
 
 @Component({
   selector: 'app-header',

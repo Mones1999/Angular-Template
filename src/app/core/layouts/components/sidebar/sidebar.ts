@@ -7,9 +7,9 @@ import { Button } from 'primeng/button';
 import { Divider } from 'primeng/divider';
 import { PanelMenu } from 'primeng/panelmenu';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../../../services/auth-service';
-import { LanguageService } from '../../../services/language-service';
-import { ThemeService } from '../../../services/theme-service';
+import { AuthService } from '@core/services/auth-service';
+import { LanguageService } from '@core/services/language-service';
+import { ThemeService } from '@core/services/theme-service';
 
 @Component({
   selector: 'app-sidebar',

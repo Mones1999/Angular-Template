@@ -9,11 +9,12 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
-import { AuthService } from '../../../../core/services/auth-service';
+import { AuthService } from '@core/services/auth-service';
 import { AutoFocusModule } from 'primeng/autofocus';
 import { MessageModule } from 'primeng/message';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { APP_ROUTES } from '../../../../core/constants/app-routes-constants';
+import { APP_ROUTES } from '@core/constants/app-routes-constants';
+
 @Component({
   selector: 'app-login',
   imports: [

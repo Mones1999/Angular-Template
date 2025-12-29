@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AUTH_ROUTES } from './constants/auth-routes-constants';
-import { APP_ROUTES } from '../../core/constants/app-routes-constants';
+import { APP_ROUTES } from '@core/constants/app-routes-constants';
 
 export const AuthRoutes: Routes = [
     {

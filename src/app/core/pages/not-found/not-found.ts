@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { Button } from 'primeng/button';
 import { Card } from 'primeng/card';
 import { TranslateModule } from '@ngx-translate/core';
-import { APP_ROUTES } from '../../constants/app-routes-constants';
+import { APP_ROUTES } from '@core/constants/app-routes-constants';
 
 @Component({
     selector: 'app-not-found',

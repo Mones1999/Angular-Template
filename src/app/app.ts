@@ -1,9 +1,7 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Toast, ToastModule, ToastPassThrough } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import { LanguageService } from './core/services/language-service';
-import { ThemeService } from './core/services/theme-service';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +12,5 @@ import { ThemeService } from './core/services/theme-service';
 })
 export class App {
   protected readonly title = signal('Angular-Template');
-  private languageService = inject(LanguageService);
-  private themeService = inject(ThemeService);
 
 }
