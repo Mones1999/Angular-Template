@@ -17,8 +17,6 @@ export class LanguageService {
     readonly currentLang = signal<LangCode>('en');
 
     constructor() {
-        this.initLanguage();
-
         effect(() => {
             const lang = this.currentLang();
 
@@ -36,16 +34,24 @@ export class LanguageService {
         this.currentLang.update(lang => lang === 'en' ? 'ar' : 'en');
     }
 
-    private initLanguage() {
+    public initialize(): Promise<void> {
         if (isPlatformBrowser(this.platformId)) {
             const savedLang = sessionStorage.getItem('app-lang') as LangCode;
+            let lang: LangCode = 'en';
+
             if (savedLang) {
-                this.currentLang.set(savedLang);
+                lang = savedLang;
             } else {
                 const browserLang = this.translate.getBrowserLang();
-                this.currentLang.set(browserLang?.match(/en|ar/) ? (browserLang as LangCode) : 'en');
+                lang = browserLang?.match(/en|ar/) ? (browserLang as LangCode) : 'en';
             }
+
+            this.currentLang.set(lang);
+            return new Promise<void>(resolve => {
+                this.translate.use(lang).subscribe(() => resolve());
+            });
         }
+        return Promise.resolve();
     }
 
     private updateDirection(lang: LangCode) {

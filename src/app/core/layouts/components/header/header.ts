@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { APP_ROUTES } from '@core/constants/app-routes-constants';
 import { AuthService } from '@core/services/auth-service';
 import { LanguageService } from '@core/services/language-service';
 import { ThemeService } from '@core/services/theme-service';
@@ -62,12 +63,11 @@ export class Header implements OnInit, OnDestroy {
         label: this.translate.instant('HEADER.HOME'),
         icon: 'pi pi-home',
         routerLink: '/dashboard',
-        routerLinkActiveOptions: { exact: true }
       },
       {
         label: this.translate.instant('HEADER.ABOUT'),
         icon: 'pi pi-info-circle',
-        routerLink: '/about-us'
+        routerLink: APP_ROUTES.ABOUT_US
       },
       {
         label: this.translate.instant('HEADER.FEATURES'),

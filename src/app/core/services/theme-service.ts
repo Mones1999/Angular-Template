@@ -1,23 +1,20 @@
 import { DOCUMENT } from '@angular/common';
-import { Injectable, computed, effect, inject, signal } from '@angular/core';
+import { Injectable, computed, effect, inject, signal, RendererFactory2 } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   private document = inject(DOCUMENT);
+  private renderer = inject(RendererFactory2).createRenderer(null, null);
   #isDarkTheme = signal<boolean>(this.getInitialTheme());
   public isDarkTheme = computed(() => this.#isDarkTheme());
 
   constructor() {
     effect(() => {
-      const isDark = this.#isDarkTheme();
-      if (isDark) {
-        this.document.documentElement.classList.add('my-app-dark');
-      } else {
-        this.document.documentElement.classList.remove('my-app-dark');
-      }
-      sessionStorage.setItem('app-theme', isDark ? 'dark' : 'light');
+      const method = this.#isDarkTheme() ? 'addClass' : 'removeClass';
+      this.renderer[method](this.document.documentElement, 'my-app-dark');
+      sessionStorage.setItem('app-theme', this.#isDarkTheme() ? 'dark' : 'light');
     });
   }
 

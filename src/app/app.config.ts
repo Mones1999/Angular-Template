@@ -9,13 +9,16 @@ import { routes } from './app.routes';
 import { AppConfig } from './core/models/AppConfig';
 import { ConfigService } from './core/services/config-service';
 import { MyPreset } from './../assets/styles/preset';
-import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateService, TranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguageService } from '@core/services/language-service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     MessageService,
+    LanguageService,
+    TranslateService,
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
@@ -34,7 +37,7 @@ export const appConfig: ApplicationConfig = {
           darkModeSelector: '.my-app-dark',
         }
       },
-      
+
     }),
     provideAppInitializer(() => {
       const http = inject(HttpClient);
@@ -45,5 +48,10 @@ export const appConfig: ApplicationConfig = {
         )
       );
     }),
+    provideAppInitializer(() => {
+      const languageService = inject(LanguageService);
+      return languageService.initialize();
+    }),
+    
   ]
 };
