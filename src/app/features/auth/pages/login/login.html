@@ -31,7 +31,8 @@
                     <p-password id="password" class="w-full" formControlName="password" [feedback]="false"
                         [toggleMask]="true"
                         [inputStyleClass]="submitted && f['password'].errors ? 'w-full p-invalid' : 'w-full'"
-                        [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" [pt]="{ pcInputText: { root: '!border-primary-400 focus:!border-primary-600 !rounded-3xl' }, 
+                        [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" 
+                        [pt]="{ pcInputText: { root: '!border-primary-400 focus:!border-primary-600 !rounded-3xl' }, 
                         maskIcon:  '!text-orange-400' , 
                         unmaskIcon: '!text-orange-400' }"></p-password>
                 </p-iconfield>

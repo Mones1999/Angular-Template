@@ -145,6 +145,33 @@
             "CTA": "Contact Us"
         }
     },
+    "DASHBOARD": {
+        "TITLE": "Dashboard",
+        "SUBTITLE": "Welcome back! Here's an overview of your business performance.",
+        "VS_LAST_MONTH": "vs last month",
+        "STATS": {
+            "USERS": "Total Users",
+            "REVENUE": "Revenue",
+            "ORDERS": "Orders",
+            "GROWTH": "Growth Rate"
+        },
+        "CHARTS": {
+            "SALES_TREND": "Sales Trend",
+            "MONTHLY_OVERVIEW": "Monthly sales and expenses overview",
+            "CATEGORIES": "Sales by Category",
+            "BY_CATEGORY": "Revenue distribution by category"
+        },
+        "TABLE": {
+            "TITLE": "Recent Orders",
+            "SUBTITLE": "Latest customer orders and their status",
+            "ORDER_ID": "Order ID",
+            "CUSTOMER": "Customer",
+            "PRODUCT": "Product",
+            "AMOUNT": "Amount",
+            "STATUS": "Status",
+            "DATE": "Date"
+        }
+    },
     "PRIMENG": {
         "accept": "Accept",
         "reject": "Reject",

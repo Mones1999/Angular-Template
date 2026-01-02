@@ -1,0 +1,158 @@
+<div class="p-6 min-h-screen bg-surface-ground">
+    <!-- Page Header -->
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-surface-900 dark:text-surface-0 mb-1">
+            {{ 'DASHBOARD.TITLE' | translate }}
+        </h1>
+        <p class="text-surface-500 dark:text-surface-400">
+            {{ 'DASHBOARD.SUBTITLE' | translate }}
+        </p>
+    </div>
+
+    <!-- Statistics Widgets -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        @for (stat of stats; track stat.title) {
+        <p-card [pt]="{
+            root: { class: 'shadow-sm hover:shadow-md transition-shadow duration-200' },
+            body: { class: 'p-4' },
+            content: { class: 'p-0' }
+        }">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm text-surface-500 dark:text-surface-400 mb-1">
+                        {{ stat.title | translate }}
+                    </p>
+                    <p class="text-2xl font-bold text-surface-900 dark:text-surface-0">
+                        {{ stat.value }}
+                    </p>
+                    <div class="flex items-center gap-1 mt-2">
+                        <i [class]="stat.trendUp 
+                            ? 'pi pi-arrow-up text-green-500 text-xs' 
+                            : 'pi pi-arrow-down text-red-500 text-xs'"></i>
+                        <span [class]="stat.trendUp 
+                            ? 'text-green-600 text-sm font-medium' 
+                            : 'text-red-600 text-sm font-medium'">
+                            {{ stat.trend }}
+                        </span>
+                        <span class="text-surface-400 text-xs">
+                            {{ 'DASHBOARD.VS_LAST_MONTH' | translate }}
+                        </span>
+                    </div>
+                </div>
+                <div
+                    [class]="stat.iconBg + ' ' + stat.iconColor + ' w-12 h-12 rounded-xl flex items-center justify-center'">
+                    <i [class]="stat.icon + ' text-xl'"></i>
+                </div>
+            </div>
+        </p-card>
+        }
+    </div>
+
+    <!-- Charts Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+        <!-- Line Chart -->
+        <p-card class="lg:col-span-2" [pt]="{
+            root: { class: 'shadow-sm' },
+            body: { class: 'p-0' },
+            content: { class: 'p-0' }
+        }">
+            <ng-template #header>
+                <div class="p-4 border-b border-surface-200 dark:border-surface-700">
+                    <h3 class="text-lg font-semibold text-surface-900 dark:text-surface-0">
+                        {{ 'DASHBOARD.CHARTS.SALES_TREND' | translate }}
+                    </h3>
+                    <p class="text-sm text-surface-500 dark:text-surface-400">
+                        {{ 'DASHBOARD.CHARTS.MONTHLY_OVERVIEW' | translate }}
+                    </p>
+                </div>
+            </ng-template>
+            <div class="p-4 h-80">
+                <p-chart type="line" [data]="lineChartData" [options]="lineChartOptions"
+                    [pt]="{ root: { class: 'h-full w-full' } }" />
+            </div>
+        </p-card>
+
+        <!-- Doughnut Chart -->
+        <p-card [pt]="{
+            root: { class: 'shadow-sm' },
+            body: { class: 'p-0' },
+            content: { class: 'p-0' }
+        }">
+            <ng-template #header>
+                <div class="p-4 border-b border-surface-200 dark:border-surface-700">
+                    <h3 class="text-lg font-semibold text-surface-900 dark:text-surface-0">
+                        {{ 'DASHBOARD.CHARTS.CATEGORIES' | translate }}
+                    </h3>
+                    <p class="text-sm text-surface-500 dark:text-surface-400">
+                        {{ 'DASHBOARD.CHARTS.BY_CATEGORY' | translate }}
+                    </p>
+                </div>
+            </ng-template>
+            <div class="p-4 h-72 flex items-center justify-center">
+                <p-chart type="doughnut" [data]="doughnutChartData" [options]="doughnutChartOptions"
+                    [pt]="{ root: { class: 'w-full' } }" />
+            </div>
+        </p-card>
+    </div>
+
+    <!-- Recent Orders Table -->
+    <p-card [pt]="{
+        root: { class: 'shadow-sm' },
+        body: { class: 'p-0' },
+        content: { class: 'p-0' }
+    }">
+        <ng-template #header>
+            <div class="p-4 border-b border-surface-200 dark:border-surface-700">
+                <h3 class="text-lg font-semibold text-surface-900 dark:text-surface-0">
+                    {{ 'DASHBOARD.TABLE.TITLE' | translate }}
+                </h3>
+                <p class="text-sm text-surface-500 dark:text-surface-400">
+                    {{ 'DASHBOARD.TABLE.SUBTITLE' | translate }}
+                </p>
+            </div>
+        </ng-template>
+        <p-table [value]="orders" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 20]"
+            [tableStyle]="{ 'min-width': '60rem' }">
+            <ng-template #header>
+                <tr>
+                    <th pSortableColumn="id">
+                        {{ 'DASHBOARD.TABLE.ORDER_ID' | translate }}
+                        <p-sortIcon field="id" />
+                    </th>
+                    <th pSortableColumn="customer">
+                        {{ 'DASHBOARD.TABLE.CUSTOMER' | translate }}
+                        <p-sortIcon field="customer" />
+                    </th>
+                    <th pSortableColumn="product">
+                        {{ 'DASHBOARD.TABLE.PRODUCT' | translate }}
+                        <p-sortIcon field="product" />
+                    </th>
+                    <th pSortableColumn="amount">
+                        {{ 'DASHBOARD.TABLE.AMOUNT' | translate }}
+                        <p-sortIcon field="amount" />
+                    </th>
+                    <th pSortableColumn="status">
+                        {{ 'DASHBOARD.TABLE.STATUS' | translate }}
+                        <p-sortIcon field="status" />
+                    </th>
+                    <th pSortableColumn="date">
+                        {{ 'DASHBOARD.TABLE.DATE' | translate }}
+                        <p-sortIcon field="date" />
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-order>
+                <tr class="hover:bg-surface-50 dark:hover:bg-surface-800">
+                    <td class="font-semibold text-primary">{{ order.id }}</td>
+                    <td>{{ order.customer }}</td>
+                    <td>{{ order.product }}</td>
+                    <td class="font-semibold">{{ order.amount | currency }}</td>
+                    <td>
+                        <p-tag [value]="order.status" [severity]="getStatusSeverity(order.status)" [rounded]="true" />
+                    </td>
+                    <td class="text-surface-500 dark:text-surface-400">{{ order.date }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-card>
+</div>
