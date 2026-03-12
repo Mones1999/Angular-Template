@@ -1,1 +1,34 @@
-/* Empty file */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--p-surface-200);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-inline-start: 260px;
+    transition: margin-inline-start 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-content {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+:host .sidebar-collapsed .main-content {
+    margin-inline-start: 68px;
+}
+
+@media (max-width: 1023px) {
+    .main-content {
+        margin-inline-start: 0;
+    }
+}
+
+/* Dark mode */
+:host-context(.my-app-dark) .app-layout {
+    background: var(--p-surface-950);
+}

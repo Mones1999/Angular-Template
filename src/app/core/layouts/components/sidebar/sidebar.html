@@ -1,44 +1,73 @@
-<aside class="app-sidebar">
-    <!-- Sidebar Header -->
-    <div class="sidebar-header">
-        <div class="sidebar-brand">
-            <i class="pi pi-box brand-icon"></i>
-            <span class="brand-text">{{ 'SIDEBAR.BRAND' | translate }}</span>
+<aside class="sidebar" [class.collapsed]="collapsed()" role="navigation" aria-label="Main navigation">
+    <!-- Brand -->
+    <div class="brand-section">
+        <div class="flex items-center gap-2.5 overflow-hidden">
+            <i class="pi pi-box text-2xl text-white flex-shrink-0"></i>
+            <span class="brand-label text-lg font-bold tracking-tight text-white">{{ 'SIDEBAR.BRAND' | translate
+                }}</span>
         </div>
-        <p-button icon="pi pi-times" [rounded]="true" [text]="true" severity="secondary" (onClick)="toggleSidebar()"
-            styleClass="close-btn" />
+        <!-- Mobile close -->
+        <button
+            class="sidebar-close-btn lg:hidden flex items-center justify-center w-8 h-8 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+            (click)="closeSidebar()" [attr.aria-label]="'Close sidebar'">
+            <i class="pi pi-times text-sm"></i>
+        </button>
+        <!-- Desktop collapse toggle -->
+        <button pRipple (click)="toggleCollapse()"
+            class="collapse-toggle-btn hidden lg:flex items-center justify-center w-8 h-8 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors border-0 bg-transparent cursor-pointer"
+            [attr.aria-label]="'Toggle sidebar'">
+            <i class="pi text-sm" [class.pi-chevron-left]="!collapsed()" [class.pi-chevron-right]="collapsed()"></i>
+        </button>
     </div>
 
-    <!-- User Profile Section -->
-    <div class="user-profile">
-        <p-avatar icon="pi pi-user" size="xlarge" shape="circle" styleClass="profile-avatar" />
-        <div class="user-info">
-            <span class="user-name">{{ 'SIDEBAR.USER.NAME' | translate }}</span>
-            <span class="user-role">{{ 'SIDEBAR.USER.ROLE' | translate }}</span>
+    <!-- User Profile -->
+    <div class="user-profile-card mx-3 mb-4 rounded-xl bg-[#304073]" [class.collapsed-profile]="collapsed()">
+        <div class="flex items-center gap-3 px-3 py-3">
+            <p-avatar icon="pi pi-user" [size]="collapsed() ? 'normal' : 'large'" shape="circle"
+                [pt]="{ root: { class: 'bg-white/20 text-white flex-shrink-0' } }" />
+            <div class="user-info flex flex-col min-w-0">
+                <span class="text-sm font-semibold text-white truncate">{{ 'SIDEBAR.USER.NAME' | translate }}</span>
+                <span class="text-xs text-white/50 truncate">{{ 'SIDEBAR.USER.ROLE' | translate }}</span>
+            </div>
         </div>
     </div>
 
-    <p-divider />
+    <!-- Navigation Groups -->
+    <nav class="flex-1 overflow-y-auto px-3 sidebar-scroll">
+        @for (group of menuGroups; track group.label) {
+        <div class="mb-4">
+            <span
+                class="group-label block px-3 mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-white/40">
+                {{ group.label }}
+            </span>
+            @if (collapsed()) {
+            <div class="collapsed-divider mx-3 mb-1.5 border-t border-white/15"></div>
+            }
+            <ul class="space-y-0.5" role="list">
+                @for (item of group.items; track item.route) {
+                <li>
+                    <a [routerLink]="item.route" routerLinkActive="nav-item-active" pRipple
+                        class="nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/70 hover:text-white hover:bg-white/8 transition-all duration-200 cursor-pointer no-underline"
+                        [class.justify-center]="collapsed()" [attr.aria-label]="item.label"
+                        [pTooltip]="collapsed() ? item.label : ''" tooltipPosition="right">
+                        <i [class]="item.icon" class="text-base w-5 text-center flex-shrink-0"></i>
+                        <span class="nav-label text-sm font-medium">{{ item.label }}</span>
+                    </a>
+                </li>
+                }
+            </ul>
+        </div>
+        }
+    </nav>
 
-    <!-- Navigation Menu -->
-    <div class="sidebar-nav">
-        <p-panelMenu [model]="menuItems" [multiple]="false" class="sidebar-menu" />
-    </div>
-
-    <!-- Sidebar Footer -->
-    <div class="sidebar-footer">
-        <div class="footer-item" (click)="themeService.toggleTheme()">
-            <i [class]="themeService.isDarkTheme() ? 'pi pi-sun' : 'pi pi-moon'"></i>
-            <span>{{ 'SIDEBAR.TOGGLE_THEME' | translate }}</span>
-        </div>
-        <div class="footer-item" (click)="languageService.toggleLang()">
-            <i class="pi pi-globe"></i>
-            <span>{{ languageService.currentLang() === 'en' ? 'العربية' : 'English' }}</span>
-        </div>
-        <p-divider />
-        <div class="footer-item logout" (click)="authService.logout()">
-            <i class="pi pi-sign-out"></i>
-            <span>{{ 'SIDEBAR.LOGOUT' | translate }}</span>
-        </div>
+    <!-- Bottom Actions -->
+    <div class="px-3 pb-3 pt-2 border-t border-white/10 mt-auto">
+        <button pRipple (click)="authService.logout()"
+            class="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-red-300 hover:text-white hover:bg-red-500/20 transition-all duration-200 cursor-pointer border-0 bg-transparent text-left"
+            [class.justify-center]="collapsed()" [pTooltip]="collapsed() ? ('SIDEBAR.LOGOUT' | translate) : ''"
+            tooltipPosition="right" aria-label="Logout">
+            <i class="pi pi-sign-out text-base w-5 text-center flex-shrink-0"></i>
+            <span class="nav-label text-sm font-medium">{{ 'SIDEBAR.LOGOUT' | translate }}</span>
+        </button>
     </div>
 </aside>

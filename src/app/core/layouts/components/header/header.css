@@ -1,5 +1,4 @@
-/* Essential layout styles only - using default PrimeNG styles */
-
+/* Top bar */
 .app-header {
     position: sticky;
     top: 0;
@@ -12,69 +11,29 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1.5rem;
-    max-width: 1600px;
-    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
     gap: 1rem;
 }
 
 .header-start {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-}
-
-.brand-icon {
-    font-size: 1.5rem;
-    color: var(--p-primary-color);
-}
-
-.brand-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--p-text-color);
-}
-
-.header-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;
 }
 
 .header-end {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
 .user-menu {
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
 }
 
-/* User avatar clickable */
 ::ng-deep .user-avatar {
     cursor: pointer;
 }
 
-/* Fix: Keep user menu popup fixed on scroll (like menubar submenu) */
 ::ng-deep .user-menu .p-menu-overlay {
     position: fixed !important;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .header-center {
-        display: none;
-    }
-
-    .brand-name {
-        display: none;
-    }
 }

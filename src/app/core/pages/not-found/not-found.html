@@ -1,15 +1,20 @@
-<div class="min-h-screen surface-ground flex flex-column align-items-center justify-content-center p-3">
-    <p-card class="w-full max-w-md text-center">
-        <div class="flex flex-column align-items-center gap-4">
-            <i class="pi pi-exclamation-circle text-primary" style="font-size: 5rem;"></i>
-            <h1 class="text-6xl font-bold text-primary m-0">{{ 'NOT_FOUND.CODE' | translate }}</h1>
-            <h2 class="text-2xl font-semibold text-color m-0">{{ 'NOT_FOUND.TITLE' | translate }}</h2>
-            <p class="text-color-secondary text-center m-0">
-                {{ 'NOT_FOUND.DESCRIPTION' | translate }}
-            </p>
+<div class="not-found-container">
+    <div class="not-found-content">
+        <div class="error-visual">
+            <span class="digit">4</span>
+            <div class="circle-icon">
+                <i class="pi pi-compass"></i>
+            </div>
+            <span class="digit">4</span>
+        </div>
+
+        <h2 class="title">{{ 'NOT_FOUND.TITLE' | translate }}</h2>
+        <p class="description">{{ 'NOT_FOUND.DESCRIPTION' | translate }}</p>
+
+        <div class="actions">
             <p-button [label]="'COMMON.GO_TO_HOME' | translate" icon="pi pi-home" [routerLink]="homeRoute"
-                severity="primary">
+                severity="primary" size="large" styleClass="home-btn">
             </p-button>
         </div>
-    </p-card>
+    </div>
 </div>

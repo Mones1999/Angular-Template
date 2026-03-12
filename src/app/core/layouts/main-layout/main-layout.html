@@ -1,7 +1,17 @@
-<div class="app-layout">
+<div class="app-layout" [class.sidebar-collapsed]="sidebarCollapsed()">
+    <!-- Sidebar -->
+    <app-sidebar [class.sidebar-open]="sidebarOpen()" [collapsed]="sidebarCollapsed()"
+        (sidebarToggle)="onSidebarToggle($event)" (collapseToggle)="onCollapseToggle($event)" />
 
+    <!-- Mobile overlay -->
+    @if (sidebarOpen()) {
+    <div class="sidebar-overlay fixed inset-0 bg-black/40 z-[1050] lg:hidden" (click)="closeSidebarOverlay()">
+    </div>
+    }
+
+    <!-- Main content area -->
     <div class="main-content">
-        <app-header />
+        <app-header (menuToggle)="openSidebar()" />
         <main class="page-content">
             <router-outlet />
         </main>

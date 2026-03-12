@@ -31,6 +31,10 @@
             "NAME": "John Doe",
             "ROLE": "Administrator"
         },
+        "GROUPS": {
+            "GENERAL": "General",
+            "OTHERS": "Others"
+        },
         "MENU": {
             "MAIN": "Main",
             "DASHBOARD": "Dashboard",
@@ -46,7 +50,11 @@
             "SETTINGS": "Settings",
             "GENERAL": "General",
             "SECURITY": "Security",
-            "NOTIFICATIONS": "Notifications"
+            "NOTIFICATIONS": "Notifications",
+            "SYSTEM_SETTINGS": "System Settings",
+            "SMS_TEMPLATES": "SMS Templates",
+            "ABOUT_SYSTEM": "About System",
+            "CHANGE_PASSWORD": "Change Password"
         }
     },
     "LOGIN": {

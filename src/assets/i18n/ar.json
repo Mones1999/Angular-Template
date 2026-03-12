@@ -31,6 +31,10 @@
             "NAME": "جون دو",
             "ROLE": "مدير النظام"
         },
+        "GROUPS": {
+            "GENERAL": "عام",
+            "OTHERS": "أخرى"
+        },
         "MENU": {
             "MAIN": "الرئيسية",
             "DASHBOARD": "لوحة التحكم",
@@ -46,7 +50,11 @@
             "SETTINGS": "الإعدادات",
             "GENERAL": "عام",
             "SECURITY": "الأمان",
-            "NOTIFICATIONS": "الإشعارات"
+            "NOTIFICATIONS": "الإشعارات",
+            "SYSTEM_SETTINGS": "إعدادات النظام",
+            "SMS_TEMPLATES": "قوالب الرسائل",
+            "ABOUT_SYSTEM": "حول النظام",
+            "CHANGE_PASSWORD": "تغيير كلمة المرور"
         }
     },
     "LOGIN": {

@@ -8,6 +8,10 @@ export const routes: Routes = [
         loadChildren: () => import('./features/auth/auth.routes').then(m => m.AuthRoutes),
     },
     {
+        path: APP_ROUTES.NOT_FOUND,
+        loadComponent: () => import('./core/pages/not-found/not-found').then(m => m.NotFound)
+    },
+    {
         path: '',
         canActivate: [authGuard],
         loadComponent: () => import('./core/layouts/main-layout/main-layout').then(m => m.MainLayout),
@@ -22,17 +26,13 @@ export const routes: Routes = [
                 loadComponent: () => import('./core/pages/forbidden/forbidden').then(m => m.Forbidden)
             },
             {
-                path: APP_ROUTES.NOT_FOUND,
-                loadComponent: () => import('./core/pages/not-found/not-found').then(m => m.NotFound)
-            },
-            {
                 path: '**',
-                redirectTo: APP_ROUTES.NOT_FOUND
+                redirectTo: '/' + APP_ROUTES.NOT_FOUND
             }
         ]
     },
     {
         path: '**',
-        redirectTo: APP_ROUTES.NOT_FOUND
+        redirectTo: '/' + APP_ROUTES.NOT_FOUND
     }
 ];

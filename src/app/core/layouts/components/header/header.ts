@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { APP_ROUTES } from '@core/constants/app-routes-constants';
+import { Component, inject, OnDestroy, OnInit, output, ViewChild } from '@angular/core';
 import { AuthService } from '@core/services/auth-service';
 import { LanguageService } from '@core/services/language-service';
 import { ThemeService } from '@core/services/theme-service';
@@ -9,7 +8,6 @@ import { MenuItem } from 'primeng/api';
 import { Avatar } from 'primeng/avatar';
 import { Button } from 'primeng/button';
 import { Menu } from 'primeng/menu';
-import { Menubar } from 'primeng/menubar';
 import { Tooltip } from 'primeng/tooltip';
 import { Subscription } from 'rxjs';
 
@@ -18,7 +16,6 @@ import { Subscription } from 'rxjs';
   selector: 'app-header',
   imports: [
     CommonModule,
-    Menubar,
     Menu,
     Button,
     Avatar,
@@ -34,65 +31,26 @@ export class Header implements OnInit, OnDestroy {
   languageService = inject(LanguageService);
   translate = inject(TranslateService);
 
+  menuToggle = output<void>();
+
   @ViewChild('userMenu') userMenu!: Menu;
 
-  menuItems: MenuItem[] = [];
   userMenuItems: MenuItem[] = [];
   private langSubscription!: Subscription;
 
   ngOnInit() {
-    this.buildMenu();
     this.buildUserMenu();
-
-    // Rebuild menu when language changes
     this.langSubscription = this.translate.onLangChange.subscribe(() => {
-      this.buildMenu();
       this.buildUserMenu();
     });
   }
 
   ngOnDestroy() {
-    if (this.langSubscription) {
-      this.langSubscription.unsubscribe();
-    }
+    this.langSubscription?.unsubscribe();
   }
 
-  private buildMenu() {
-    this.menuItems = [
-      {
-        label: this.translate.instant('HEADER.HOME'),
-        icon: 'pi pi-home',
-        routerLink: '/dashboard',
-      },
-      {
-        label: this.translate.instant('HEADER.ABOUT'),
-        icon: 'pi pi-info-circle',
-        routerLink: APP_ROUTES.ABOUT_US
-      },
-      {
-        label: this.translate.instant('HEADER.FEATURES'),
-        icon: 'pi pi-star',
-        badge: 'NEW'
-      },
-      {
-        label: this.translate.instant('HEADER.SERVICES'),
-        icon: 'pi pi-cog',
-        items: [
-          {
-            label: this.translate.instant('HEADER.SERVICES_CONSULTING'),
-            icon: 'pi pi-briefcase'
-          },
-          {
-            label: this.translate.instant('HEADER.SERVICES_DEVELOPMENT'),
-            icon: 'pi pi-code'
-          },
-          {
-            label: this.translate.instant('HEADER.SERVICES_SUPPORT'),
-            icon: 'pi pi-headphones'
-          }
-        ]
-      }
-    ];
+  onMenuToggle() {
+    this.menuToggle.emit();
   }
 
   private buildUserMenu() {
