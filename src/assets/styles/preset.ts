@@ -51,17 +51,17 @@ export const MyPreset = definePreset(Aura, {
             950: "#1a2e05"
         },
         red: {
-            50: "#fef2f2",
-            100: "#fee2e2",
-            200: "#fecaca",
-            300: "#fca5a5",
-            400: "#f87171",
-            500: "#ef4444",
-            600: "#dc2626",
-            700: "#b91c1c",
-            800: "#991b1b",
-            900: "#7f1d1d",
-            950: "#450a0a"
+            50: "#fef2f3",
+            100: "#fee5e6",
+            200: "#fccfd1",
+            300: "#f8a8ab",
+            400: "#f07a7f",
+            500: "#e5484d",
+            600: "#d33f44",
+            700: "#b8363a",
+            800: "#8f2b2f",
+            900: "#6a2023",
+            950: "#3d1214"
         },
         orange: {
             50: "#fff7ed",
@@ -311,17 +311,17 @@ export const MyPreset = definePreset(Aura, {
         iconSize: "1rem",
         anchorGutter: "2px",
         primary: {
-            50: "#fff7ed",
-            100: "#ffedd5",
-            200: "#fed7aa",
-            300: "#fdba74",
-            400: "#fb923c",
-            500: "#f97316",
-            600: "#ea580c",
-            700: "#c2410c",
-            800: "#9a3412",
-            900: "#7c2d12",
-            950: "#431407"
+            50: "#eef3fb",
+            100: "#d9e4f5",
+            200: "#b8cce9",
+            300: "#90add9",
+            400: "#648ac5",
+            500: "#173f84",
+            600: "#143873",
+            700: "#102f61",
+            800: "#1d2b62",
+            900: "#18234f",
+            950: "#0f1736"
         },
         formField: {
             paddingX: "0.75rem",
@@ -408,17 +408,17 @@ export const MyPreset = definePreset(Aura, {
             light: {
                 surface: {
                     0: "#ffffff",
-                    50: "#f8fafc",
-                    100: "#f1f5f9",
-                    200: "#e2e8f0",
-                    300: "#cbd5e1",
-                    400: "#94a3b8",
-                    500: "#64748b",
-                    600: "#475569",
-                    700: "#334155",
-                    800: "#1e293b",
-                    900: "#0f172a",
-                    950: "#020617"
+                    50: "#f7f9fd",
+                    100: "#eef2f8",
+                    200: "#e8ecf3",
+                    300: "#d7dfec",
+                    400: "#aebedb",
+                    500: "#8796b0",
+                    600: "#5f6f8a",
+                    700: "#3e4c67",
+                    800: "#24314d",
+                    900: "#13203f",
+                    950: "#0c1429"
                 },
                 primary: {
                     color: "{primary.500}",
@@ -442,48 +442,48 @@ export const MyPreset = definePreset(Aura, {
                     filledBackground: "{surface.50}",
                     filledHoverBackground: "{surface.50}",
                     filledFocusBackground: "{surface.50}",
-                    borderColor: "{surface.300}",
-                    hoverBorderColor: "{surface.400}",
+                    borderColor: "{surface.400}",
+                    hoverBorderColor: "{surface.500}",
                     focusBorderColor: "{primary.color}",
                     invalidBorderColor: "{red.400}",
-                    color: "{surface.700}",
+                    color: "{surface.900}",
                     disabledColor: "{surface.500}",
-                    placeholderColor: "{surface.500}",
+                    placeholderColor: "{surface.600}",
                     invalidPlaceholderColor: "{red.600}",
-                    floatLabelColor: "{surface.500}",
+                    floatLabelColor: "{surface.600}",
                     floatLabelFocusColor: "{primary.600}",
-                    floatLabelActiveColor: "{surface.500}",
+                    floatLabelActiveColor: "{surface.600}",
                     floatLabelInvalidColor: "{form.field.invalid.placeholder.color}",
-                    iconColor: "{surface.400}",
+                    iconColor: "{surface.600}",
                     shadow: "0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(18, 18, 23, 0.05)"
                 },
                 text: {
-                    color: "{surface.700}",
+                    color: "{surface.900}",
                     hoverColor: "{surface.800}",
-                    mutedColor: "{surface.500}",
-                    hoverMutedColor: "{surface.600}"
+                    mutedColor: "{surface.600}",
+                    hoverMutedColor: "{surface.700}"
                 },
                 content: {
                     background: "{surface.0}",
-                    hoverBackground: "{surface.100}",
-                    borderColor: "{surface.200}",
+                    hoverBackground: "{surface.50}",
+                    borderColor: "{surface.300}",
                     color: "{text.color}",
                     hoverColor: "{text.hover.color}"
                 },
                 overlay: {
                     select: {
                         background: "{surface.0}",
-                        borderColor: "{surface.200}",
+                        borderColor: "{surface.300}",
                         color: "{text.color}"
                     },
                     popover: {
                         background: "{surface.0}",
-                        borderColor: "{surface.200}",
+                        borderColor: "{surface.300}",
                         color: "{text.color}"
                     },
                     modal: {
                         background: "{surface.0}",
-                        borderColor: "{surface.200}",
+                        borderColor: "{surface.300}",
                         color: "{text.color}"
                     }
                 },

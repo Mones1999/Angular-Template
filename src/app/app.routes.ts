@@ -18,14 +18,6 @@ export const routes: Routes = [
                 pathMatch: 'full'
             },
             {
-                path: APP_ROUTES.DASHBOARD,
-                loadComponent: () => import('./features/dashboard/pages/dashboard/dashboard').then(m => m.Dashboard)
-            },
-            {
-                path: APP_ROUTES.ABOUT_US,
-                loadComponent: () => import('./features/about-us/pages/about-us/about-us').then(m => m.AboutUs)
-            },
-            {
                 path: APP_ROUTES.FORBIDDEN,
                 loadComponent: () => import('./core/pages/forbidden/forbidden').then(m => m.Forbidden)
             },

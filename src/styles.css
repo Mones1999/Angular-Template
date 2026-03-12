@@ -2,12 +2,16 @@
 @import 'primeicons/primeicons.css';
 
 :root {
-  --p-tooltip-background: var(--p-orange-500);
+  --app-background-light-color: #eff4fa; 
+  --app-background-dark-color: #0d0d0d; 
 }
 
 body {
-  font-family: "Nunito", sans-serif;
-  margin: 0;
+  background-color: var(--app-background-light-color);
+}
+
+.my-app-dark body {
+  background-color: var(--app-background-dark-color) ;
 }
 
 /* Arabic font - applied when app language is Arabic */

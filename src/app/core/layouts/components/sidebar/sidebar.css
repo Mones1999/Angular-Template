@@ -3,8 +3,8 @@
     flex-direction: column;
     width: 280px;
     height: 100vh;
-    background: var(--p-content-background);
-    border-right: 1px solid var(--p-content-border-color);
+    background: var(--app-brand-navy);
+    border-right: 1px solid var(--p-primary-900);
     overflow: hidden;
     transition: width 0.3s ease;
 }
@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem 1rem;
-    border-bottom: 1px solid var(--p-surface-100);
+    border-bottom: 1px solid color-mix(in srgb, #ffffff 18%, transparent);
 }
 
 .sidebar-brand {
@@ -26,7 +26,7 @@
 
 .sidebar-brand .brand-icon {
     font-size: 1.75rem;
-    background: linear-gradient(135deg, var(--p-primary-500), var(--p-primary-400));
+    background: linear-gradient(135deg, #ffffff, var(--p-primary-200));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -35,7 +35,7 @@
 .sidebar-brand .brand-text {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--p-text-color);
+    color: #ffffff;
     letter-spacing: -0.5px;
 }
 
@@ -51,7 +51,7 @@
     align-items: center;
     gap: 1rem;
     padding: 1.25rem 1rem;
-    background: linear-gradient(135deg, var(--p-content-hover-background) 0%, var(--p-content-hover-background) 100%);
+    background: var(--app-active-nav);
     margin: 0.5rem 0.75rem;
     border-radius: 12px;
 }
@@ -70,13 +70,13 @@
 
 .user-profile .user-name {
     font-weight: 600;
-    color: var(--p-text-color);
+    color: #ffffff;
     font-size: 1rem;
 }
 
 .user-profile .user-role {
     font-size: 0.85rem;
-    color: var(--p-text-muted-color);
+    color: var(--p-surface-300);
 }
 
 /* Navigation Menu */
@@ -95,7 +95,7 @@
 }
 
 .sidebar-nav::-webkit-scrollbar-thumb {
-    background: var(--p-surface-300);
+    background: var(--p-surface-500);
     border-radius: 10px;
 }
 
@@ -116,23 +116,23 @@
 }
 
 ::ng-deep .sidebar-menu .p-panelmenu-header .p-panelmenu-header-content:hover {
-    background: var(--p-surface-100) !important;
+    background: color-mix(in srgb, #ffffff 12%, transparent) !important;
 }
 
 ::ng-deep .sidebar-menu .p-panelmenu-header .p-panelmenu-header-link {
     padding: 0.85rem 1rem !important;
-    color: var(--p-text-color) !important;
+    color: #ffffff !important;
     font-weight: 600 !important;
     font-size: 0.9rem !important;
     gap: 0.75rem !important;
 }
 
 ::ng-deep .sidebar-menu .p-panelmenu-header.p-panelmenu-header-active .p-panelmenu-header-content {
-    background: var(--p-primary-50) !important;
+    background: var(--app-active-nav) !important;
 }
 
 ::ng-deep .sidebar-menu .p-panelmenu-header.p-panelmenu-header-active .p-panelmenu-header-link {
-    color: var(--p-primary-600) !important;
+    color: #ffffff !important;
 }
 
 ::ng-deep .sidebar-menu .p-panelmenu-content {
@@ -148,14 +148,14 @@
 ::ng-deep .sidebar-menu .p-menuitem-link {
     padding: 0.75rem 1rem !important;
     border-radius: 8px !important;
-    color: var(--p-text-muted-color) !important;
+    color: var(--p-surface-300) !important;
     transition: all 0.2s ease !important;
     gap: 0.75rem !important;
 }
 
 ::ng-deep .sidebar-menu .p-menuitem-link:hover {
-    background: var(--p-surface-100) !important;
-    color: var(--p-text-color) !important;
+    background: color-mix(in srgb, #ffffff 10%, transparent) !important;
+    color: #ffffff !important;
 }
 
 ::ng-deep .sidebar-menu .p-menuitem-link .p-menuitem-icon {
@@ -169,19 +169,19 @@
 
 ::ng-deep .sidebar-menu .p-menuitem.p-menuitem-active .p-menuitem-content,
 ::ng-deep .sidebar-menu .p-menuitem-link.router-link-active .p-menuitem-content {
-    background: var(--p-primary-50) !important;
+    background: var(--app-active-nav) !important;
 }
 
 ::ng-deep .sidebar-menu .p-menuitem.p-menuitem-active .p-menuitem-link,
 ::ng-deep .sidebar-menu .p-menuitem-link.router-link-active .p-menuitem-link {
-    color: var(--p-primary-600) !important;
+    color: #ffffff !important;
 }
 
 /* Sidebar Footer */
 .sidebar-footer {
     padding: 0.75rem;
-    border-top: 1px solid var(--p-surface-100);
-    background: var(--p-surface-50);
+    border-top: 1px solid color-mix(in srgb, #ffffff 14%, transparent);
+    background: var(--p-primary-900);
 }
 
 .sidebar-footer ::ng-deep .p-divider {
@@ -195,15 +195,15 @@
     padding: 0.75rem 1rem;
     border-radius: 8px;
     cursor: pointer;
-    color: var(--p-text-muted-color);
+    color: var(--p-surface-300);
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.2s ease;
 }
 
 .footer-item:hover {
-    background: var(--p-surface-100);
-    color: var(--p-text-color);
+    background: color-mix(in srgb, #ffffff 10%, transparent);
+    color: #ffffff;
 }
 
 .footer-item i {
@@ -211,12 +211,12 @@
 }
 
 .footer-item.logout {
-    color: var(--p-red-500);
+    color: #ff8f94;
 }
 
 .footer-item.logout:hover {
-    background: var(--p-red-50);
-    color: var(--p-red-600);
+    background: color-mix(in srgb, var(--p-red-500) 22%, transparent);
+    color: #ffffff;
 }
 
 /* Responsive */

@@ -9,12 +9,12 @@
                 <label for="username" class="font-semibold">{{ 'LOGIN.USERNAME' | translate }}</label>
                 <p-iconfield iconPosition="left" class="w-full">
                     <p-inputicon>
-                        <i class="pi pi-envelope text-orange-300"></i>
+                        <i class="pi pi-envelope text-surface-600"></i>
                     </p-inputicon>
                     <input id="username" type="text" pInputText [pAutoFocus]="true"
                         [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate" formControlName="username"
                         class="w-full" [ngClass]="{ 'p-invalid': submitted && f['username'].errors }"
-                        [pt]="{ root: '!border-primary-400 focus:!border-primary-600 !rounded-3xl' }" />
+                        [pt]="{ root: '!border-surface-400 focus:!border-primary-500 !rounded-3xl' }" />
                 </p-iconfield>
                 @if (submitted && f['username'].errors) {
                 <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.USERNAME_REQUIRED' | translate
@@ -26,15 +26,14 @@
                 <label for="password" class="font-semibold">{{ 'LOGIN.PASSWORD' | translate }}</label>
                 <p-iconfield iconPosition="left" class="w-full">
                     <p-inputicon>
-                        <i class="pi pi-lock text-orange-300"></i>
+                        <i class="pi pi-lock text-surface-600"></i>
                     </p-inputicon>
                     <p-password id="password" class="w-full" formControlName="password" [feedback]="false"
                         [toggleMask]="true"
                         [inputStyleClass]="submitted && f['password'].errors ? 'w-full p-invalid' : 'w-full'"
-                        [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" 
-                        [pt]="{ pcInputText: { root: '!border-primary-400 focus:!border-primary-600 !rounded-3xl' }, 
-                        maskIcon:  '!text-orange-400' , 
-                        unmaskIcon: '!text-orange-400' }"></p-password>
+                        [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" [pt]="{ pcInputText: { root: '!border-surface-400 focus:!border-primary-500 !rounded-3xl' }, 
+                        maskIcon:  '!text-surface-600' , 
+                        unmaskIcon: '!text-surface-600' }"></p-password>
                 </p-iconfield>
                 @if (submitted && f['password'].errors) {
                 <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.PASSWORD_REQUIRED' | translate
