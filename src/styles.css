@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import 'primeicons/primeicons.css';
+@import "tailwindcss" layer(tailwind);
+@import 'primeicons/primeicons.css' layer(primengicons);
 
 :root {
   --app-background-light-color: #eff4fa; 

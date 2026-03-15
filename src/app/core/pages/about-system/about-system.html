@@ -1,0 +1,69 @@
+<div class="mx-auto max-w-[1100px] p-3 md:p-4 lg:p-5">
+    <section class="mb-4">
+        <p-card [pt]="{ root: '!rounded-2xl !shadow-sm', body: '!p-0', content: '!p-5 md:!p-6' }">
+            <div class="flex flex-col gap-3">
+                <span
+                    class="inline-flex w-fit items-center gap-2 rounded-full bg-[color-mix(in_srgb,var(--p-primary-500)_18%,transparent)] px-3 py-1.5 text-sm font-semibold text-[var(--p-primary-700)]">
+                    <i class="pi pi-info-circle" aria-hidden="true"></i>
+                    {{ 'ABOUT_SYSTEM.BADGE' | translate }}
+                </span>
+                <h1 class="m-0 text-[clamp(1.35rem,1.7vw,2rem)] leading-tight">{{ 'ABOUT_SYSTEM.HERO.TITLE' | translate }}</h1>
+                <p class="m-0 leading-relaxed text-[var(--p-text-muted-color)]">{{ 'ABOUT_SYSTEM.HERO.SUBTITLE' | translate }}</p>
+            </div>
+        </p-card>
+    </section>
+
+    <section class="mb-4">
+        <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            @for (capability of capabilities; track capability.titleKey) {
+            <p-card [pt]="{ root: '!rounded-xl !shadow-sm h-full', body: '!p-0 h-full', content: '!p-4 h-full' }">
+                <div class="flex h-full flex-col gap-3">
+                    <i [class]="capability.icon + ' inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[color-mix(in_srgb,var(--p-primary-500)_16%,transparent)] text-[1.2rem] text-[var(--p-primary-600)]'"
+                        aria-hidden="true"></i>
+                    <h3 class="m-0 text-[1.05rem]">{{ capability.titleKey | translate }}</h3>
+                    <p class="m-0 leading-relaxed text-[var(--p-text-muted-color)]">{{ capability.descriptionKey |
+                        translate }}</p>
+                </div>
+            </p-card>
+            }
+        </div>
+    </section>
+
+    <section class="mb-4">
+        <p-card [pt]="{ root: '!rounded-2xl !shadow-sm', body: '!p-0', content: '!p-5 md:!p-6' }">
+            <div class="mb-3">
+                <h2 class="m-0 text-[1.2rem]">{{ 'ABOUT_SYSTEM.FACTS.TITLE' | translate }}</h2>
+                <p class="m-0 mt-1.5 text-[var(--p-text-muted-color)]">{{ 'ABOUT_SYSTEM.FACTS.SUBTITLE' | translate }}
+                </p>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+                @for (fact of systemFacts; track fact.labelKey) {
+                <div
+                    class="rounded-xl border border-[var(--p-content-border-color)] bg-[var(--p-content-background)] p-3">
+                    <div class="flex items-center gap-2">
+                        <i [class]="fact.icon + ' text-[var(--p-primary-color)]'" aria-hidden="true"></i>
+                        <span class="text-sm text-[var(--p-text-muted-color)]">{{ fact.labelKey | translate }}</span>
+                    </div>
+                    <div class="mt-1.5 text-[1.05rem] font-semibold">{{ fact.valueKey | translate }}</div>
+                </div>
+                }
+            </div>
+        </p-card>
+    </section>
+
+    <section>
+        <p-card [pt]="{ root: '!rounded-2xl !shadow-sm', body: '!p-0', content: '!p-5 md:!p-6' }">
+            <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+                <div>
+                    <h2 class="m-0 text-[1.2rem]">{{ 'ABOUT_SYSTEM.ROADMAP.TITLE' | translate }}</h2>
+                    <p class="m-0 mt-1.5 text-[var(--p-text-muted-color)]">{{ 'ABOUT_SYSTEM.ROADMAP.DESCRIPTION' |
+                        translate }}</p>
+                </div>
+                <p-button icon="pi pi-send" [label]="'ABOUT_SYSTEM.ROADMAP.CTA' | translate" severity="primary"
+                    [outlined]="true"
+                    [pt]="{ root: '!rounded-xl !px-4 !py-2 !font-semibold', icon: '!text-sm', label: '!text-sm' }" />
+            </div>
+        </p-card>
+    </section>
+</div>

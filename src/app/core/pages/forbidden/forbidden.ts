@@ -12,5 +12,5 @@ import { APP_ROUTES } from '@core/constants/app-routes-constants';
     styleUrl: './forbidden.css',
 })
 export class Forbidden {
-    homeRoute = `/${APP_ROUTES.ABOUT_US}`;
+    homeRoute = `/${APP_ROUTES.ABOUT_SYSTEM}`;
 }

@@ -34,6 +34,10 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: MyPreset,
         options: {
+          cssLayer: {
+            name: 'primeng',
+            order:'primengicons, tailwind, primeng',
+          },
           darkModeSelector: '.my-app-dark',
         }
       },
@@ -52,6 +56,6 @@ export const appConfig: ApplicationConfig = {
       const languageService = inject(LanguageService);
       return languageService.initialize();
     }),
-    
+
   ]
 };

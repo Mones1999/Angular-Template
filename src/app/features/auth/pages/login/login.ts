@@ -64,7 +64,7 @@ export class Login {
     this.authService.login(this.form.value).subscribe({
       next: () => {
         // Login successful, navigate to a protected route
-        this.router.navigate([APP_ROUTES.ABOUT_US]);
+        this.router.navigate([APP_ROUTES.ABOUT_SYSTEM]);
         this.messageService.add({
           severity: 'success',
           summary: this.translateService.instant('LOGIN.SUCCESS_TITLE'),

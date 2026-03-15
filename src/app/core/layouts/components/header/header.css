@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1.5rem;
+    padding: 1.2rem 1.5rem;
     gap: 1rem;
 }
 
@@ -28,12 +28,4 @@
 
 .user-menu {
     margin-inline-start: 0.5rem;
-}
-
-::ng-deep .user-avatar {
-    cursor: pointer;
-}
-
-::ng-deep .user-menu .p-menu-overlay {
-    position: fixed !important;
 }

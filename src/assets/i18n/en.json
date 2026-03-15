@@ -153,6 +153,46 @@
             "CTA": "Contact Us"
         }
     },
+    "ABOUT_SYSTEM": {
+        "BADGE": "System Overview",
+        "HERO": {
+            "TITLE": "About System",
+            "SUBTITLE": "This page shows mock translated details and dummy data for your platform profile, technical capabilities, and upcoming roadmap."
+        },
+        "CAPABILITIES": {
+            "SECURITY": {
+                "TITLE": "Security by Design",
+                "DESCRIPTION": "Role-based access, token-driven auth flows, and auditable request handling across core modules."
+            },
+            "PERFORMANCE": {
+                "TITLE": "Optimized Performance",
+                "DESCRIPTION": "Lightweight UI architecture with lazy loading and reusable components to keep interactions fast."
+            },
+            "INTEGRATION": {
+                "TITLE": "Integration Ready",
+                "DESCRIPTION": "Built to connect with APIs, monitoring pipelines, and enterprise services using a modular setup."
+            }
+        },
+        "FACTS": {
+            "TITLE": "System Facts",
+            "SUBTITLE": "Dummy values for quick preview",
+            "RELEASE": "Current Release",
+            "FRAMEWORK": "UI Framework",
+            "ENVIRONMENT": "Deployment Environment",
+            "SUPPORTED_USERS": "Supported Users"
+        },
+        "DUMMY": {
+            "RELEASE": "v2.6.0-mock",
+            "FRAMEWORK": "Angular 20 + PrimeNG 20",
+            "ENVIRONMENT": "Staging Cluster (Dummy)",
+            "SUPPORTED_USERS": "10,000 concurrent (sample)"
+        },
+        "ROADMAP": {
+            "TITLE": "Roadmap Snapshot",
+            "DESCRIPTION": "Next steps include analytics widgets, deeper localization coverage, and monitoring dashboards.",
+            "CTA": "Share Feedback"
+        }
+    },
     "DASHBOARD": {
         "TITLE": "Dashboard",
         "SUBTITLE": "Welcome back! Here's an overview of your business performance.",
@@ -178,6 +218,24 @@
             "AMOUNT": "Amount",
             "STATUS": "Status",
             "DATE": "Date"
+        }
+    },
+    "USERS": {
+        "TITLE": "Users Management",
+        "ADD_USER": "Add User",
+        "EXPORT": "Export",
+        "SEARCH": "Search users...",
+        "NO_RECORDS": "No users found.",
+        "COLUMNS": {
+            "USERNAME": "Username",
+            "FULL_NAME": "Full Name",
+            "EMAIL": "Email",
+            "PHONE_NUMBER": "Phone Number",
+            "ACTIONS": "Actions"
+        },
+        "ACTIONS": {
+            "UPDATE": "Update",
+            "DELETE": "Delete"
         }
     },
     "PRIMENG": {

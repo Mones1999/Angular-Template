@@ -18,12 +18,25 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: APP_ROUTES.DASHBOARD,
+                redirectTo: APP_ROUTES.ABOUT_SYSTEM,
+                pathMatch: 'full'
+            },
+            {
+                path: APP_ROUTES.ABOUT_SYSTEM,
+                loadComponent: () => import('./core/pages/about-system/about-system').then(m => m.AboutSystem)
+            },
+            {
+                path: APP_ROUTES.ABOUT_US,
+                redirectTo: APP_ROUTES.ABOUT_SYSTEM,
                 pathMatch: 'full'
             },
             {
                 path: APP_ROUTES.FORBIDDEN,
                 loadComponent: () => import('./core/pages/forbidden/forbidden').then(m => m.Forbidden)
+            },
+            {
+                path: APP_ROUTES.USERS,
+                loadComponent: () => import('./features/users-management/pages/users/users').then(m => m.Users)
             },
             {
                 path: '**',

@@ -7,6 +7,7 @@ import { Tooltip } from 'primeng/tooltip';
 import { Subscription } from 'rxjs';
 import { AuthService } from '@core/services/auth-service';
 import { SidebarMenuGroup } from '@core/models/SidebarMenu';
+import { APP_ROUTES } from '@core/constants/app-routes-constants';
 
 @Component({
   selector: 'app-sidebar',
@@ -63,7 +64,7 @@ export class Sidebar implements OnInit, OnDestroy {
       {
         label: this.translate.instant('SIDEBAR.GROUPS.GENERAL'),
         items: [
-          { label: this.translate.instant('SIDEBAR.MENU.USERS'), icon: 'pi pi-users', route: '/dashboard' },
+          { label: this.translate.instant('SIDEBAR.MENU.USERS'), icon: 'pi pi-users', route: '/users' },
           { label: this.translate.instant('SIDEBAR.MENU.SYSTEM_SETTINGS'), icon: 'pi pi-cog', route: '/settings/general' },
           { label: this.translate.instant('SIDEBAR.MENU.SMS_TEMPLATES'), icon: 'pi pi-envelope', route: '/sms-templates' },
         ]
@@ -71,7 +72,7 @@ export class Sidebar implements OnInit, OnDestroy {
       {
         label: this.translate.instant('SIDEBAR.GROUPS.OTHERS'),
         items: [
-          { label: this.translate.instant('SIDEBAR.MENU.ABOUT_SYSTEM'), icon: 'pi pi-info-circle', route: '/about-us' },
+          { label: this.translate.instant('SIDEBAR.MENU.ABOUT_SYSTEM'), icon: 'pi pi-info-circle', route: `/${APP_ROUTES.ABOUT_SYSTEM}` },
           { label: this.translate.instant('SIDEBAR.MENU.CHANGE_PASSWORD'), icon: 'pi pi-lock', route: '/change-password' },
         ]
       }
