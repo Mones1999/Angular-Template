@@ -1,244 +1,244 @@
 {
-    "COMMON": {
-        "GO_TO_HOME": "Go to Home"
+    "common": {
+        "go_to_home": "Go to Home"
     },
-    "HEADER": {
-        "BRAND": "Angular App",
-        "HOME": "Home",
-        "ABOUT": "About",
-        "FEATURES": "Features",
-        "FEATURES_TOOLTIP": "New Features Coming Soon!",
-        "SERVICES": "Services",
-        "SERVICES_CONSULTING": "Consulting",
-        "SERVICES_DEVELOPMENT": "Development",
-        "SERVICES_SUPPORT": "Support",
-        "SEARCH": "Search",
-        "NOTIFICATIONS": "Notifications",
-        "LOGOUT": "Logout",
-        "THEME": "Toggle Theme",
-        "LANGUAGE": "Language",
-        "USER_MENU": {
-            "PROFILE": "My Profile",
-            "SETTINGS": "Settings"
+    "header": {
+        "brand": "Angular App",
+        "home": "Home",
+        "about": "About",
+        "features": "Features",
+        "features_tooltip": "New Features Coming Soon!",
+        "services": "Services",
+        "services_consulting": "Consulting",
+        "services_development": "Development",
+        "services_support": "Support",
+        "search": "Search",
+        "notifications": "Notifications",
+        "logout": "Logout",
+        "theme": "Toggle Theme",
+        "language": "Language",
+        "user_menu": {
+            "profile": "My Profile",
+            "settings": "Settings"
         }
     },
-    "SIDEBAR": {
-        "BRAND": "Angular App",
-        "TITLE": "Navigation",
-        "TOGGLE_THEME": "Toggle Theme",
-        "LOGOUT": "Logout",
-        "USER": {
-            "NAME": "John Doe",
-            "ROLE": "Administrator"
+    "sidebar": {
+        "brand": "Angular App",
+        "title": "Navigation",
+        "toggle_theme": "Toggle Theme",
+        "logout": "Logout",
+        "user": {
+            "name": "John Doe",
+            "role": "Administrator"
         },
-        "GROUPS": {
-            "GENERAL": "General",
-            "OTHERS": "Others"
+        "groups": {
+            "general": "General",
+            "others": "Others"
         },
-        "MENU": {
-            "MAIN": "Main",
-            "DASHBOARD": "Dashboard",
-            "ANALYTICS": "Analytics",
-            "CONTENT": "Content",
-            "PAGES": "Pages",
-            "ABOUT": "About Us",
-            "MEDIA": "Media Library",
-            "MANAGEMENT": "Management",
-            "USERS": "Users",
-            "ROLES": "Roles",
-            "PERMISSIONS": "Permissions",
-            "SETTINGS": "Settings",
-            "GENERAL": "General",
-            "SECURITY": "Security",
-            "NOTIFICATIONS": "Notifications",
-            "SYSTEM_SETTINGS": "System Settings",
-            "SMS_TEMPLATES": "SMS Templates",
-            "ABOUT_SYSTEM": "About System",
-            "CHANGE_PASSWORD": "Change Password"
+        "menu": {
+            "main": "Main",
+            "dashboard": "Dashboard",
+            "analytics": "Analytics",
+            "content": "Content",
+            "pages": "Pages",
+            "about": "About Us",
+            "media": "Media Library",
+            "management": "Management",
+            "users": "Users",
+            "roles": "Roles",
+            "permissions": "Permissions",
+            "settings": "Settings",
+            "general": "General",
+            "security": "Security",
+            "notifications": "Notifications",
+            "system_settings": "System Settings",
+            "sms_templates": "SMS Templates",
+            "about_system": "About System",
+            "change_password": "Change Password"
         }
     },
-    "LOGIN": {
-        "TITLE": "Login",
-        "USERNAME": "Username",
-        "USERNAME_PLACEHOLDER": "Username",
-        "USERNAME_REQUIRED": "Username is required",
-        "PASSWORD": "Password",
-        "PASSWORD_PLACEHOLDER": "Password",
-        "PASSWORD_REQUIRED": "Password is required",
-        "SUBMIT": "Login",
-        "SUCCESS_TITLE": "Login Successful",
-        "SUCCESS_MESSAGE": "You have successfully logged in.",
-        "ERROR_TITLE": "Login Failed",
-        "ERROR_MESSAGE": "An error occurred during login."
+    "login": {
+        "title": "Login",
+        "username": "Username",
+        "username_placeholder": "Username",
+        "username_required": "Username is required",
+        "password": "Password",
+        "password_placeholder": "Password",
+        "password_required": "Password is required",
+        "submit": "Login",
+        "success_title": "Login Successful",
+        "success_message": "You have successfully logged in.",
+        "error_title": "Login Failed",
+        "error_message": "An error occurred during login."
     },
-    "NOT_FOUND": {
-        "CODE": "404",
-        "TITLE": "Page Not Found",
-        "DESCRIPTION": "Sorry, the page you are looking for does not exist or has been moved."
+    "not_found": {
+        "code": "404",
+        "title": "Page Not Found",
+        "description": "Sorry, the page you are looking for does not exist or has been moved."
     },
-    "FORBIDDEN": {
-        "CODE": "403",
-        "TITLE": "Access Forbidden",
-        "DESCRIPTION": "Sorry, you do not have permission to access this page."
+    "forbidden": {
+        "code": "403",
+        "title": "Access Forbidden",
+        "description": "Sorry, you do not have permission to access this page."
     },
-    "ABOUT_US": {
-        "HERO": {
-            "TITLE": "About Our Company",
-            "SUBTITLE": "We are passionate about creating innovative solutions that transform businesses and empower communities worldwide."
+    "about_us": {
+        "hero": {
+            "title": "About Our Company",
+            "subtitle": "We are passionate about creating innovative solutions that transform businesses and empower communities worldwide."
         },
-        "STATS": {
-            "YEARS": "Years of Experience",
-            "PROJECTS": "Projects Completed",
-            "TEAM": "Team Members",
-            "CLIENTS": "Happy Clients"
+        "stats": {
+            "years": "Years of Experience",
+            "projects": "Projects Completed",
+            "team": "Team Members",
+            "clients": "Happy Clients"
         },
-        "MISSION": {
-            "TITLE": "Our Mission",
-            "DESCRIPTION": "To deliver cutting-edge technology solutions that drive business growth and create lasting value for our clients. We believe in the power of innovation to solve complex challenges and unlock new opportunities."
+        "mission": {
+            "title": "Our Mission",
+            "description": "To deliver cutting-edge technology solutions that drive business growth and create lasting value for our clients. We believe in the power of innovation to solve complex challenges and unlock new opportunities."
         },
-        "VISION": {
-            "TITLE": "Our Vision",
-            "DESCRIPTION": "To be the leading technology partner for businesses worldwide, recognized for our commitment to excellence, innovation, and customer success. We envision a future where technology empowers everyone."
+        "vision": {
+            "title": "Our Vision",
+            "description": "To be the leading technology partner for businesses worldwide, recognized for our commitment to excellence, innovation, and customer success. We envision a future where technology empowers everyone."
         },
-        "TEAM": {
-            "TITLE": "Meet Our Team",
-            "SUBTITLE": "The talented people behind our success",
+        "team": {
+            "title": "Meet Our Team",
+            "subtitle": "The talented people behind our success",
             "MEMBER1": {
-                "NAME": "John Doe",
-                "ROLE": "CEO & Founder",
-                "BIO": "With over 15 years of experience in technology leadership, John drives our vision and strategy."
+                "name": "John Doe",
+                "role": "CEO & Founder",
+                "bio": "With over 15 years of experience in technology leadership, John drives our vision and strategy."
             },
             "MEMBER2": {
-                "NAME": "Sarah Mitchell",
-                "ROLE": "CTO",
-                "BIO": "Sarah leads our technical innovation with expertise in cloud architecture and AI solutions."
+                "name": "Sarah Mitchell",
+                "role": "CTO",
+                "bio": "Sarah leads our technical innovation with expertise in cloud architecture and AI solutions."
             },
             "MEMBER3": {
-                "NAME": "Ahmed Khan",
-                "ROLE": "Lead Developer",
-                "BIO": "Ahmed brings creativity and technical excellence to every project, specializing in Angular and Node.js."
+                "name": "Ahmed Khan",
+                "role": "Lead Developer",
+                "bio": "Ahmed brings creativity and technical excellence to every project, specializing in Angular and Node.js."
             },
             "MEMBER4": {
-                "NAME": "Maria Rodriguez",
-                "ROLE": "UX Designer",
-                "BIO": "Maria creates intuitive and beautiful user experiences that delight our clients and their customers."
+                "name": "Maria Rodriguez",
+                "role": "UX Designer",
+                "bio": "Maria creates intuitive and beautiful user experiences that delight our clients and their customers."
             }
         },
-        "TIMELINE": {
-            "TITLE": "Our Journey",
-            "SUBTITLE": "Key milestones in our company's history",
+        "timeline": {
+            "title": "Our Journey",
+            "subtitle": "Key milestones in our company's history",
             "EVENT1": {
-                "TITLE": "Company Founded",
-                "DESCRIPTION": "Started with a vision to revolutionize how businesses leverage technology."
+                "title": "Company Founded",
+                "description": "Started with a vision to revolutionize how businesses leverage technology."
             },
             "EVENT2": {
-                "TITLE": "Team Expansion",
-                "DESCRIPTION": "Grew our team to 25+ talented professionals across multiple disciplines."
+                "title": "Team Expansion",
+                "description": "Grew our team to 25+ talented professionals across multiple disciplines."
             },
             "EVENT3": {
-                "TITLE": "Global Reach",
-                "DESCRIPTION": "Expanded our services to clients across 15+ countries worldwide."
+                "title": "Global Reach",
+                "description": "Expanded our services to clients across 15+ countries worldwide."
             },
             "EVENT4": {
-                "TITLE": "Industry Recognition",
-                "DESCRIPTION": "Received multiple awards for innovation and excellence in technology solutions."
+                "title": "Industry Recognition",
+                "description": "Received multiple awards for innovation and excellence in technology solutions."
             }
         },
-        "CONTACT": {
-            "TITLE": "Get In Touch",
-            "DESCRIPTION": "Ready to start your next project? We'd love to hear from you.",
-            "ADDRESS": "123 Innovation Street, Tech City",
-            "PHONE": "+1 (555) 123-4567",
-            "EMAIL": "hello@company.com",
-            "CTA": "Contact Us"
+        "contact": {
+            "title": "Get In Touch",
+            "description": "Ready to start your next project? We'd love to hear from you.",
+            "address": "123 Innovation Street, Tech City",
+            "phone": "+1 (555) 123-4567",
+            "email": "hello@company.com",
+            "cta": "Contact Us"
         }
     },
-    "ABOUT_SYSTEM": {
-        "BADGE": "System Overview",
-        "HERO": {
-            "TITLE": "About System",
-            "SUBTITLE": "This page shows mock translated details and dummy data for your platform profile, technical capabilities, and upcoming roadmap."
+    "about_system": {
+        "badge": "System Overview",
+        "hero": {
+            "title": "About System",
+            "subtitle": "This page shows mock translated details and dummy data for your platform profile, technical capabilities, and upcoming roadmap."
         },
-        "CAPABILITIES": {
-            "SECURITY": {
-                "TITLE": "Security by Design",
-                "DESCRIPTION": "Role-based access, token-driven auth flows, and auditable request handling across core modules."
+        "capabilities": {
+            "security": {
+                "title": "Security by Design",
+                "description": "Role-based access, token-driven auth flows, and auditable request handling across core modules."
             },
-            "PERFORMANCE": {
-                "TITLE": "Optimized Performance",
-                "DESCRIPTION": "Lightweight UI architecture with lazy loading and reusable components to keep interactions fast."
+            "performance": {
+                "title": "Optimized Performance",
+                "description": "Lightweight UI architecture with lazy loading and reusable components to keep interactions fast."
             },
-            "INTEGRATION": {
-                "TITLE": "Integration Ready",
-                "DESCRIPTION": "Built to connect with APIs, monitoring pipelines, and enterprise services using a modular setup."
+            "integration": {
+                "title": "Integration Ready",
+                "description": "Built to connect with APIs, monitoring pipelines, and enterprise services using a modular setup."
             }
         },
-        "FACTS": {
-            "TITLE": "System Facts",
-            "SUBTITLE": "Dummy values for quick preview",
-            "RELEASE": "Current Release",
-            "FRAMEWORK": "UI Framework",
-            "ENVIRONMENT": "Deployment Environment",
-            "SUPPORTED_USERS": "Supported Users"
+        "facts": {
+            "title": "System Facts",
+            "subtitle": "Dummy values for quick preview",
+            "release": "Current Release",
+            "framework": "UI Framework",
+            "environment": "Deployment Environment",
+            "supported_users": "Supported Users"
         },
-        "DUMMY": {
-            "RELEASE": "v2.6.0-mock",
-            "FRAMEWORK": "Angular 20 + PrimeNG 20",
-            "ENVIRONMENT": "Staging Cluster (Dummy)",
-            "SUPPORTED_USERS": "10,000 concurrent (sample)"
+        "dummy": {
+            "release": "v2.6.0-mock",
+            "framework": "Angular 20 + PrimeNG 20",
+            "environment": "Staging Cluster (Dummy)",
+            "supported_users": "10,000 concurrent (sample)"
         },
-        "ROADMAP": {
-            "TITLE": "Roadmap Snapshot",
-            "DESCRIPTION": "Next steps include analytics widgets, deeper localization coverage, and monitoring dashboards.",
-            "CTA": "Share Feedback"
+        "roadmap": {
+            "title": "Roadmap Snapshot",
+            "description": "Next steps include analytics widgets, deeper localization coverage, and monitoring dashboards.",
+            "cta": "Share Feedback"
         }
     },
-    "DASHBOARD": {
-        "TITLE": "Dashboard",
-        "SUBTITLE": "Welcome back! Here's an overview of your business performance.",
-        "VS_LAST_MONTH": "vs last month",
-        "STATS": {
-            "USERS": "Total Users",
-            "REVENUE": "Revenue",
-            "ORDERS": "Orders",
-            "GROWTH": "Growth Rate"
+    "dashboard": {
+        "title": "Dashboard",
+        "subtitle": "Welcome back! Here's an overview of your business performance.",
+        "vs_last_month": "vs last month",
+        "stats": {
+            "users": "Total Users",
+            "revenue": "Revenue",
+            "orders": "Orders",
+            "growth": "Growth Rate"
         },
-        "CHARTS": {
-            "SALES_TREND": "Sales Trend",
-            "MONTHLY_OVERVIEW": "Monthly sales and expenses overview",
-            "CATEGORIES": "Sales by Category",
-            "BY_CATEGORY": "Revenue distribution by category"
+        "charts": {
+            "sales_trend": "Sales Trend",
+            "monthly_overview": "Monthly sales and expenses overview",
+            "categories": "Sales by Category",
+            "by_category": "Revenue distribution by category"
         },
-        "TABLE": {
-            "TITLE": "Recent Orders",
-            "SUBTITLE": "Latest customer orders and their status",
-            "ORDER_ID": "Order ID",
-            "CUSTOMER": "Customer",
-            "PRODUCT": "Product",
-            "AMOUNT": "Amount",
-            "STATUS": "Status",
-            "DATE": "Date"
+        "table": {
+            "title": "Recent Orders",
+            "subtitle": "Latest customer orders and their status",
+            "order_id": "Order ID",
+            "customer": "Customer",
+            "product": "Product",
+            "amount": "Amount",
+            "status": "Status",
+            "date": "Date"
         }
     },
-    "USERS": {
-        "TITLE": "Users Management",
-        "ADD_USER": "Add User",
-        "EXPORT": "Export",
-        "SEARCH": "Search users...",
-        "NO_RECORDS": "No users found.",
-        "COLUMNS": {
-            "USERNAME": "Username",
-            "FULL_NAME": "Full Name",
-            "EMAIL": "Email",
-            "PHONE_NUMBER": "Phone Number",
-            "ACTIONS": "Actions"
+    "users": {
+        "title": "Users Management",
+        "add_user": "Add User",
+        "export": "Export",
+        "search": "Search users...",
+        "no_records": "No users found.",
+        "columns": {
+            "username": "Username",
+            "full_name": "Full Name",
+            "email": "Email",
+            "phone_number": "Phone Number",
+            "actions": "Actions"
         },
-        "ACTIONS": {
-            "UPDATE": "Update",
-            "DELETE": "Delete"
+        "actions": {
+            "update": "Update",
+            "delete": "Delete"
         }
     },
-    "PRIMENG": {
+    "primeng": {
         "accept": "Accept",
         "reject": "Reject",
         "choose": "Choose",

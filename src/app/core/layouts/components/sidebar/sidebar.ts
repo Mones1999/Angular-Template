@@ -62,18 +62,18 @@ export class Sidebar implements OnInit, OnDestroy {
   private buildMenu() {
     this.menuGroups = [
       {
-        label: this.translate.instant('SIDEBAR.GROUPS.GENERAL'),
+        label: this.translate.instant('sidebar.groups.general'),
         items: [
-          { label: this.translate.instant('SIDEBAR.MENU.USERS'), icon: 'pi pi-users', route: '/users' },
-          { label: this.translate.instant('SIDEBAR.MENU.SYSTEM_SETTINGS'), icon: 'pi pi-cog', route: '/settings/general' },
-          { label: this.translate.instant('SIDEBAR.MENU.SMS_TEMPLATES'), icon: 'pi pi-envelope', route: '/sms-templates' },
+          { label: this.translate.instant('sidebar.menu.users'), icon: 'pi pi-users', route: '/users' },
+          { label: this.translate.instant('sidebar.menu.system_settings'), icon: 'pi pi-cog', route: '/settings/general' },
+          { label: this.translate.instant('sidebar.menu.sms_templates'), icon: 'pi pi-envelope', route: '/sms-templates' },
         ]
       },
       {
-        label: this.translate.instant('SIDEBAR.GROUPS.OTHERS'),
+        label: this.translate.instant('sidebar.groups.others'),
         items: [
-          { label: this.translate.instant('SIDEBAR.MENU.ABOUT_SYSTEM'), icon: 'pi pi-info-circle', route: `/${APP_ROUTES.ABOUT_SYSTEM}` },
-          { label: this.translate.instant('SIDEBAR.MENU.CHANGE_PASSWORD'), icon: 'pi pi-lock', route: '/change-password' },
+          { label: this.translate.instant('sidebar.menu.about_system'), icon: 'pi pi-info-circle', route: `/${APP_ROUTES.ABOUT_SYSTEM}` },
+          { label: this.translate.instant('sidebar.menu.change_password'), icon: 'pi pi-lock', route: '/change-password' },
         ]
       }
     ];

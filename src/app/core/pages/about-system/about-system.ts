@@ -14,41 +14,41 @@ export class AboutSystem {
     readonly capabilities = [
         {
             icon: 'pi pi-shield',
-            titleKey: 'ABOUT_SYSTEM.CAPABILITIES.SECURITY.TITLE',
-            descriptionKey: 'ABOUT_SYSTEM.CAPABILITIES.SECURITY.DESCRIPTION',
+            titleKey: 'about_system.capabilities.security.title',
+            descriptionKey: 'about_system.capabilities.security.description',
         },
         {
             icon: 'pi pi-bolt',
-            titleKey: 'ABOUT_SYSTEM.CAPABILITIES.PERFORMANCE.TITLE',
-            descriptionKey: 'ABOUT_SYSTEM.CAPABILITIES.PERFORMANCE.DESCRIPTION',
+            titleKey: 'about_system.capabilities.performance.title',
+            descriptionKey: 'about_system.capabilities.performance.description',
         },
         {
             icon: 'pi pi-sync',
-            titleKey: 'ABOUT_SYSTEM.CAPABILITIES.INTEGRATION.TITLE',
-            descriptionKey: 'ABOUT_SYSTEM.CAPABILITIES.INTEGRATION.DESCRIPTION',
+            titleKey: 'about_system.capabilities.integration.title',
+            descriptionKey: 'about_system.capabilities.integration.description',
         },
     ];
 
     readonly systemFacts = [
         {
             icon: 'pi pi-server',
-            labelKey: 'ABOUT_SYSTEM.FACTS.RELEASE',
-            valueKey: 'ABOUT_SYSTEM.DUMMY.RELEASE',
+            labelKey: 'about_system.facts.release',
+            valueKey: 'about_system.dummy.release',
         },
         {
             icon: 'pi pi-code',
-            labelKey: 'ABOUT_SYSTEM.FACTS.FRAMEWORK',
-            valueKey: 'ABOUT_SYSTEM.DUMMY.FRAMEWORK',
+            labelKey: 'about_system.facts.framework',
+            valueKey: 'about_system.dummy.framework',
         },
         {
             icon: 'pi pi-cloud',
-            labelKey: 'ABOUT_SYSTEM.FACTS.ENVIRONMENT',
-            valueKey: 'ABOUT_SYSTEM.DUMMY.ENVIRONMENT',
+            labelKey: 'about_system.facts.environment',
+            valueKey: 'about_system.dummy.environment',
         },
         {
             icon: 'pi pi-users',
-            labelKey: 'ABOUT_SYSTEM.FACTS.SUPPORTED_USERS',
-            valueKey: 'ABOUT_SYSTEM.DUMMY.SUPPORTED_USERS',
+            labelKey: 'about_system.facts.supported_users',
+            valueKey: 'about_system.dummy.supported_users',
         },
     ];
 }

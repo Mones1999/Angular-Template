@@ -3,7 +3,7 @@
     <div class="brand-section">
         <div class="flex items-center gap-2.5 overflow-hidden">
             <i class="pi pi-box text-2xl text-white flex-shrink-0"></i>
-            <span class="brand-label text-lg font-bold tracking-tight text-white">{{ 'SIDEBAR.BRAND' | translate
+            <span class="brand-label text-lg font-bold tracking-tight text-white">{{ 'sidebar.brand' | translate
                 }}</span>
         </div>
         <!-- Mobile close -->
@@ -26,8 +26,8 @@
             <p-avatar icon="pi pi-user" [size]="collapsed() ? 'normal' : 'large'" shape="circle"
                 [pt]="{ root: { class: 'bg-white/20 text-white flex-shrink-0' } }" />
             <div class="user-info flex flex-col min-w-0">
-                <span class="text-sm font-semibold text-white truncate">{{ 'SIDEBAR.USER.NAME' | translate }}</span>
-                <span class="text-xs text-white/50 truncate">{{ 'SIDEBAR.USER.ROLE' | translate }}</span>
+                <span class="text-sm font-semibold text-white truncate">{{ 'sidebar.user.name' | translate }}</span>
+                <span class="text-xs text-white/50 truncate">{{ 'sidebar.user.role' | translate }}</span>
             </div>
         </div>
     </div>
@@ -64,10 +64,10 @@
     <div class="px-3 pb-3 pt-2 border-t border-white/10 mt-auto">
         <button pRipple (click)="authService.logout()"
             class="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-red-300 hover:text-white hover:bg-red-500/20 transition-all duration-200 cursor-pointer border-0 bg-transparent text-left"
-            [class.justify-center]="collapsed()" [pTooltip]="collapsed() ? ('SIDEBAR.LOGOUT' | translate) : ''"
+            [class.justify-center]="collapsed()" [pTooltip]="collapsed() ? ('sidebar.logout' | translate) : ''"
             tooltipPosition="right" aria-label="Logout">
             <i class="pi pi-sign-out text-base w-5 text-center flex-shrink-0"></i>
-            <span class="nav-label text-sm font-medium">{{ 'SIDEBAR.LOGOUT' | translate }}</span>
+            <span class="nav-label text-sm font-medium">{{ 'sidebar.logout' | translate }}</span>
         </button>
     </div>
 </aside>

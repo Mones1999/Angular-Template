@@ -1,29 +1,29 @@
 <div class="min-h-screen flex items-center justify-center px-3 py-5 bg-surface-ground">
     <p-card class="w-full sm:w-[25rem]">
         <div class="text-center mb-3">
-            <div class="text-2xl font-semibold mb-1">{{ 'LOGIN.TITLE' | translate }}</div>
+            <div class="text-2xl font-semibold mb-1">{{ 'login.title' | translate }}</div>
         </div>
 
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-3">
             <div class="flex flex-col gap-2">
-                <label for="username" class="font-semibold">{{ 'LOGIN.USERNAME' | translate }}</label>
+                <label for="username" class="font-semibold">{{ 'login.username' | translate }}</label>
                 <p-iconfield iconPosition="left" class="w-full">
                     <p-inputicon>
                         <i class="pi pi-envelope text-surface-600"></i>
                     </p-inputicon>
                     <input id="username" type="text" pInputText [pAutoFocus]="true"
-                        [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate" formControlName="username"
+                        [placeholder]="'login.username_placeholder' | translate" formControlName="username"
                         class="w-full" [ngClass]="{ 'p-invalid': submitted && f['username'].errors }"
                         [pt]="{ root: '!border-surface-400 focus:!border-primary-500 !rounded-3xl' }" />
                 </p-iconfield>
                 @if (submitted && f['username'].errors) {
-                <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.USERNAME_REQUIRED' | translate
+                <p-message severity="error" size="small" variant="simple">{{ 'login.username_required' | translate
                     }}</p-message>
                 }
             </div>
 
             <div class="flex flex-col gap-2">
-                <label for="password" class="font-semibold">{{ 'LOGIN.PASSWORD' | translate }}</label>
+                <label for="password" class="font-semibold">{{ 'login.password' | translate }}</label>
                 <p-iconfield iconPosition="left" class="w-full">
                     <p-inputicon>
                         <i class="pi pi-lock text-surface-600"></i>
@@ -31,17 +31,17 @@
                     <p-password id="password" class="w-full" formControlName="password" [feedback]="false"
                         [toggleMask]="true"
                         [inputStyleClass]="submitted && f['password'].errors ? 'w-full p-invalid' : 'w-full'"
-                        [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" [pt]="{ pcInputText: { root: '!border-surface-400 focus:!border-primary-500 !rounded-3xl' }, 
+                        [placeholder]="'login.password_placeholder' | translate" [pt]="{ pcInputText: { root: '!border-surface-400 focus:!border-primary-500 !rounded-3xl' }, 
                         maskIcon:  '!text-surface-600' , 
                         unmaskIcon: '!text-surface-600' }"></p-password>
                 </p-iconfield>
                 @if (submitted && f['password'].errors) {
-                <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.PASSWORD_REQUIRED' | translate
+                <p-message severity="error" size="small" variant="simple">{{ 'login.password_required' | translate
                     }}</p-message>
                 }
             </div>
 
-            <p-button type="submit" [label]="'LOGIN.SUBMIT' | translate" [pt]="{ root: '!w-full !rounded-3xl' }"
+            <p-button type="submit" [label]="'login.submit' | translate" [pt]="{ root: '!w-full !rounded-3xl' }"
                 severity="primary"></p-button>
         </form>
     </p-card>

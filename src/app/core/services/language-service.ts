@@ -63,7 +63,7 @@ export class LanguageService {
 
     }
     private updatePrimeNGConfig(lang: LangCode) {
-        this.translate.get('PRIMENG').subscribe(res => {
+        this.translate.get('primeng').subscribe(res => {
             this.primeng.setTranslation(res);
         });
     }

@@ -67,16 +67,16 @@ export class Login {
         this.router.navigate([APP_ROUTES.ABOUT_SYSTEM]);
         this.messageService.add({
           severity: 'success',
-          summary: this.translateService.instant('LOGIN.SUCCESS_TITLE'),
-          detail: this.translateService.instant('LOGIN.SUCCESS_MESSAGE')
+          summary: this.translateService.instant('login.success_title'),
+          detail: this.translateService.instant('login.success_message')
         });
       },
       error: (err) => {
         // Handle login error
         this.messageService.add({
           severity: 'error',
-          summary: this.translateService.instant('LOGIN.ERROR_TITLE'),
-          detail: this.translateService.instant('LOGIN.ERROR_MESSAGE')
+          summary: this.translateService.instant('login.error_title'),
+          detail: this.translateService.instant('login.error_message')
         });
       }
     });

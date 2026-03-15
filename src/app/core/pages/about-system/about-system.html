@@ -5,10 +5,12 @@
                 <span
                     class="inline-flex w-fit items-center gap-2 rounded-full bg-[color-mix(in_srgb,var(--p-primary-500)_18%,transparent)] px-3 py-1.5 text-sm font-semibold text-[var(--p-primary-700)]">
                     <i class="pi pi-info-circle" aria-hidden="true"></i>
-                    {{ 'ABOUT_SYSTEM.BADGE' | translate }}
+                    {{ 'about_system.badge' | translate }}
                 </span>
-                <h1 class="m-0 text-[clamp(1.35rem,1.7vw,2rem)] leading-tight">{{ 'ABOUT_SYSTEM.HERO.TITLE' | translate }}</h1>
-                <p class="m-0 leading-relaxed text-[var(--p-text-muted-color)]">{{ 'ABOUT_SYSTEM.HERO.SUBTITLE' | translate }}</p>
+                <h1 class="m-0 text-[clamp(1.35rem,1.7vw,2rem)] leading-tight">{{ 'about_system.hero.title' | translate
+                    }}</h1>
+                <p class="m-0 leading-relaxed text-[var(--p-text-muted-color)]">{{'about_system.hero.subtitle' |
+                    translate }}</p>
             </div>
         </p-card>
     </section>
@@ -32,8 +34,8 @@
     <section class="mb-4">
         <p-card [pt]="{ root: '!rounded-2xl !shadow-sm', body: '!p-0', content: '!p-5 md:!p-6' }">
             <div class="mb-3">
-                <h2 class="m-0 text-[1.2rem]">{{ 'ABOUT_SYSTEM.FACTS.TITLE' | translate }}</h2>
-                <p class="m-0 mt-1.5 text-[var(--p-text-muted-color)]">{{ 'ABOUT_SYSTEM.FACTS.SUBTITLE' | translate }}
+                <h2 class="m-0 text-[1.2rem]">{{ 'about_system.facts.title' | translate }}</h2>
+                <p class="m-0 mt-1.5 text-[var(--p-text-muted-color)]">{{'about_system.facts.subtitle' | translate }}
                 </p>
             </div>
 
@@ -56,11 +58,11 @@
         <p-card [pt]="{ root: '!rounded-2xl !shadow-sm', body: '!p-0', content: '!p-5 md:!p-6' }">
             <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
                 <div>
-                    <h2 class="m-0 text-[1.2rem]">{{ 'ABOUT_SYSTEM.ROADMAP.TITLE' | translate }}</h2>
-                    <p class="m-0 mt-1.5 text-[var(--p-text-muted-color)]">{{ 'ABOUT_SYSTEM.ROADMAP.DESCRIPTION' |
+                    <h2 class="m-0 text-[1.2rem]">{{ 'about_system.roadmap.title' | translate }}</h2>
+                    <p class="m-0 mt-1.5 text-[var(--p-text-muted-color)]">{{'about_system.roadmap.description' |
                         translate }}</p>
                 </div>
-                <p-button icon="pi pi-send" [label]="'ABOUT_SYSTEM.ROADMAP.CTA' | translate" severity="primary"
+                <p-button icon="pi pi-send" [label]="'about_system.roadmap.cta' | translate" severity="primary"
                     [outlined]="true"
                     [pt]="{ root: '!rounded-xl !px-4 !py-2 !font-semibold', icon: '!text-sm', label: '!text-sm' }" />
             </div>
