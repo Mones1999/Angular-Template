@@ -1,16 +1,15 @@
 <header class="app-header">
     <div class="header-container">
-        <!-- Spacer -->
-        <div class="flex-1"></div>
+        <div class="header-start">
+            <button class="menu-btn" type="button" (click)="toggleSidebar()" aria-label="Toggle menu">
+                <i class="pi pi-bars" aria-hidden="true"></i>
+            </button>
+            <h1 class="page-title">{{ currentPageTitle() }}</h1>
+        </div>
 
         <!-- Header Actions -->
         <div class="header-end">
-            <!-- Language Toggle -->
-            <!-- <p-button icon="pi pi-globe" [rounded]="true" [text]="true" severity="secondary"
-                (onClick)="languageService.toggleLang()"
-                [pTooltip]="languageService.currentLang() === 'en' ? 'العربية' : 'English'" tooltipPosition="bottom" /> -->
 
-            
         </div>
     </div>
 </header>

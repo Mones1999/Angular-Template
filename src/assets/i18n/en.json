@@ -3,7 +3,6 @@
         "go_to_home": "Go to Home"
     },
     "header": {
-        "brand": "Angular App",
         "home": "Home",
         "about": "About",
         "features": "Features",
@@ -23,7 +22,6 @@
         }
     },
     "sidebar": {
-        "brand": "Angular App",
         "title": "Navigation",
         "toggle_theme": "Toggle Theme",
         "logout": "Logout",

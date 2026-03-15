@@ -21,8 +21,8 @@ export class MainLayout {
     this.sidebarCollapsed.set(collapsed);
   }
 
-  openSidebar() {
-    this.sidebarOpen.set(true);
+  toggleSidebar() {
+    this.sidebarOpen.update(open => !open);
   }
 
   closeSidebarOverlay() {

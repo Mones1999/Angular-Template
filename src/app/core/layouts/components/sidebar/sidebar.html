@@ -2,9 +2,7 @@
     <!-- Brand -->
     <div class="brand-section">
         <div class="flex items-center gap-2.5 overflow-hidden">
-            <i class="pi pi-box text-2xl text-white flex-shrink-0"></i>
-            <span class="brand-label text-lg font-bold tracking-tight text-white">{{ 'sidebar.brand' | translate
-                }}</span>
+            <img src="assets\icons\globitel-logo.png" width="110px" />
         </div>
         <!-- Mobile close -->
         <button
@@ -49,7 +47,7 @@
                     <a [routerLink]="item.route" routerLinkActive="nav-item-active" pRipple
                         class="nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/70 hover:text-white hover:bg-white/8 transition-all duration-200 cursor-pointer no-underline"
                         [class.justify-center]="collapsed()" [attr.aria-label]="item.label"
-                        [pTooltip]="collapsed() ? item.label : ''" tooltipPosition="right">
+                        [pTooltip]="collapsed() ? item.label : ''" tooltipPosition="right" (click)="closeSidebar()">
                         <i [class]="item.icon" class="text-base w-5 text-center flex-shrink-0"></i>
                         <span class="nav-label text-sm font-medium">{{ item.label }}</span>
                     </a>

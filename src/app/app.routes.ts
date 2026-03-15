@@ -9,6 +9,7 @@ export const routes: Routes = [
     },
     {
         path: APP_ROUTES.NOT_FOUND,
+        data: { breadcrumb: 'not_found.title' },
         loadComponent: () => import('./core/pages/not-found/not-found').then(m => m.NotFound)
     },
     {
@@ -23,6 +24,7 @@ export const routes: Routes = [
             },
             {
                 path: APP_ROUTES.ABOUT_SYSTEM,
+                data: { breadcrumb: 'sidebar.menu.about_system' },
                 loadComponent: () => import('./core/pages/about-system/about-system').then(m => m.AboutSystem)
             },
             {
@@ -32,10 +34,12 @@ export const routes: Routes = [
             },
             {
                 path: APP_ROUTES.FORBIDDEN,
+                data: { breadcrumb: 'forbidden.title' },
                 loadComponent: () => import('./core/pages/forbidden/forbidden').then(m => m.Forbidden)
             },
             {
                 path: APP_ROUTES.USERS,
+                data: { breadcrumb: 'users.title' },
                 loadComponent: () => import('./features/users-management/pages/users/users').then(m => m.Users)
             },
             {
