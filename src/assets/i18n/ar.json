@@ -224,6 +224,47 @@
         "export": "تصدير",
         "search": "البحث عن مستخدمين...",
         "no_records": "لا يوجد مستخدمين.",
+        "dialog": {
+            "add_user_title": "إضافة مستخدم"
+        },
+        "confirm_delete": {
+            "title": "حذف المستخدم",
+            "message": "هل أنت متأكد أنك تريد حذف {{username}}؟",
+            "accept": "حذف",
+            "reject": "إلغاء"
+        },
+        "form": {
+            "username": "اسم المستخدم",
+            "username_placeholder": "أدخل اسم المستخدم",
+            "full_name": "الاسم الكامل",
+            "full_name_placeholder": "أدخل الاسم الكامل",
+            "password": "كلمة المرور",
+            "password_placeholder": "أدخل كلمة المرور",
+            "confirm_password": "تأكيد كلمة المرور",
+            "confirm_password_placeholder": "أدخل تأكيد كلمة المرور"
+        },
+        "validation": {
+            "username_required": "اسم المستخدم مطلوب.",
+            "full_name_required": "الاسم الكامل مطلوب.",
+            "password_required": "كلمة المرور مطلوبة.",
+            "confirm_password_required": "تأكيد كلمة المرور مطلوب.",
+            "password_min_length": "يجب أن تكون كلمة المرور 6 أحرف على الأقل.",
+            "password_mismatch": "كلمتا المرور غير متطابقتين."
+        },
+        "buttons": {
+            "cancel": "إلغاء",
+            "save": "حفظ"
+        },
+        "toast": {
+            "success_title": "نجاح",
+            "success_message": "تمت إضافة المستخدم بنجاح.",
+            "error_title": "خطأ",
+            "error_message": "فشلت إضافة المستخدم.",
+            "delete_success_title": "تم الحذف",
+            "delete_success_message": "تم حذف المستخدم بنجاح.",
+            "delete_error_title": "خطأ",
+            "delete_error_message": "فشل حذف المستخدم."
+        },
         "columns": {
             "username": "اسم المستخدم",
             "full_name": "الاسم الكامل",
@@ -235,6 +276,13 @@
             "update": "تعديل",
             "delete": "حذف"
         }
+    },
+    "data_table": {
+        "add_new": "إضافة جديد",
+        "export": "تصدير",
+        "search": "بحث...",
+        "no_records": "لا توجد سجلات.",
+        "actions": "الإجراءات"
     },
     "primeng": {
         "accept": "قبول",

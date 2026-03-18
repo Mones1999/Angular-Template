@@ -11,21 +11,20 @@
             <i class="pi pi-times text-sm"></i>
         </button>
         <!-- Desktop collapse toggle -->
-        <button pRipple (click)="toggleCollapse()"
+        <button (click)="toggleCollapse()"
             class="collapse-toggle-btn hidden lg:flex items-center justify-center w-8 h-8 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors border-0 bg-transparent cursor-pointer"
             [attr.aria-label]="'Toggle sidebar'">
-            <i class="pi text-sm" [class.pi-chevron-left]="!collapsed()" [class.pi-chevron-right]="collapsed()"></i>
+            <img src="assets\icons\toggle-icon.svg" />
         </button>
     </div>
 
     <!-- User Profile -->
-    <div class="user-profile-card mx-3 mb-4 rounded-xl bg-[#304073]" [class.collapsed-profile]="collapsed()">
+    <div class="user-profile-card mx-3 border-t border-white/10" [class.collapsed-profile]="collapsed()">
         <div class="flex items-center gap-3 px-3 py-3">
-            <p-avatar icon="pi pi-user" [size]="collapsed() ? 'normal' : 'large'" shape="circle"
-                [pt]="{ root: { class: 'bg-white/20 text-white flex-shrink-0' } }" />
+            <p-avatar icon="pi pi-user" [size]="collapsed() ? 'normal' : 'large'" shape="circle" [pTooltip]="userDate?.name" [tooltipDisabled]="!collapsed()"
+                [pt]="{ root: { class: 'flex-shrink-0' } }" />
             <div class="user-info flex flex-col min-w-0">
-                <span class="text-sm font-semibold text-white truncate">{{ 'sidebar.user.name' | translate }}</span>
-                <span class="text-xs text-white/50 truncate">{{ 'sidebar.user.role' | translate }}</span>
+                <span class="text-lg font-semibold text-white truncate">{{ userDate?.name }}</span>
             </div>
         </div>
     </div>
@@ -33,19 +32,19 @@
     <!-- Navigation Groups -->
     <nav class="flex-1 overflow-y-auto px-3 sidebar-scroll">
         @for (group of menuGroups; track group.label) {
-        <div class="mb-4">
+        <div class="mb-4 pt-3 border-t border-white/15">
             <span
-                class="group-label block px-3 mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-white/40">
+                class="group-label block px-3 mb-1.5 text-[13px] font-semibold tracking-wider text-white/40">
                 {{ group.label }}
             </span>
             @if (collapsed()) {
-            <div class="collapsed-divider mx-3 mb-1.5 border-t border-white/15"></div>
+            <div class="collapsed-divider mx-3 mb-1.5"></div>
             }
             <ul class="space-y-0.5" role="list">
                 @for (item of group.items; track item.route) {
                 <li>
-                    <a [routerLink]="item.route" routerLinkActive="nav-item-active" pRipple
-                        class="nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/70 hover:text-white hover:bg-white/8 transition-all duration-200 cursor-pointer no-underline"
+                    <a [routerLink]="item.route" routerLinkActive="nav-item-active"
+                        class="nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer no-underline"
                         [class.justify-center]="collapsed()" [attr.aria-label]="item.label"
                         [pTooltip]="collapsed() ? item.label : ''" tooltipPosition="right" (click)="closeSidebar()">
                         <i [class]="item.icon" class="text-base w-5 text-center flex-shrink-0"></i>
@@ -60,7 +59,7 @@
 
     <!-- Bottom Actions -->
     <div class="px-3 pb-3 pt-2 border-t border-white/10 mt-auto">
-        <button pRipple (click)="authService.logout()"
+        <button  (click)="authService.logout()"
             class="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-red-300 hover:text-white hover:bg-red-500/20 transition-all duration-200 cursor-pointer border-0 bg-transparent text-left"
             [class.justify-center]="collapsed()" [pTooltip]="collapsed() ? ('sidebar.logout' | translate) : ''"
             tooltipPosition="right" aria-label="Logout">

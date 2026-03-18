@@ -1,9 +1,11 @@
-@import "tailwindcss" layer(tailwind);
+@import "tailwindcss/preflight" layer(tw-base);
+@import "tailwindcss/theme" layer(tw-base);
+@import "tailwindcss/utilities" layer(tw-utilities);
 @import 'primeicons/primeicons.css' layer(primengicons);
 
 :root {
-  --app-background-light-color: #eff4fa; 
-  --app-background-dark-color: #0d0d0d; 
+  --app-background-light-color: #F3F6FF;
+  --app-background-dark-color: #0d0d0d;
 }
 
 body {
@@ -11,7 +13,14 @@ body {
 }
 
 .my-app-dark body {
-  background-color: var(--app-background-dark-color) ;
+  background-color: var(--app-background-dark-color);
+}
+.p-dialog-header {
+  border-bottom: 1px solid var(--p-primary-100);
+}
+.p-dialog-footer {
+  border-top: 1px solid var(--p-primary-100);
+  margin-top: 0.5rem;
 }
 
 /* Arabic font - applied when app language is Arabic */

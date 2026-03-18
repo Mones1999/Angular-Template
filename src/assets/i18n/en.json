@@ -224,6 +224,47 @@
         "export": "Export",
         "search": "Search users...",
         "no_records": "No users found.",
+        "dialog": {
+            "add_user_title": "Add User"
+        },
+        "confirm_delete": {
+            "title": "Delete User",
+            "message": "Are you sure you want to delete {{username}}?",
+            "accept": "Delete",
+            "reject": "Cancel"
+        },
+        "form": {
+            "username": "Username",
+            "username_placeholder": "Enter username",
+            "full_name": "Full Name",
+            "full_name_placeholder": "Enter full name",
+            "password": "Password",
+            "password_placeholder": "Enter password",
+            "confirm_password": "Confirm Password",
+            "confirm_password_placeholder": "Enter confirm password"
+        },
+        "validation": {
+            "username_required": "Username is required.",
+            "full_name_required": "Full name is required.",
+            "password_required": "Password is required.",
+            "confirm_password_required": "Confirm password is required.",
+            "password_min_length": "Password must be at least 6 characters.",
+            "password_mismatch": "Passwords do not match."
+        },
+        "buttons": {
+            "cancel": "Cancel",
+            "save": "Save"
+        },
+        "toast": {
+            "success_title": "Success",
+            "success_message": "User added successfully.",
+            "error_title": "Error",
+            "error_message": "Failed to add user.",
+            "delete_success_title": "Deleted",
+            "delete_success_message": "User deleted successfully.",
+            "delete_error_title": "Error",
+            "delete_error_message": "Failed to delete user."
+        },
         "columns": {
             "username": "Username",
             "full_name": "Full Name",
@@ -235,6 +276,13 @@
             "update": "Update",
             "delete": "Delete"
         }
+    },
+    "data_table": {
+        "add_new": "Add New",
+        "export": "Export",
+        "search": "Search...",
+        "no_records": "No records found.",
+        "actions": "Actions"
     },
     "primeng": {
         "accept": "Accept",

@@ -1,0 +1,57 @@
+:host {
+    --p-datatable-body-cell-padding: 0.7rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+:host ::ng-deep p-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+:host ::ng-deep .p-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+:host ::ng-deep .p-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+:host ::ng-deep .p-card-content>div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+:host ::ng-deep p-table {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+:host ::ng-deep .p-datatable {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+:host ::ng-deep .p-datatable-wrapper {
+    flex: 1;
+}
+
+:host ::ng-deep p-paginator {
+    margin-top: auto;
+}

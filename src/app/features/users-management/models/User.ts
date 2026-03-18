@@ -1,6 +1,12 @@
 export interface User {
+    userId: number;
     username: string;
     fullName: string;
-    email: string;
-    phoneNumber: string;
+}
+
+export interface AddUserForm {
+    username: string;
+    fullName: string;
+    password: string;
+    confirmPassword: string;
 }

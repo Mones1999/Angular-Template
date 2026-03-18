@@ -1,13 +1,12 @@
 import { Component, inject, input, OnDestroy, OnInit, output, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { APP_ROUTES } from '@core/constants/app-routes-constants';
+import { SidebarMenuGroup } from '@core/models/SidebarMenu';
+import { AuthService } from '@core/services/auth-service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Avatar } from 'primeng/avatar';
-import { Ripple } from 'primeng/ripple';
 import { Tooltip } from 'primeng/tooltip';
 import { Subscription } from 'rxjs';
-import { AuthService } from '@core/services/auth-service';
-import { SidebarMenuGroup } from '@core/models/SidebarMenu';
-import { APP_ROUTES } from '@core/constants/app-routes-constants';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,7 +15,6 @@ import { APP_ROUTES } from '@core/constants/app-routes-constants';
     RouterLinkActive,
     TranslateModule,
     Avatar,
-    Ripple,
     Tooltip,
   ],
   templateUrl: './sidebar.html',
@@ -33,6 +31,8 @@ export class Sidebar implements OnInit, OnDestroy {
 
   menuGroups: SidebarMenuGroup[] = [];
   private langSubscription!: Subscription;
+
+  userDate = this.authService.userData();
 
   ngOnInit() {
     this.buildMenu();

@@ -1,0 +1,169 @@
+<!-- Toolbar -->
+<div class="flex justify-between items-center flex-wrap gap-3 mb-3">
+    <div class="flex items-center gap-2">
+        @if (tableName()) {
+        <h2 class="m-0 text-(--p-surface-900)">
+            {{ tableName() }}
+            <span class="text-(--p-primary-500) font-bold ms-1">({{ allRowsCount() }})</span>
+        </h2>
+        }
+    </div>
+    <div class="flex gap-2">
+        @if (showAddButton()) {
+        <p-button icon="pi pi-plus" [label]="addButtonLabel() || ('data_table.add_new' | translate)"
+            (onClick)="onAddNew.emit()" [pt]="{ root: { class: 'shadow-sm' } }" />
+        }
+        @if (showExportButton()) {
+        <p-button icon="pi pi-download" [label]="exportButtonLabel() || ('data_table.export' | translate)"
+            severity="secondary" (onClick)="onExport.emit()" [pt]="{ root: { class: 'shadow-sm' } }" />
+        }
+    </div>
+</div>
+
+<p-card [pt]="{ root: { class: 'border border-(--p-surface-200)'}}">
+    <div class="flex flex-col justify-between">
+
+        <p-table #dt [value]="loading() ? skeletonRows() : displayData()" [lazy]="lazy()" [totalRecords]="totalRecords()"
+            [paginator]="false" [rows]="rows()" [globalFilterFields]="globalFilterFields()" [stripedRows]="false"
+            [dataKey]="dataKey()" [loading]="false" [showLoader]="true" (onLazyLoad)="handleLazyLoad($event)"
+            [selectionMode]="selectionMode()" [selection]="selection()" (selectionChange)="handleSelectionChange($event)"
+            [scrollable]="true" [tableStyle]="{ 'min-width': tableMinWidth() }" [pt]="{
+                thead: { class: 'text-(--p-primary-600) [&_tr:first-child_th:first-child]:!rounded-ss-xl [&_tr:first-child_th:last-child]:!rounded-se-xl' },
+                tbody: { class: 'bg-(--p-surface-0)' }
+            }">
+    
+            <!-- Column Headers -->
+            <ng-template #header>
+                <tr>
+                    @if (selectionMode()) {
+                    <th class="!bg-(--p-primary-50) !border-none" style="width: 4rem">
+                        <p-tableHeaderCheckbox />
+                    </th>
+                    }
+                    @for (col of columns(); track col.field; let i = $index) {
+                    @if (col.sortable) {
+                    <th class="!bg-(--p-primary-50) !border-none !font-semibold !text-sm"
+                        [style.width.%]="col.width || 100/columns().length" [pSortableColumn]="col.field">
+                        {{ col.header | translate }}
+                        <p-sortIcon [field]="col.field" />
+                    </th>
+                    } @else {
+                    <th class="!bg-(--p-primary-50) !border-none !font-semibold !text-sm"
+                        [style.width.%]="col.width || 100/columns().length">
+                        {{ col.header | translate }}
+                    </th>
+                    }
+                    }
+                    @if (actionConfig()) {
+                    <th class="!bg-(--p-primary-50) !border-none !font-semibold !text-sm !text-center min-w-3xs max-w-xs"
+                        alignFrozen="right" pFrozenColumn [frozen]="frozenActionColumn()">
+                        {{ 'data_table.actions' | translate }}
+                    </th>
+                    }
+                </tr>
+            </ng-template>
+    
+            <!-- Table Body -->
+            <ng-template #body let-item>
+                @if (loading()) {
+                <!-- Skeleton Row -->
+                <tr>
+                    @if (selectionMode()) {
+                    <td class="!border-b !border-(--p-surface-100)">
+                        <p-skeleton width="1.5rem" height="1.5rem" [pt]="{ root: { class: 'rounded-md' } }" />
+                    </td>
+                    }
+                    @for (col of columns(); track col.field; let i = $index) {
+                    <td class="!border-b !border-(--p-surface-100) mx-auto"
+                        [style.width.%]="col.width || 100/columns().length">
+                        <p-skeleton [pt]="{ root: { class: 'rounded-md' } }" />
+                    </td>
+                    }
+                    @if (actionConfig()) {
+                    <td class="!border-b !border-(--p-surface-100) mx-auto min-w-3xs max-w-xs overflow-hidden"
+                        alignFrozen="right" pFrozenColumn [frozen]="frozenActionColumn()">
+                        <div class="flex gap-2">
+                            <p-skeleton [pt]="{ root: { class: 'rounded-md' } }" />
+                        </div>
+                    </td>
+                    }
+                </tr>
+                } @else {
+                <!-- Data Row -->
+                <tr class="transition-colors duration-200 hover:!bg-(--p-primary-50) group">
+                    @if (selectionMode()) {
+                    <td class="!border-b !border-(--p-surface-100)">
+                        <p-tableCheckbox [value]="item" />
+                    </td>
+                    }
+                    @for (col of columns(); track col.field; let i = $index) {
+                    <td class="!border-b !border-(--p-surface-100) text-(--p-surface-700) text-sm"
+                        [style.width.%]="col.width || 100/columns().length">
+                        @switch (col.type) {
+                        @case ('date') {
+                        {{ item[col.field] | date: 'mediumDate' }}
+                        }
+                        @case ('currency') {
+                        {{ item[col.field] | currency }}
+                        }
+                        @case ('number') {
+                        {{ item[col.field] | number }}
+                        }
+                        @default {
+                        {{ item[col.field] }}
+                        }
+                        }
+                    </td>
+                    }
+    
+                    <!-- Action Column -->
+                    @if (actionConfig(); as config) {
+                    <td class="!border-b !border-(--p-surface-100) flex justify-center min-w-3xs max-w-xs overflow-hidden"
+                        alignFrozen="right" pFrozenColumn [frozen]="frozenActionColumn()">
+                        @if (canUseExpandedActions(config)) {
+                        <div class="flex gap-1 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                            @for (action of config.actions; track action.actionType) {
+                            @if (isActionVisible(action.visible, item)) {
+                            <p-button [icon]="action.icon" [rounded]="true" [text]="true"
+                                [severity]="action.severity ?? 'info'" [pTooltip]="action.label | translate"
+                                tooltipPosition="top" [disabled]="isActionDisabled(action.disabled, item)"
+                                (onClick)="handleActionClick(action.actionType, item)"
+                                [pt]="{ root:{ class:'m-0 p-0' } }" />
+                            }
+                            }
+                        </div>
+                        } @else {
+                        <p-button [icon]="config.menuButtonIcon ?? 'pi pi-ellipsis-v'" [rounded]="true" [text]="true"
+                            (onClick)="menu.toggle($event)" [pt]="{ root: { class: 'w-8 h-8' } }" />
+                        <p-menu #menu [model]="buildMenuItems(item)" [popup]="true" [appendTo]="'body'" [pt]="{
+                                root: { class: 'shadow-lg border border-(--p-surface-200) rounded-lg' },
+                                list: { class: 'py-1' },
+                                itemLink: { class: 'rounded-md mx-1 px-3 py-2 text-sm' }
+                            }" />
+                        }
+                    </td>
+                    }
+                </tr>
+                }
+            </ng-template>
+    
+            <!-- Empty Message -->
+            <ng-template #emptymessage>
+                @if (!loading()) {
+                <tr>
+                    <td [attr.colspan]="totalColumns()" class="text-center !py-12 text-(--p-surface-400)">
+                        <div class="flex flex-col items-center gap-3">
+                            <i class="pi pi-inbox text-4xl text-(--p-surface-300)"></i>
+                            <span class="text-sm font-medium">{{ 'data_table.no_records' | translate }}</span>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </ng-template>
+        </p-table>
+    
+        <p-paginator [first]="paginatorFirst()" [rows]="paginatorRows() || rows()" [totalRecords]="effectiveTotalRecords()"
+            [rowsPerPageOptions]="rowsPerPageOptions()" (onPageChange)="handlePageChange($event)"
+            [pt]="{ root: { class: 'text-sm mt-auto border-0 pt-5' } }" />
+    </div>
+</p-card>
