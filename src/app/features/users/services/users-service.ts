@@ -1,11 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { ConfigService } from '@core/services/config-service';
 import { ResponseResult } from '@core/models/ResponseResult';
+import { ConfigService } from '@core/services/config-service';
 import { PageRequestDto, PageResponse } from '@shared/models/page.models';
-import { AddUserForm, User } from '../models/User';
+import { Observable } from 'rxjs';
+import { AddUserForm, UpdateUserForm, User } from '../models/User';
 
 @Injectable({
   providedIn: 'root',
@@ -19,11 +18,19 @@ export class UsersService {
   }
 
   getUsers(request: PageRequestDto): Observable<ResponseResult<PageResponse<User>>> {
-    return this.http.post<ResponseResult<PageResponse<User>>>(this.baseUrl, request);
+    return this.http.post<ResponseResult<PageResponse<User>>>(`${this.baseUrl}/getAllDatatable`, request);
+  }
+
+  getUserById(userId: number): Observable<ResponseResult<User>> {
+    return this.http.get<ResponseResult<User>>(`${this.baseUrl}/${userId}`);
   }
 
   addUser(payload: AddUserForm): Observable<ResponseResult> {
     return this.http.post<ResponseResult>(`${this.baseUrl}/add`, payload);
+  }
+
+  updateUser(payload: UpdateUserForm): Observable<ResponseResult> {
+    return this.http.put<ResponseResult>(`${this.baseUrl}/update`, payload);
   }
 
   deleteUser(userId: number): Observable<ResponseResult> {

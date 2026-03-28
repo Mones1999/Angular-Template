@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input, model, output, signal, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, model, output, signal, ViewChild, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { Table, TableLazyLoadEvent, TableModule } from 'primeng/table';
@@ -12,7 +12,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { Card } from 'primeng/card';
 import { Paginator, PaginatorState } from 'primeng/paginator';
 import { MenuItem } from 'primeng/api';
-import { ActionConfig, ActionEvent, TableColumn } from '@shared/models/data-table.models';
+import { Menu } from 'primeng/menu';
+import { ActionConfig, ActionEvent, ActionType, TableColumn } from '@shared/models/data-table.models';
 
 @Component({
     selector: 'app-data-table',
@@ -36,6 +37,8 @@ import { ActionConfig, ActionEvent, TableColumn } from '@shared/models/data-tabl
 })
 export class DataTable {
     @ViewChild('dt') dt!: Table;
+    rowMenu = viewChild<Menu>('rowMenu');
+    activeMenuItems = signal<MenuItem[]>([]);
 
     // Data
     columns = input.required<TableColumn[]>();
@@ -141,12 +144,17 @@ export class DataTable {
         this.onSelectionChange.emit(value);
     }
 
-    handleActionClick(actionType: string, rowData: any): void {
+    handleActionClick(actionType: ActionType, rowData: any): void {
         this.onActionClick.emit({ actionType, rowData });
     }
 
     canUseExpandedActions(config: ActionConfig): boolean {
         return config.mode === 'EXPANDED' && config.actions.length <= 4;
+    }
+
+    toggleRowMenu(event: Event, rowData: any): void {
+        this.activeMenuItems.set(this.buildMenuItems(rowData));
+        this.rowMenu()?.toggle(event);
     }
 
     buildMenuItems(rowData: any): MenuItem[] {

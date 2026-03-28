@@ -1,9 +1,9 @@
 export const APP_ROUTES = {
   AUTH: 'auth',
-  DASHBOARD: 'dashboard',
-  ABOUT_US: 'about-us',
+  SYSTEM_SETTINGS: 'system-settings',
   ABOUT_SYSTEM: 'about-system',
   USERS: 'users',
+  CHANGE_PASSWORD: 'change-password',
   NOT_FOUND: '404',
   FORBIDDEN: '403'
 };

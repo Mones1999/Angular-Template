@@ -7,7 +7,7 @@ export interface TableColumn {
 }
 
 export interface ActionItem {
-    actionType: string;
+    actionType: ActionType;
     label: string;
     icon: string;
     severity?: 'info' | 'success' | 'warn' | 'danger' | 'secondary' | 'contrast';
@@ -23,6 +23,12 @@ export interface ActionConfig {
 }
 
 export interface ActionEvent {
-    actionType: string;
+    actionType: ActionType;
     rowData: any;
+}
+
+export enum ActionType {
+    EDIT = 'EDIT',
+    DELETE = 'DELETE',
+    VIEW = 'VIEW',
 }

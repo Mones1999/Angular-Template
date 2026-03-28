@@ -23,15 +23,16 @@
 <p-card [pt]="{ root: { class: 'border border-(--p-surface-200)'}}">
     <div class="flex flex-col justify-between">
 
-        <p-table #dt [value]="loading() ? skeletonRows() : displayData()" [lazy]="lazy()" [totalRecords]="totalRecords()"
-            [paginator]="false" [rows]="rows()" [globalFilterFields]="globalFilterFields()" [stripedRows]="false"
-            [dataKey]="dataKey()" [loading]="false" [showLoader]="true" (onLazyLoad)="handleLazyLoad($event)"
-            [selectionMode]="selectionMode()" [selection]="selection()" (selectionChange)="handleSelectionChange($event)"
-            [scrollable]="true" [tableStyle]="{ 'min-width': tableMinWidth() }" [pt]="{
+        <p-table #dt [value]="loading() ? skeletonRows() : displayData()" [lazy]="lazy()"
+            [totalRecords]="totalRecords()" [paginator]="false" [rows]="rows()"
+            [globalFilterFields]="globalFilterFields()" [stripedRows]="false" [dataKey]="dataKey()" [loading]="false"
+            [showLoader]="true" (onLazyLoad)="handleLazyLoad($event)" [selectionMode]="selectionMode()"
+            [selection]="selection()" (selectionChange)="handleSelectionChange($event)" [scrollable]="true"
+            [tableStyle]="{ 'min-width': tableMinWidth() }" [pt]="{
                 thead: { class: 'text-(--p-primary-600) [&_tr:first-child_th:first-child]:!rounded-ss-xl [&_tr:first-child_th:last-child]:!rounded-se-xl' },
                 tbody: { class: 'bg-(--p-surface-0)' }
             }">
-    
+
             <!-- Column Headers -->
             <ng-template #header>
                 <tr>
@@ -62,7 +63,7 @@
                     }
                 </tr>
             </ng-template>
-    
+
             <!-- Table Body -->
             <ng-template #body let-item>
                 @if (loading()) {
@@ -115,7 +116,7 @@
                         }
                     </td>
                     }
-    
+
                     <!-- Action Column -->
                     @if (actionConfig(); as config) {
                     <td class="!border-b !border-(--p-surface-100) flex justify-center min-w-3xs max-w-xs overflow-hidden"
@@ -134,19 +135,14 @@
                         </div>
                         } @else {
                         <p-button [icon]="config.menuButtonIcon ?? 'pi pi-ellipsis-v'" [rounded]="true" [text]="true"
-                            (onClick)="menu.toggle($event)" [pt]="{ root: { class: 'w-8 h-8' } }" />
-                        <p-menu #menu [model]="buildMenuItems(item)" [popup]="true" [appendTo]="'body'" [pt]="{
-                                root: { class: 'shadow-lg border border-(--p-surface-200) rounded-lg' },
-                                list: { class: 'py-1' },
-                                itemLink: { class: 'rounded-md mx-1 px-3 py-2 text-sm' }
-                            }" />
+                            (onClick)="toggleRowMenu($event, item)" [pt]="{ root: { class: 'w-8 h-8' } }" />
                         }
                     </td>
                     }
                 </tr>
                 }
             </ng-template>
-    
+
             <!-- Empty Message -->
             <ng-template #emptymessage>
                 @if (!loading()) {
@@ -161,9 +157,15 @@
                 }
             </ng-template>
         </p-table>
-    
-        <p-paginator [first]="paginatorFirst()" [rows]="paginatorRows() || rows()" [totalRecords]="effectiveTotalRecords()"
-            [rowsPerPageOptions]="rowsPerPageOptions()" (onPageChange)="handlePageChange($event)"
-            [pt]="{ root: { class: 'text-sm mt-auto border-0 pt-5' } }" />
+        <!-- Action Column Menu -->
+        <p-menu #rowMenu [model]="activeMenuItems()" [popup]="true" appendTo="body" [pt]="{
+            root: { class: 'shadow-lg border border-(--p-surface-200) rounded-lg min-w-0 w-auto' },
+            list: { class: 'py-1' },
+            itemLink: { class: 'rounded-md mx-1 px-3 py-2 text-sm' }
+        }" />
+
+        <p-paginator [first]="paginatorFirst()" [rows]="paginatorRows() || rows()"
+            [totalRecords]="effectiveTotalRecords()" [rowsPerPageOptions]="rowsPerPageOptions()"
+            (onPageChange)="handlePageChange($event)" [pt]="{ root: { class: 'text-sm mt-auto border-0 pt-5' } }" />
     </div>
 </p-card>

@@ -6,6 +6,10 @@
 :root {
   --app-background-light-color: #F3F6FF;
   --app-background-dark-color: #0d0d0d;
+  --p-button-outlined-secondary-color: 000;
+  --p-form-field-padding-y: 0.30rem;
+  --p-dialog-footer-padding:1rem;
+  --p-dialog-header-padding:1rem;
 }
 
 body {
@@ -15,9 +19,12 @@ body {
 .my-app-dark body {
   background-color: var(--app-background-dark-color);
 }
+
 .p-dialog-header {
   border-bottom: 1px solid var(--p-primary-100);
+  margin-bottom: 1rem;
 }
+
 .p-dialog-footer {
   border-top: 1px solid var(--p-primary-100);
   margin-top: 0.5rem;

@@ -10,3 +10,11 @@ export interface AddUserForm {
     password: string;
     confirmPassword: string;
 }
+
+export interface UpdateUserForm {
+    userId: number;
+    username: string;
+    fullName: string;
+    password?: string;
+    confirmPassword?: string;
+}

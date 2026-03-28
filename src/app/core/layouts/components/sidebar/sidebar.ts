@@ -64,8 +64,8 @@ export class Sidebar implements OnInit, OnDestroy {
       {
         label: this.translate.instant('sidebar.groups.general'),
         items: [
-          { label: this.translate.instant('sidebar.menu.users'), icon: 'pi pi-users', route: '/users' },
-          { label: this.translate.instant('sidebar.menu.system_settings'), icon: 'pi pi-cog', route: '/settings/general' },
+          { label: this.translate.instant('sidebar.menu.users'), icon: 'pi pi-users', route: `/${APP_ROUTES.USERS}` },
+          { label: this.translate.instant('sidebar.menu.system_settings'), icon: 'pi pi-cog', route: `/${APP_ROUTES.SYSTEM_SETTINGS}` },
           { label: this.translate.instant('sidebar.menu.sms_templates'), icon: 'pi pi-envelope', route: '/sms-templates' },
         ]
       },
@@ -73,7 +73,7 @@ export class Sidebar implements OnInit, OnDestroy {
         label: this.translate.instant('sidebar.groups.others'),
         items: [
           { label: this.translate.instant('sidebar.menu.about_system'), icon: 'pi pi-info-circle', route: `/${APP_ROUTES.ABOUT_SYSTEM}` },
-          { label: this.translate.instant('sidebar.menu.change_password'), icon: 'pi pi-lock', route: '/change-password' },
+          { label: this.translate.instant('sidebar.menu.change_password'), icon: 'pi pi-lock', route: `/${APP_ROUTES.CHANGE_PASSWORD}` },
         ]
       }
     ];

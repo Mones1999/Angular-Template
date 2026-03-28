@@ -65,110 +65,38 @@
         "password_required": "Password is required",
         "submit": "Login",
         "success_title": "Login Successful",
-        "success_message": "You have successfully logged in.",
+        "success_message": "You have successfully logged in",
         "error_title": "Login Failed",
-        "error_message": "An error occurred during login."
+        "error_message": "An error occurred during login"
     },
     "not_found": {
         "code": "404",
         "title": "Page Not Found",
-        "description": "Sorry, the page you are looking for does not exist or has been moved."
+        "description": "Sorry, the page you are looking for does not exist or has been moved"
     },
     "forbidden": {
         "code": "403",
         "title": "Access Forbidden",
-        "description": "Sorry, you do not have permission to access this page."
-    },
-    "about_us": {
-        "hero": {
-            "title": "About Our Company",
-            "subtitle": "We are passionate about creating innovative solutions that transform businesses and empower communities worldwide."
-        },
-        "stats": {
-            "years": "Years of Experience",
-            "projects": "Projects Completed",
-            "team": "Team Members",
-            "clients": "Happy Clients"
-        },
-        "mission": {
-            "title": "Our Mission",
-            "description": "To deliver cutting-edge technology solutions that drive business growth and create lasting value for our clients. We believe in the power of innovation to solve complex challenges and unlock new opportunities."
-        },
-        "vision": {
-            "title": "Our Vision",
-            "description": "To be the leading technology partner for businesses worldwide, recognized for our commitment to excellence, innovation, and customer success. We envision a future where technology empowers everyone."
-        },
-        "team": {
-            "title": "Meet Our Team",
-            "subtitle": "The talented people behind our success",
-            "MEMBER1": {
-                "name": "John Doe",
-                "role": "CEO & Founder",
-                "bio": "With over 15 years of experience in technology leadership, John drives our vision and strategy."
-            },
-            "MEMBER2": {
-                "name": "Sarah Mitchell",
-                "role": "CTO",
-                "bio": "Sarah leads our technical innovation with expertise in cloud architecture and AI solutions."
-            },
-            "MEMBER3": {
-                "name": "Ahmed Khan",
-                "role": "Lead Developer",
-                "bio": "Ahmed brings creativity and technical excellence to every project, specializing in Angular and Node.js."
-            },
-            "MEMBER4": {
-                "name": "Maria Rodriguez",
-                "role": "UX Designer",
-                "bio": "Maria creates intuitive and beautiful user experiences that delight our clients and their customers."
-            }
-        },
-        "timeline": {
-            "title": "Our Journey",
-            "subtitle": "Key milestones in our company's history",
-            "EVENT1": {
-                "title": "Company Founded",
-                "description": "Started with a vision to revolutionize how businesses leverage technology."
-            },
-            "EVENT2": {
-                "title": "Team Expansion",
-                "description": "Grew our team to 25+ talented professionals across multiple disciplines."
-            },
-            "EVENT3": {
-                "title": "Global Reach",
-                "description": "Expanded our services to clients across 15+ countries worldwide."
-            },
-            "EVENT4": {
-                "title": "Industry Recognition",
-                "description": "Received multiple awards for innovation and excellence in technology solutions."
-            }
-        },
-        "contact": {
-            "title": "Get In Touch",
-            "description": "Ready to start your next project? We'd love to hear from you.",
-            "address": "123 Innovation Street, Tech City",
-            "phone": "+1 (555) 123-4567",
-            "email": "hello@company.com",
-            "cta": "Contact Us"
-        }
+        "description": "Sorry, you do not have permission to access this page"
     },
     "about_system": {
         "badge": "System Overview",
         "hero": {
             "title": "About System",
-            "subtitle": "This page shows mock translated details and dummy data for your platform profile, technical capabilities, and upcoming roadmap."
+            "subtitle": "This page shows mock translated details and dummy data for your platform profile, technical capabilities, and upcoming roadmap"
         },
         "capabilities": {
             "security": {
                 "title": "Security by Design",
-                "description": "Role-based access, token-driven auth flows, and auditable request handling across core modules."
+                "description": "Role-based access, token-driven auth flows, and auditable request handling across core modules"
             },
             "performance": {
                 "title": "Optimized Performance",
-                "description": "Lightweight UI architecture with lazy loading and reusable components to keep interactions fast."
+                "description": "Lightweight UI architecture with lazy loading and reusable components to keep interactions fast"
             },
             "integration": {
                 "title": "Integration Ready",
-                "description": "Built to connect with APIs, monitoring pipelines, and enterprise services using a modular setup."
+                "description": "Built to connect with APIs, monitoring pipelines, and enterprise services using a modular setup"
             }
         },
         "facts": {
@@ -187,45 +115,19 @@
         },
         "roadmap": {
             "title": "Roadmap Snapshot",
-            "description": "Next steps include analytics widgets, deeper localization coverage, and monitoring dashboards.",
+            "description": "Next steps include analytics widgets, deeper localization coverage, and monitoring dashboards",
             "cta": "Share Feedback"
-        }
-    },
-    "dashboard": {
-        "title": "Dashboard",
-        "subtitle": "Welcome back! Here's an overview of your business performance.",
-        "vs_last_month": "vs last month",
-        "stats": {
-            "users": "Total Users",
-            "revenue": "Revenue",
-            "orders": "Orders",
-            "growth": "Growth Rate"
-        },
-        "charts": {
-            "sales_trend": "Sales Trend",
-            "monthly_overview": "Monthly sales and expenses overview",
-            "categories": "Sales by Category",
-            "by_category": "Revenue distribution by category"
-        },
-        "table": {
-            "title": "Recent Orders",
-            "subtitle": "Latest customer orders and their status",
-            "order_id": "Order ID",
-            "customer": "Customer",
-            "product": "Product",
-            "amount": "Amount",
-            "status": "Status",
-            "date": "Date"
         }
     },
     "users": {
         "title": "Users Management",
         "add_user": "Add User",
         "export": "Export",
-        "search": "Search users...",
-        "no_records": "No users found.",
+        "search": "Search users..",
+        "no_records": "No users found",
         "dialog": {
-            "add_user_title": "Add User"
+            "add_user_title": "Add User",
+            "edit_user_title": "Edit User"
         },
         "confirm_delete": {
             "title": "Delete User",
@@ -244,12 +146,12 @@
             "confirm_password_placeholder": "Enter confirm password"
         },
         "validation": {
-            "username_required": "Username is required.",
-            "full_name_required": "Full name is required.",
-            "password_required": "Password is required.",
-            "confirm_password_required": "Confirm password is required.",
-            "password_min_length": "Password must be at least 6 characters.",
-            "password_mismatch": "Passwords do not match."
+            "username_required": "Username is required",
+            "full_name_required": "Full name is required",
+            "password_required": "Password is required",
+            "confirm_password_required": "Confirm password is required",
+            "password_min_length": "Password must be at least 6 characters",
+            "password_mismatch": "Passwords do not match"
         },
         "buttons": {
             "cancel": "Cancel",
@@ -257,13 +159,17 @@
         },
         "toast": {
             "success_title": "Success",
-            "success_message": "User added successfully.",
+            "success_message": "User added successfully",
             "error_title": "Error",
-            "error_message": "Failed to add user.",
+            "error_message": "Failed to add user",
+            "update_success_title": "Success",
+            "update_success_message": "User updated successfully",
+            "update_error_title": "Error",
+            "update_error_message": "Failed to update user",
             "delete_success_title": "Deleted",
-            "delete_success_message": "User deleted successfully.",
+            "delete_success_message": "User deleted successfully",
             "delete_error_title": "Error",
-            "delete_error_message": "Failed to delete user."
+            "delete_error_message": "Failed to delete user"
         },
         "columns": {
             "username": "Username",
@@ -277,11 +183,52 @@
             "delete": "Delete"
         }
     },
+    "system_settings": {
+        "title": "System Settings",
+        "load_error": "Failed to load system settings",
+        "dialog": {
+            "add_title": "Add System Setting"
+        },
+        "form": {
+            "name": "Name",
+            "name_placeholder": "Enter name",
+            "value": "Value",
+            "value_placeholder": "Enter value",
+            "description": "Description",
+            "description_placeholder": "Enter description",
+            "friendly_name": "Friendly Name",
+            "friendly_name_placeholder": "Enter friendly name",
+            "is_editable": "Is Editable"
+        },
+        "validation": {
+            "name_required": "Name is required",
+            "value_required": "Value is required",
+            "description_required": "Description is required",
+            "friendly_name_required": "Friendly name is required"
+        },
+        "buttons": {
+            "cancel": "Cancel",
+            "save": "Save"
+        },
+        "toast": {
+            "success_title": "Success",
+            "success_message": "System setting added successfully",
+            "error_title": "Error",
+            "error_message": "Failed to add system setting"
+        },
+        "columns": {
+            "name": "Name",
+            "value": "Value",
+            "description": "Description",
+            "friendlyName": "Friendly Name",
+            "isEditable": "Is Editable"
+        }
+    },
     "data_table": {
         "add_new": "Add New",
         "export": "Export",
-        "search": "Search...",
-        "no_records": "No records found.",
+        "search": "Search..",
+        "no_records": "No records found",
         "actions": "Actions"
     },
     "primeng": {

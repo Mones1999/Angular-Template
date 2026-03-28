@@ -28,19 +28,19 @@ export const routes: Routes = [
                 loadComponent: () => import('./core/pages/about-system/about-system').then(m => m.AboutSystem)
             },
             {
-                path: APP_ROUTES.ABOUT_US,
-                redirectTo: APP_ROUTES.ABOUT_SYSTEM,
-                pathMatch: 'full'
-            },
-            {
-                path: APP_ROUTES.FORBIDDEN,
-                data: { breadcrumb: 'forbidden.title' },
-                loadComponent: () => import('./core/pages/forbidden/forbidden').then(m => m.Forbidden)
-            },
-            {
                 path: APP_ROUTES.USERS,
                 data: { breadcrumb: 'users.title' },
-                loadComponent: () => import('./features/users-management/pages/users/users').then(m => m.Users)
+                loadComponent: () => import('./features/users/pages/users/users').then(m => m.Users)
+            },
+            {
+                path:APP_ROUTES.SYSTEM_SETTINGS,
+                data:{ breadcrumb: 'system_settings.title' },
+                loadComponent: () => import('./features/system-settings/pages/system-settings/system-settings').then(m => m.SystemSettings)
+            },
+            {
+                path:APP_ROUTES.CHANGE_PASSWORD,
+                data:{ breadcrumb: 'change_password.title' },
+                loadComponent: () => import('./features/change-password/pages/change-password/change-password').then(m => m.ChangePassword)
             },
             {
                 path: '**',
