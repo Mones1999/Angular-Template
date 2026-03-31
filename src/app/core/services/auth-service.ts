@@ -84,9 +84,17 @@ export class AuthService {
 
   // The logout method
   public logout(): void {
-    sessionStorage.removeItem(TOKEN_KEY);
-    this.#authState.set({ isLoggedIn: false, userData: null });
-    this.router.navigate([APP_ROUTES.AUTH, AUTH_ROUTES.LOGIN]);
+    this.http.post<ResponseResult>(`${this.apiUrl}/logout`, null).subscribe({
+      next: () => {
+        sessionStorage.removeItem(TOKEN_KEY);
+        this.#authState.set({ isLoggedIn: false, userData: null });
+        this.router.navigate([APP_ROUTES.AUTH, AUTH_ROUTES.LOGIN]);
+      },
+      error: (error) => {
+        console.error("Logout failed:", error);
+      }
+    }
+    );
   }
 
 

@@ -30,6 +30,10 @@ body {
   margin-top: 0.5rem;
 }
 
+.p-dialog-content {
+  overflow: visible !important;
+}
+
 /* Arabic font - applied when app language is Arabic */
 /* [lang="ar"] body {
   font-family: "Baloo Bhaijaan 2", sans-serif;

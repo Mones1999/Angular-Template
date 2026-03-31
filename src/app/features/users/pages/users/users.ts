@@ -15,6 +15,8 @@ import { AddUserForm, UpdateUserForm, User } from '../../models/User';
 import { UsersService } from '../../services/users-service';
 import { ActionConfig, ActionType } from '@shared/models/data-table.models';
 import { AuthService } from '@core/services/auth-service';
+import { Divider } from "primeng/divider";
+import { UtilitiesService } from '@shared/util/utilities-service';
 
 @Component({
   selector: 'app-users',
@@ -26,8 +28,9 @@ import { AuthService } from '@core/services/auth-service';
     InputTextModule,
     PasswordModule,
     ReactiveFormsModule,
-    ConfirmDialog
-  ],
+    ConfirmDialog,
+    Divider
+],
   templateUrl: './users.html',
   styleUrl: './users.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -40,7 +43,9 @@ export class Users implements OnInit {
   private translateService = inject(TranslateService);
   private confirmationService = inject(ConfirmationService);
   private authService = inject(AuthService);
-
+  
+  utilitiesService = inject(UtilitiesService);
+  
   users: User[] = [];
   totalRecords = signal(0);
   loading = signal(true);
@@ -70,13 +75,13 @@ export class Users implements OnInit {
     actions: [
       {
       actionType: ActionType.EDIT,
-      label: this.translateService.instant('users.actions.update'),
+      label: this.translateService.instant('data_table.update'),
       icon: 'pi pi-pencil',
       severity: 'info',
       },
       {
         actionType: ActionType.DELETE,
-        label: this.translateService.instant('users.actions.delete'),
+        label: this.translateService.instant('data_table.delete'),
         icon: 'pi pi-trash',
         severity: 'danger',
       }
@@ -85,7 +90,9 @@ export class Users implements OnInit {
 
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+
+  }
 
   onLazyLoad(event: TableLazyLoadEvent): void {
     const request: PageRequestDto = {

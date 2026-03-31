@@ -150,8 +150,9 @@
             "full_name_required": "الاسم الكامل مطلوب.",
             "password_required": "كلمة المرور مطلوبة.",
             "confirm_password_required": "تأكيد كلمة المرور مطلوب.",
-            "password_min_length": "يجب أن تكون كلمة المرور 6 أحرف على الأقل.",
-            "password_mismatch": "كلمتا المرور غير متطابقتين."
+            "password_min_length": "يجب أن تكون كلمة المرور {{PasswordMinimumLength}} أحرف على الأقل.",
+            "password_mismatch": "كلمتا المرور غير متطابقتين.",
+            "password_requirements": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد على الأقل، ورقم واحد على الأقل، وأن تكون بطول {{PasswordMinimumLength}} أحرف على الأقل."
         },
         "buttons": {
             "cancel": "إلغاء",
@@ -177,10 +178,6 @@
             "email": "البريد الإلكتروني",
             "phone_number": "رقم الهاتف",
             "actions": "الإجراءات"
-        },
-        "actions": {
-            "update": "تعديل",
-            "delete": "حذف"
         }
     },
     "system_settings": {
@@ -224,12 +221,47 @@
             "isEditable": "قابل للتعديل"
         }
     },
+    "change_password": {
+        "title": "تغيير كلمة المرور",
+        "subtitle": "قم بتحديث كلمة المرور للحفاظ على أمان حسابك",
+        "sections": {
+            "verify_identity": "التحقق من الهوية",
+            "new_password": "تعيين كلمة مرور جديدة"
+        },
+        "form": {
+            "current_password": "كلمة المرور الحالية",
+            "current_password_placeholder": "أدخل كلمة المرور الحالية",
+            "new_password": "كلمة المرور الجديدة",
+            "new_password_placeholder": "أدخل كلمة المرور الجديدة",
+            "confirm_password": "تأكيد كلمة المرور الجديدة",
+            "confirm_password_placeholder": "أعد إدخال كلمة المرور الجديدة"
+        },
+        "validation": {
+            "current_password_required": "كلمة المرور الحالية مطلوبة.",
+            "new_password_required": "كلمة المرور الجديدة مطلوبة.",
+            "new_password_min_length": "يجب أن تكون كلمة المرور الجديدة 6 أحرف على الأقل.",
+            "confirm_password_required": "تأكيد كلمة المرور الجديدة مطلوبة.",
+            "password_mismatch": "كلمتا المرور غير متطابقتين."
+        },
+        "buttons": {
+            "cancel": "إلغاء",
+            "save": "تحديث كلمة المرور"
+        },
+        "toast": {
+            "success_title": "نجاح",
+            "success_message": "تم تغيير كلمة المرور بنجاح.",
+            "error_title": "خطأ",
+            "error_message": "فشل تغيير كلمة المرور."
+        }
+    },
     "data_table": {
         "add_new": "إضافة جديد",
         "export": "تصدير",
         "search": "بحث...",
         "no_records": "لا توجد سجلات.",
-        "actions": "الإجراءات"
+        "actions": "الإجراءات",
+        "update": "تحديث",
+        "delete": "حذف"
     },
     "primeng": {
         "accept": "قبول",

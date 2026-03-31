@@ -123,7 +123,7 @@
         "title": "Users Management",
         "add_user": "Add User",
         "export": "Export",
-        "search": "Search users..",
+        "search": "Search users.",
         "no_records": "No users found",
         "dialog": {
             "add_user_title": "Add User",
@@ -177,10 +177,6 @@
             "email": "Email",
             "phone_number": "Phone Number",
             "actions": "Actions"
-        },
-        "actions": {
-            "update": "Update",
-            "delete": "Delete"
         }
     },
     "system_settings": {
@@ -224,12 +220,48 @@
             "isEditable": "Is Editable"
         }
     },
+    "change_password": {
+        "title": "Change Password",
+        "subtitle": "Update your password to keep your account secure",
+        "sections": {
+            "verify_identity": "Verify Your Identity",
+            "new_password": "Set New Password"
+        },
+        "form": {
+            "current_password": "Current Password",
+            "current_password_placeholder": "Enter your current password",
+            "new_password": "New Password",
+            "new_password_placeholder": "Enter new password",
+            "confirm_password": "Confirm New Password",
+            "confirm_password_placeholder": "Re-enter new password",
+            "password_requirements": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least {{PasswordMinimumLength}} characters long."
+        },
+        "validation": {
+            "current_password_required": "Current password is required",
+            "new_password_required": "New password is required",
+            "new_password_min_length": "New password must be at least {{PasswordMinimumLength}} characters",
+            "confirm_password_required": "Confirm new password is required",
+            "password_mismatch": "Password and confirm password do not match"
+        },
+        "buttons": {
+            "cancel": "Cancel",
+            "save": "Update Password"
+        },
+        "toast": {
+            "success_title": "Success",
+            "success_message": "Password changed successfully",
+            "error_title": "Error",
+            "error_message": "Failed to change password"
+        }
+    },
     "data_table": {
         "add_new": "Add New",
         "export": "Export",
-        "search": "Search..",
+        "search": "Search.",
         "no_records": "No records found",
-        "actions": "Actions"
+        "actions": "Actions",
+        "update": "Update",
+        "delete": "Delete"
     },
     "primeng": {
         "accept": "Accept",

@@ -49,28 +49,18 @@ export class SystemSettings {
     actions: [
       {
         actionType: ActionType.EDIT,
-        label: this.translateService.instant('system_settings.actions.add'),
+        label: this.translateService.instant('data_table.update'),
         icon: 'pi pi-pencil',
         severity: 'info',
       },
       {
         actionType: ActionType.DELETE,
-        label: this.translateService.instant('system_settings.actions.add'),
+        label: this.translateService.instant('data_table.delete'),
         icon: 'pi pi-trash',
         severity: 'danger',
       }
     ]
   };
-  /**
-   * export interface ActionItem {
-    actionType: string;
-    label: string;
-    icon: string;
-    severity?: 'info' | 'success' | 'warn' | 'danger' | 'secondary' | 'contrast';
-    visible?: boolean | ((rowData: any) => boolean);
-    disabled?: boolean | ((rowData: any) => boolean);
-}
-   */
 
   dialogVisible = false;
   submitted = false;
