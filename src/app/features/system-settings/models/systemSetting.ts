@@ -4,5 +4,5 @@ export interface SystemSetting {
     value: string;
     description: string;
     friendlyName: string;
-    isEditable: boolean;
+    isEditable: string | boolean;
 }

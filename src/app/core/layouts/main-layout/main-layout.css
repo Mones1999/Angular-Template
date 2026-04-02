@@ -9,7 +9,8 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
     margin-inline-start: 260px;
     transition: margin-inline-start 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -19,6 +20,15 @@
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+:host ::ng-deep .page-content>*:not(router-outlet) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 :host .sidebar-collapsed .main-content {

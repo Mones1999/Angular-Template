@@ -82,41 +82,11 @@
     "about_system": {
         "badge": "نظرة عامة على النظام",
         "hero": {
-            "title": "حول النظام",
-            "subtitle": "تعرض هذه الصفحة نصوصا مترجمة تجريبيا وبيانات وهمية لملف المنصة والقدرات التقنية وخارطة الطريق القادمة."
+            "title": "حول النظام"
         },
-        "capabilities": {
-            "security": {
-                "title": "الأمان من الأساس",
-                "description": "صلاحيات مبنية على الأدوار، وتدفقات مصادقة عبر الرموز، ومعالجة طلبات قابلة للتدقيق عبر الوحدات الأساسية."
-            },
-            "performance": {
-                "title": "أداء محسّن",
-                "description": "بنية واجهات خفيفة مع التحميل الكسول ومكونات قابلة لإعادة الاستخدام للحفاظ على سرعة التفاعل."
-            },
-            "integration": {
-                "title": "جاهز للتكامل",
-                "description": "مصمم للاتصال بواجهات البرمجة وخطوط المراقبة وخدمات المؤسسات من خلال إعداد معياري."
-            }
-        },
-        "facts": {
-            "title": "حقائق النظام",
-            "subtitle": "قيم وهمية للمعاينة السريعة",
-            "release": "الإصدار الحالي",
-            "framework": "إطار الواجهة",
-            "environment": "بيئة النشر",
-            "supported_users": "عدد المستخدمين المدعوم"
-        },
-        "dummy": {
-            "release": "v2.6.0-mock",
-            "framework": "Angular 20 + PrimeNG 20",
-            "environment": "عنقود تجريبي (وهمي)",
-            "supported_users": "10,000 متزامن (مثال)"
-        },
-        "roadmap": {
-            "title": "ملخص خارطة الطريق",
-            "description": "تشمل الخطوات القادمة عناصر تحليلات إضافية، وتغطية أعمق للترجمة، ولوحات مراقبة تفصيلية.",
-            "cta": "شارك ملاحظاتك"
+        "details": {
+            "title": "تفاصيل النظام",
+            "subtitle": "معلومات أساسية حول النظام"
         }
     },
     "users": {
@@ -152,7 +122,11 @@
             "confirm_password_required": "تأكيد كلمة المرور مطلوب.",
             "password_min_length": "يجب أن تكون كلمة المرور {{PasswordMinimumLength}} أحرف على الأقل.",
             "password_mismatch": "كلمتا المرور غير متطابقتين.",
-            "password_requirements": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد على الأقل، ورقم واحد على الأقل، وأن تكون بطول {{PasswordMinimumLength}} أحرف على الأقل."
+            "password_strength": {
+                "weak": "ضعيفة",
+                "medium": "متوسطة",
+                "strong": "قوية"
+            }
         },
         "buttons": {
             "cancel": "إلغاء",
@@ -184,7 +158,14 @@
         "title": "إعدادات النظام",
         "load_error": "فشل تحميل إعدادات النظام.",
         "dialog": {
-            "add_title": "إضافة إعداد نظام"
+            "add_title": "إضافة إعداد نظام",
+            "edit_title": "تعديل إعداد نظام"
+        },
+        "confirm_delete": {
+            "title": "حذف إعداد النظام",
+            "message": "هل أنت متأكد أنك تريد حذف {{name}}؟",
+            "accept": "حذف",
+            "reject": "إلغاء"
         },
         "form": {
             "name": "الاسم",
@@ -211,7 +192,15 @@
             "success_title": "نجاح",
             "success_message": "تمت إضافة إعداد النظام بنجاح.",
             "error_title": "خطأ",
-            "error_message": "فشلت إضافة إعداد النظام."
+            "error_message": "فشلت إضافة إعداد النظام.",
+            "update_success_title": "نجاح",
+            "update_success_message": "تم تحديث إعداد النظام بنجاح.",
+            "update_error_title": "خطأ",
+            "update_error_message": "فشل تحديث إعداد النظام.",
+            "delete_success_title": "تم الحذف",
+            "delete_success_message": "تم حذف إعداد النظام بنجاح.",
+            "delete_error_title": "خطأ",
+            "delete_error_message": "فشل حذف إعداد النظام."
         },
         "columns": {
             "name": "الاسم",
@@ -234,7 +223,8 @@
             "new_password": "كلمة المرور الجديدة",
             "new_password_placeholder": "أدخل كلمة المرور الجديدة",
             "confirm_password": "تأكيد كلمة المرور الجديدة",
-            "confirm_password_placeholder": "أعد إدخال كلمة المرور الجديدة"
+            "confirm_password_placeholder": "أعد إدخال كلمة المرور الجديدة",
+            "password_requirements": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد على الأقل، ورقم واحد على الأقل، وأن تكون بطول {{PasswordMinimumLength}} أحرف على الأقل"
         },
         "validation": {
             "current_password_required": "كلمة المرور الحالية مطلوبة.",

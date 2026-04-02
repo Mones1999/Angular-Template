@@ -43,13 +43,13 @@
                     }
                     @for (col of columns(); track col.field; let i = $index) {
                     @if (col.sortable) {
-                    <th class="!bg-(--p-primary-50) !border-none !font-semibold !text-sm"
+                    <th class="!bg-(--p-primary-50) !border-none !font-semibold !text-sm" [class]="col.headerStyleClass"
                         [style.width.%]="col.width || 100/columns().length" [pSortableColumn]="col.field">
                         {{ col.header | translate }}
                         <p-sortIcon [field]="col.field" />
                     </th>
                     } @else {
-                    <th class="!bg-(--p-primary-50) !border-none !font-semibold !text-sm"
+                    <th class="!bg-(--p-primary-50) !border-none !font-semibold !text-sm" [class]="col.headerStyleClass"
                         [style.width.%]="col.width || 100/columns().length">
                         {{ col.header | translate }}
                     </th>
@@ -99,7 +99,9 @@
                     }
                     @for (col of columns(); track col.field; let i = $index) {
                     <td class="!border-b !border-(--p-surface-100) text-(--p-surface-700) text-sm"
-                        [style.width.%]="col.width || 100/columns().length">
+                        [class]="col.bodyStyleClass" [ngStyle]="col.bodyStyle" [class.truncate]="col.truncate"
+                        [class.max-w-[1px]]="col.truncate" [pTooltip]="col.truncate ? item[col.field] : null"
+                        tooltipPosition="top" [style.width.%]="col.width || 100/columns().length">
                         @switch (col.type) {
                         @case ('date') {
                         {{ item[col.field] | date: 'mediumDate' }}

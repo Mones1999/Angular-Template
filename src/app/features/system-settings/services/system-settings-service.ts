@@ -21,8 +21,16 @@ export class SystemSettingsService {
     return this.http.get<ResponseResult<SystemSetting>>(`${this.baseUrl}/${id}`);
   }
 
-  addSystemSetting(payload: Omit<SystemSetting, 'isEditable'> & { isEditable: string }): Observable<ResponseResult> {
+  addSystemSetting(payload: SystemSetting): Observable<ResponseResult> {
     return this.http.post<ResponseResult>(`${this.baseUrl}/add`, payload);
+  }
+
+  updateSystemSetting(payload: SystemSetting): Observable<ResponseResult> {
+    return this.http.post<ResponseResult>(`${this.baseUrl}/edit`, payload);
+  }
+
+  deleteSystemSetting(payload: SystemSetting): Observable<ResponseResult> {
+    return this.http.post<ResponseResult>(`${this.baseUrl}/delete`, payload);
   }
 
   loadSystemSettings(request: PageRequestDto): Observable<ResponseResult<PageResponse<SystemSetting>>> {

@@ -1,5 +1,5 @@
 :host {
-    --p-datatable-body-cell-padding: 0.7rem 1rem;
+    --p-datatable-body-cell-padding: 0.43rem 1rem;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -50,6 +50,8 @@
 
 :host ::ng-deep .p-datatable-wrapper {
     flex: 1;
+    overflow: auto;
+    min-height: 0;
 }
 
 :host ::ng-deep p-paginator {

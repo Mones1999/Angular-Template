@@ -82,45 +82,15 @@
     "about_system": {
         "badge": "System Overview",
         "hero": {
-            "title": "About System",
-            "subtitle": "This page shows mock translated details and dummy data for your platform profile, technical capabilities, and upcoming roadmap"
+            "title": "About System"
         },
-        "capabilities": {
-            "security": {
-                "title": "Security by Design",
-                "description": "Role-based access, token-driven auth flows, and auditable request handling across core modules"
-            },
-            "performance": {
-                "title": "Optimized Performance",
-                "description": "Lightweight UI architecture with lazy loading and reusable components to keep interactions fast"
-            },
-            "integration": {
-                "title": "Integration Ready",
-                "description": "Built to connect with APIs, monitoring pipelines, and enterprise services using a modular setup"
-            }
-        },
-        "facts": {
-            "title": "System Facts",
-            "subtitle": "Dummy values for quick preview",
-            "release": "Current Release",
-            "framework": "UI Framework",
-            "environment": "Deployment Environment",
-            "supported_users": "Supported Users"
-        },
-        "dummy": {
-            "release": "v2.6.0-mock",
-            "framework": "Angular 20 + PrimeNG 20",
-            "environment": "Staging Cluster (Dummy)",
-            "supported_users": "10,000 concurrent (sample)"
-        },
-        "roadmap": {
-            "title": "Roadmap Snapshot",
-            "description": "Next steps include analytics widgets, deeper localization coverage, and monitoring dashboards",
-            "cta": "Share Feedback"
+        "details": {
+            "title": "System Details",
+            "subtitle": "Key information about the system"
         }
     },
     "users": {
-        "title": "Users Management",
+        "title": "Users",
         "add_user": "Add User",
         "export": "Export",
         "search": "Search users.",
@@ -151,7 +121,12 @@
             "password_required": "Password is required",
             "confirm_password_required": "Confirm password is required",
             "password_min_length": "Password must be at least 6 characters",
-            "password_mismatch": "Passwords do not match"
+            "password_mismatch": "Passwords do not match",
+            "password_strength": {
+                "weak": "Weak",
+                "medium": "Medium",
+                "strong": "Strong"
+            }
         },
         "buttons": {
             "cancel": "Cancel",
@@ -183,13 +158,20 @@
         "title": "System Settings",
         "load_error": "Failed to load system settings",
         "dialog": {
-            "add_title": "Add System Setting"
+            "add_title": "Add System Setting",
+            "edit_title": "Edit System Setting"
+        },
+        "confirm_delete": {
+            "title": "Delete System Setting",
+            "message": "Are you sure you want to delete {{name}}?",
+            "accept": "Delete",
+            "reject": "Cancel"
         },
         "form": {
-            "name": "Name",
-            "name_placeholder": "Enter name",
+            "name": "System Setting Name",
+            "name_placeholder": "Enter System Setting Name",
             "value": "Value",
-            "value_placeholder": "Enter value",
+            "value_placeholder": "Enter Value",
             "description": "Description",
             "description_placeholder": "Enter description",
             "friendly_name": "Friendly Name",
@@ -210,7 +192,15 @@
             "success_title": "Success",
             "success_message": "System setting added successfully",
             "error_title": "Error",
-            "error_message": "Failed to add system setting"
+            "error_message": "Failed to add system setting",
+            "update_success_title": "Success",
+            "update_success_message": "System setting updated successfully",
+            "update_error_title": "Error",
+            "update_error_message": "Failed to update system setting",
+            "delete_success_title": "Deleted",
+            "delete_success_message": "System setting deleted successfully",
+            "delete_error_title": "Error",
+            "delete_error_message": "Failed to delete system setting"
         },
         "columns": {
             "name": "Name",
@@ -234,7 +224,7 @@
             "new_password_placeholder": "Enter new password",
             "confirm_password": "Confirm New Password",
             "confirm_password_placeholder": "Re-enter new password",
-            "password_requirements": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least {{PasswordMinimumLength}} characters long."
+            "password_requirements": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least {{PasswordMinimumLength}} characters long"
         },
         "validation": {
             "current_password_required": "Current password is required",

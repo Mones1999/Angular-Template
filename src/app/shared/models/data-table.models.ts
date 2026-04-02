@@ -4,6 +4,10 @@ export interface TableColumn {
     sortable?: boolean;
     type?: 'text' | 'date' | 'currency' | 'number' | 'boolean';
     width?: number;
+    headerStyleClass?: string;
+    bodyStyleClass?: string;
+    bodyStyle?: { [key: string]: string };
+    truncate?: boolean;
 }
 
 export interface ActionItem {
@@ -16,7 +20,7 @@ export interface ActionItem {
 }
 
 export interface ActionConfig {
-    mode: 'EXPANDED' | 'MENU' ;
+    mode: 'EXPANDED' | 'MENU';
     actions: ActionItem[];
     menuButtonIcon?: string;
     menuButtonLabel?: string;

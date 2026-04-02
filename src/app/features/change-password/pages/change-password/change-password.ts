@@ -9,6 +9,7 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { PasswordModule } from 'primeng/password';
+import { CardModule } from 'primeng/card';
 import { ChangePasswordRequest } from '../../models/ChangePassword';
 import { ChangePasswordService } from '../../services/change-password-service';
 @Component({
@@ -19,7 +20,8 @@ import { ChangePasswordService } from '../../services/change-password-service';
     ButtonModule,
     PasswordModule,
     DividerModule,
-    CommonModule
+    CommonModule,
+    CardModule
   ],
   templateUrl: './change-password.html',
   styleUrl: './change-password.css',
@@ -47,7 +49,7 @@ export class ChangePassword implements OnInit {
   );
 
   ngOnInit(): void {
-    
+
   }
 
   onSubmit(): void {

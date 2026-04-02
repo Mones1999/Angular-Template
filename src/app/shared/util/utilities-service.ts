@@ -14,11 +14,12 @@ export class UtilitiesService {
   // Services Injections
   private changePasswordService = inject(ChangePasswordService);
 
+  // Properties
   passwordMinimumLength: number = 8;
   dynamicMediumRegex: string = '';
   dynamicStrongRegex: string = '';
 
-  constructor(){
+  constructor() {
     this.getPasswordMinimumLength();
     this.buildRegexPatterns();
   }
@@ -29,13 +30,13 @@ export class UtilitiesService {
         this.passwordMinimumLength = response.result!;
       },
       error: (e) => {
-        console.log('error',e);
+        console.log('error', e);
       },
     });
   }
 
   buildRegexPatterns() {
-    this.dynamicMediumRegex = `^(?=.*[a-zA-Z])(?=.*[0-9]).{${this.passwordMinimumLength},}$`;
-    this.dynamicStrongRegex = `^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{${this.passwordMinimumLength},}$`;
+    this.dynamicMediumRegex = `^(?=.*[a-z])(?=.*[0-9]).{${this.passwordMinimumLength},}$`;
+    this.dynamicStrongRegex = `^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{${this.passwordMinimumLength},}$`;
   }
 }

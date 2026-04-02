@@ -1,12 +1,13 @@
-<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-6 flex-1 min-h-0">
     <app-data-table [columns]="columns" [data]="systemSettings" [loading]="loading()" [dataKey]="'id'"
         [totalRecords]="totalRecords()" [allRowsCount]="totalRecords()" [lazy]="true" [actionConfig]="actionConfig"
-        [globalFilterFields]="['name', 'value', 'description', 'friendlyName']" 
-        [tableName]="'system_settings.title' | translate" (onLazyLoad)="onLazyLoad($event)" (onAddNew)="onAddNew()" />
+        [globalFilterFields]="['name', 'value', 'description', 'friendlyName']" [showAddButton]="false"
+        [tableName]="'system_settings.title' | translate" (onLazyLoad)="onLazyLoad($event)"
+        (onActionClick)="onActionClick($event)" />
 </div>
 
-<p-dialog [header]="'system_settings.dialog.add_title' | translate" [draggable]="false" [modal]="true"
-    [(visible)]="dialogVisible" [closable]="false" [style]="{ width: '30rem' }">
+<p-dialog [header]="(isEditMode ? 'system_settings.dialog.edit_title' : 'system_settings.dialog.add_title') | translate"
+    [draggable]="false" [modal]="true" [(visible)]="dialogVisible" [closable]="false" [style]="{ width: '30rem' }">
     <form id="addSettingForm" [formGroup]="addSettingForm" (ngSubmit)="onSaveAdd()" class="flex flex-col gap-4 pt-2">
         <div class="flex flex-col gap-1">
             <label for="name" class="font-semibold">{{ 'system_settings.form.name' | translate }} <span
@@ -15,6 +16,9 @@
                 [placeholder]="'system_settings.form.name_placeholder' | translate" />
             @if (submitted && addSettingForm.get('name')?.hasError('required')) {
             <small class="text-red-500">{{ 'system_settings.validation.name_required' | translate }}</small>
+            }
+            @if(serverError()){
+            <small class="text-red-500">{{ serverError() }}</small>
             }
         </div>
 
@@ -29,16 +33,6 @@
         </div>
 
         <div class="flex flex-col gap-1">
-            <label for="description" class="font-semibold">{{ 'system_settings.form.description' | translate }} <span
-                    class="text-red-500">*</span></label>
-            <input pInputText id="description" formControlName="description" autocomplete="off"
-                [placeholder]="'system_settings.form.description_placeholder' | translate" />
-            @if (submitted && addSettingForm.get('description')?.hasError('required')) {
-            <small class="text-red-500">{{ 'system_settings.validation.description_required' | translate }}</small>
-            }
-        </div>
-
-        <div class="flex flex-col gap-1">
             <label for="friendlyName" class="font-semibold">{{ 'system_settings.form.friendly_name' | translate }} <span
                     class="text-red-500">*</span></label>
             <input pInputText id="friendlyName" formControlName="friendlyName" autocomplete="off"
@@ -47,11 +41,20 @@
             <small class="text-red-500">{{ 'system_settings.validation.friendly_name_required' | translate }}</small>
             }
         </div>
-
-        <div class="flex items-center gap-2">
-            <p-checkbox formControlName="isEditable" [binary]="true" inputId="isEditable" />
-            <label for="isEditable" class="font-semibold">{{ 'system_settings.form.is_editable' | translate }}</label>
+        
+        <div class="flex flex-col gap-1">
+            <label for="description" class="font-semibold">{{ 'system_settings.form.description' | translate }}</label>
+            <textarea pTextarea id="description" formControlName="description" autocomplete="off" rows="3" [autoResize]="false"
+                [placeholder]="'system_settings.form.description_placeholder' | translate"></textarea>
         </div>
+        @if(!isEditMode){
+            <div class="flex items-center gap-2">
+                <p-checkbox formControlName="isEditable" [binary]="true" inputId="isEditable" />
+                <label for="isEditable" class="font-semibold">{{ 'system_settings.form.is_editable' | translate }} <span
+                        class="text-red-500">*</span></label>
+            </div>
+        }
+
     </form>
     <ng-template #footer>
         <div class="flex justify-end gap-2 pt-4">
@@ -61,3 +64,5 @@
         </div>
     </ng-template>
 </p-dialog>
+
+<p-confirmdialog [draggable]="false" />
