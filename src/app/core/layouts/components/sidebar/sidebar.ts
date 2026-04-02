@@ -66,7 +66,7 @@ export class Sidebar implements OnInit, OnDestroy {
         items: [
           { label: this.translate.instant('sidebar.menu.users'), icon: 'pi pi-users', route: `/${APP_ROUTES.USERS}` },
           { label: this.translate.instant('sidebar.menu.system_settings'), icon: 'pi pi-cog', route: `/${APP_ROUTES.SYSTEM_SETTINGS}` },
-          { label: this.translate.instant('sidebar.menu.sms_templates'), icon: 'pi pi-envelope', route: '/sms-templates' },
+          { label: this.translate.instant('sidebar.menu.sms_templates'), icon: 'pi pi-envelope', route: `/${APP_ROUTES.MESSAGE_TEMPLATES}` },
         ]
       },
       {

@@ -4,6 +4,7 @@ export const APP_ROUTES = {
   ABOUT_SYSTEM: 'about-system',
   USERS: 'users',
   CHANGE_PASSWORD: 'change-password',
+   MESSAGE_TEMPLATES: 'message-templates',
   NOT_FOUND: '404',
   FORBIDDEN: '403'
 };

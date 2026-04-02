@@ -101,19 +101,19 @@
         },
         "confirm_delete": {
             "title": "Delete User",
-            "message": "Are you sure you want to delete {{username}}?",
+            "message": "Are you sure you want to delete selected user?",
             "accept": "Delete",
             "reject": "Cancel"
         },
         "form": {
             "username": "Username",
-            "username_placeholder": "Enter username",
+            "username_placeholder": "Enter Username",
             "full_name": "Full Name",
-            "full_name_placeholder": "Enter full name",
+            "full_name_placeholder": "Enter Full Name",
             "password": "Password",
-            "password_placeholder": "Enter password",
+            "password_placeholder": "Enter Password",
             "confirm_password": "Confirm Password",
-            "confirm_password_placeholder": "Enter confirm password"
+            "confirm_password_placeholder": "Enter Confirm Password"
         },
         "validation": {
             "username_required": "Username is required",
@@ -163,7 +163,7 @@
         },
         "confirm_delete": {
             "title": "Delete System Setting",
-            "message": "Are you sure you want to delete {{name}}?",
+            "message": "Are you sure you want to delete selected system setting?",
             "accept": "Delete",
             "reject": "Cancel"
         },
@@ -173,9 +173,9 @@
             "value": "Value",
             "value_placeholder": "Enter Value",
             "description": "Description",
-            "description_placeholder": "Enter description",
+            "description_placeholder": "Enter Description",
             "friendly_name": "Friendly Name",
-            "friendly_name_placeholder": "Enter friendly name",
+            "friendly_name_placeholder": "Enter Friendly Name",
             "is_editable": "Is Editable"
         },
         "validation": {
@@ -219,11 +219,11 @@
         },
         "form": {
             "current_password": "Current Password",
-            "current_password_placeholder": "Enter your current password",
+            "current_password_placeholder": "Enter Your Current Password",
             "new_password": "New Password",
-            "new_password_placeholder": "Enter new password",
+            "new_password_placeholder": "Enter New Password",
             "confirm_password": "Confirm New Password",
-            "confirm_password_placeholder": "Re-enter new password",
+            "confirm_password_placeholder": "Re-Enter New Password",
             "password_requirements": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least {{PasswordMinimumLength}} characters long"
         },
         "validation": {
@@ -242,6 +242,64 @@
             "success_message": "Password changed successfully",
             "error_title": "Error",
             "error_message": "Failed to change password"
+        }
+    },
+    "sms_templates": {
+        "title": "SMS Templates",
+        "load_error": "Failed to load SMS templates",
+        "dialog": {
+            "add_title": "Add SMS Template",
+            "edit_title": "Edit SMS Template"
+        },
+        "confirm_delete": {
+            "title": "Delete SMS template",
+            "message": "Are you sure you want to delete selected sms template?",
+            "accept": "Delete",
+            "reject": "Cancel"
+        },
+        "form": {
+            "name": "Template Name",
+            "name_placeholder": "Enter Template Name",
+            "sms_text": "SMS Text",
+            "sms_arabic_text_placeholder": "Enter Arabic SMS Text",
+            "sms_english_text_placeholder": "Enter English SMS Text",
+            "description": "Description",
+            "description_placeholder": "Enter Description",
+            "characters_left": "Characters left: {{count}}"
+        },
+        "validation": {
+            "name_required": "Template name is required",
+            "arabic_text_required": "Arabic SMS text is required",
+            "sms_text_maxlength": "SMS text must not exceed 156 characters",
+            "description_required": "Description is required",
+            "arabic_only": "Arabic text only is allowed",
+            "english_only": "English text only is allowed"
+        },
+        "buttons": {
+            "cancel": "Cancel",
+            "save": "Save"
+        },
+        "toast": {
+            "success_title": "Success",
+            "error_title": "Error",
+            "add_success_message": "SMS template added successfully",
+            "add_error_message": "Failed to add SMS template",
+            "update_success_message": "SMS template updated successfully",
+            "update_error_message": "Failed to update SMS template",
+            "delete_success_title": "Deleted",
+            "delete_success_message": "SMS template deleted successfully",
+            "delete_error_title": "Error",
+            "delete_error_message": "Failed to delete SMS template"
+        },
+        "columns": {
+            "name": "Template Name",
+            "description": "Description",
+            "english_text": "English Text",
+            "arabic_text": "Arabic Text"
+        },
+        "actions": {
+            "edit": "Edit",
+            "delete": "Delete"
         }
     },
     "data_table": {

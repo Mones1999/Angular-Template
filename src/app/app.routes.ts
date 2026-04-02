@@ -43,6 +43,11 @@ export const routes: Routes = [
                 loadComponent: () => import('./features/change-password/pages/change-password/change-password').then(m => m.ChangePassword)
             },
             {
+                path: APP_ROUTES.MESSAGE_TEMPLATES,
+                data: { breadcrumb: 'sms_templates.title' },
+                loadComponent: () => import('./features/message-templates/pages/message-templates/message-templates').then(m => m.MessageTemplates)
+            },
+            {
                 path: '**',
                 redirectTo: '/' + APP_ROUTES.NOT_FOUND
             }

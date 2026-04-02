@@ -244,6 +244,63 @@
             "error_message": "فشل تغيير كلمة المرور."
         }
     },
+    "sms_templates": {
+        "title": "قوالب الرسائل",
+        "load_error": "فشل تحميل قوالب الرسائل",
+        "dialog": {
+            "add_title": "إضافة قالب رسالة",
+            "edit_title": "تعديل قالب رسالة"
+        },
+        "confirm_delete": {
+            "title": "حذف قالب الرسالة",
+            "message": "هل أنت متأكد أنك تريد حذف {{name}}؟",
+            "accept": "حذف",
+            "reject": "إلغاء"
+        },
+        "form": {
+            "name": "اسم القالب",
+            "name_placeholder": "أدخل اسم القالب",
+            "sms_text": "نص الرسالة",
+            "sms_text_placeholder": "أدخل نص الرسالة",
+            "description": "الوصف",
+            "description_placeholder": "أدخل الوصف",
+            "characters_left": "الأحرف المتبقية: {{count}}"
+        },
+        "validation": {
+            "name_required": "اسم القالب مطلوب",
+            "arabic_text_required": "النص العربي للرسالة مطلوب",
+            "sms_text_maxlength": "نص الرسالة يجب ألا يزيد عن 156 حرفاً",
+            "description_required": "الوصف مطلوب",
+            "arabic_only": "يسمح فقط بالنص العربي",
+            "english_only": "يسمح فقط بالنص الإنجليزي"
+        },
+        "buttons": {
+            "cancel": "إلغاء",
+            "save": "حفظ"
+        },
+        "toast": {
+            "success_title": "نجاح",
+            "error_title": "خطأ",
+            "add_success_message": "تمت إضافة قالب الرسالة بنجاح",
+            "add_error_message": "فشل في إضافة قالب الرسالة",
+            "update_success_message": "تم تعديل قالب الرسالة بنجاح",
+            "update_error_message": "فشل في تعديل قالب الرسالة",
+            "delete_success_title": "تم الحذف",
+            "delete_success_message": "تم حذف قالب الرسالة بنجاح",
+            "delete_error_title": "خطأ",
+            "delete_error_message": "فشل في حذف قالب الرسالة"
+        },
+        "columns": {
+            "name": "اسم القالب",
+            "description": "الوصف",
+            "english_text": "النص الإنجليزي",
+            "arabic_text": "النص العربي"
+        },
+        "actions": {
+            "edit": "تعديل",
+            "delete": "حذف"
+        }
+    },
     "data_table": {
         "add_new": "إضافة جديد",
         "export": "تصدير",
