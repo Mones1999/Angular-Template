@@ -11,6 +11,6 @@ import { ToastModule } from 'primeng/toast';
   providers: [MessageService]
 })
 export class App {
-  protected readonly title = signal('Angular-Template');
+  protected readonly title = signal('call-me-back');
 
 }

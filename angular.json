@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular-Template": {
+    "call-me-back": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -82,10 +82,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Angular-Template:build:production"
+              "buildTarget": "call-me-back:build:production"
             },
             "development": {
-              "buildTarget": "Angular-Template:build:development"
+              "buildTarget": "call-me-back:build:development"
             }
           },
           "defaultConfiguration": "development"
